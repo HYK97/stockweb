@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.stock.web.user.mapper.UserMapper">
+  
+  <insert id="insert">
+   insert into USERS (USER_ID,USER_PW,USER_BIRTH,USER_NAME) values (#{id}, #{password}, TO_DATE(#{birthday} , 'yyyy/mm/dd hh24:mi:ss'),#{name})   
+  </insert>
+  
+  <delete id="deleteall">
+    	delete from USERS
+  </delete>
+  <select id="login" resultType="Integer">
+  		select COUNT(*) FROM USERS WHERE USER_ID = #{id} AND USER_PW = #{password}
+  </select>
+
+  
+  
+
+</mapper>	
