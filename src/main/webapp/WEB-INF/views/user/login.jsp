@@ -21,6 +21,7 @@
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
             rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+        <script type="text/javascript" src="../../../resources/js/login.js" ></script>
         <title>로그인</title>
         <style>
             body {
@@ -99,7 +100,7 @@
             </div>
             <div
                 class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100">
-                <form class="w-75" method="post" action="/user/login">
+                <form class="w-75" id="loginForm" method="post" action="/user/login">
                     <div class="mb-3">
                         <label for="ID" class="form-label">아이디</label>
                         <input
@@ -131,10 +132,13 @@
                         </div>
                     </div>
                     
-                    <input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="로그인">
+                    <input type="submit" id="loginBtn" class="btn btn-custom btn-lg btn-block mt-3" value="로그인">
+                    <div id="message"></div>
                 </form>
             </div>
+            
         </div>
+       
         <script type="text/javascript" src="../../../resources/js/login.js"></script>
 
     </body>

@@ -219,6 +219,12 @@
       </dependency>
 
       <!-- commons-fileupload -->
+       <!-- jsoup 크롤링 -->
+         <dependency>
+          <groupId>org.jsoup</groupId>
+          <artifactId>jsoup</artifactId>
+          <version>1.11.2</version>
+      </dependency>	
       <!-- multipart?깆쓣 ?ъ슜?좎닔 ?덉쓬 -->
       <dependency>
           <groupId>commons-fileupload</groupId>

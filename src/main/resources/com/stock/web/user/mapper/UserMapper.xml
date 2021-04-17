@@ -9,12 +9,16 @@
    insert into USERS (USER_ID,USER_PW,USER_BIRTH,USER_NAME) values (#{id}, #{password}, TO_DATE(#{birthday} , 'yyyy/mm/dd hh24:mi:ss'),#{name})   
   </insert>
   
-  <delete id="deleteall">
+  <delete id="deleteAll">
     	delete from USERS
   </delete>
   <select id="login" resultType="Integer">
   		select COUNT(*) FROM USERS WHERE USER_ID = #{id} AND USER_PW = #{password}
   </select>
+   <select id="idCheck" resultType="Integer">
+  		select COUNT(*) FROM USERS WHERE USER_ID = #{id}
+  </select>
+  
 
   
   
