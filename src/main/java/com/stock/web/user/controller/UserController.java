@@ -1,11 +1,14 @@
 package com.stock.web.user.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.stock.web.user.domain.UserDto;
@@ -18,6 +21,7 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/user/*")
 @RequiredArgsConstructor
 @Log4j
+
 public class UserController {
 	
 	private final UserService service;
@@ -43,19 +47,30 @@ public class UserController {
 	
 	@PostMapping("login")
 	@ResponseBody
-	public String login(UserDto user)
+	public String login(UserDto user,HttpSession session)
 	{
 		Integer result=service.login(user);
 		
 		if(result!=0)
 		{
 			
+			session.setAttribute("login",user);
 			return "1"; //성공
 		}else
 		{
 			
 			return "0"; //실패
 		}
+	}
+	
+	@GetMapping("logout")
+	@ResponseBody
+	public String logout(HttpSession session)
+	{
+		
+		session.removeAttribute("login");
+		return "/"; 
+		
 	}
 	
 	@PostMapping("idCheck")

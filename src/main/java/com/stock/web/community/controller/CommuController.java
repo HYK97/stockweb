@@ -3,6 +3,8 @@ package com.stock.web.community.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpSession;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -29,7 +31,13 @@ public class CommuController {
 	//private final CommunityService service;
 	
 	@GetMapping("community")
-	public void main()
+	public void community(HttpSession session)
+	{
+		
+		session.setAttribute("login",session.getAttribute("login"));
+	}
+	@GetMapping("padcast")
+	public void padcast(HttpSession session)
 	{
 	
 	}

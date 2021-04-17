@@ -29,12 +29,10 @@
 
     <body>
         <!------------------header---------------------------->
-        <header
-            class="p-3 mb-3 border-bottom"
+        <header class="p-3 mb-3 border-bottom"
             style="z-index: 1; position: sticky; top: 0px; background-color: white;">
             <div class="container" style=" margin-right: auto; margin-left: auto;">
-                <div
-                    class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"">
                     <div style="margin :0 5% 0 0">
                     <a
                         href="/"
@@ -58,12 +56,11 @@
 					</div>
 
                     <div hidden="true" class="dropdown text-end" >
-                        <a
-                            href="#"
-                            class="d-block link-dark text-decoration-none dropdown-toggle"
-                            id="dropdownUser1"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a href="#"
+                           class="d-block link-dark text-decoration-none dropdown-toggle"
+                           id="dropdownUser1"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
                             <img
                                 src="../../../resources/img/velog.png"
                                 alt="mdo"
