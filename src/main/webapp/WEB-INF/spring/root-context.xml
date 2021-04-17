@@ -27,8 +27,9 @@
 	
 
 	<mybatis-spring:scan base-package="com.stock.web.user.mapper"/>
-	
+	<mybatis-spring:scan base-package="com.stock.web.community.mapper"/>
 	
 	<context:component-scan base-package="com.stock.web.user.service"></context:component-scan>	
+	<context:component-scan base-package="com.stock.web.community.service"></context:component-scan>	
 	
 </beans>

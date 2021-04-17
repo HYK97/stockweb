@@ -9,7 +9,7 @@
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&amp;display=swap"
             rel="stylesheet">
         <script
-            src="../bootstrap.bundle.min.js"
+            src="../../../resources/bootstrap.bundle.min.js"
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
         <script
@@ -21,6 +21,7 @@
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
             rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+        <script type="text/javascript" src="../../../resources/js/register.js" ></script>
         <title>회원가입</title>
         <style>
             body {
@@ -95,17 +96,25 @@
             </div>
             <div
                 class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100">
-                <form class="w-75" action="/user/register" method="post">
-                    <div class="mb-3">
-                        <label for="id" class="form-label">아이디</label>
+                <form class="w-75" action="/user/register" method="post" id="loginForm">
+                 <label for="id" class="form-label">아이디</label>
+                	<div style="display :flex; justify-content:space-between;">
+                       
+                    <div class="mb-3" style="width: 88%;">
                         <input
                             type="text"
                             class="form-control"
                             id="id"
+                            check_result="fail"
 							name="id"
                             placeholder="ID"
                             required>
                     </div>
+                    <div style="width:11%;">
+                    <input type="button" style=" font-size:10px; height:75%; margin-top: 0px!important; " class="btn btn-custom btn-lg btn-block mt-3" value="중복확인" name="" id="idCheck">
+                    </div>
+                	</div>
+                    <div id="message"></div>
                     <div class="mb-3">
                         <label for="password" class="form-label">비밀번호</label>
                         <input
@@ -155,7 +164,7 @@
                             </div>
                         </div>
                     </div>
-					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="로그인" name="" id="">
+					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="회원가입" name="" id="registerBtn">
                 </form>
             </div>
         </div>

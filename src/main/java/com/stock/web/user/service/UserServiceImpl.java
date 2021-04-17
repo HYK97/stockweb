@@ -19,15 +19,20 @@ public class UserServiceImpl implements UserService {
 
 	}
 	@Override
-	public int deleteall() {
+	public int deleteAll() {
 		// TODO Auto-generated method stub
-		return mapper.deleteall();
+		return mapper.deleteAll();
 
 	}
 	@Override
 	public Integer login(UserDto user) {
 		// TODO Auto-generated method stub
 		return mapper.login(user);
+	}
+	@Override
+	public Integer idCheck(UserDto user) {
+		// TODO Auto-generated method stub
+		return mapper.idCheck(user);
 	}
 	
 

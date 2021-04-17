@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.stock.web.user.domain.UserDto;
@@ -22,7 +23,7 @@ public class UserController {
 	private final UserService service;
 	
 	@GetMapping("register")
-	public void ss()
+	public void register()
 	{
 	
 	}
@@ -41,20 +42,40 @@ public class UserController {
 	}
 	
 	@PostMapping("login")
-	public String login(UserDto user,RedirectAttributes redirectAttributes)
+	@ResponseBody
+	public String login(UserDto user)
 	{
 		Integer result=service.login(user);
 		
 		if(result!=0)
 		{
-			redirectAttributes.addFlashAttribute("result","success");
-			return "redirect:/user/login"; //성공
+			
+			return "1"; //성공
 		}else
 		{
-			redirectAttributes.addFlashAttribute("result","false");
-			return "redirect:/user/login"; //실패
+			
+			return "0"; //실패
 		}
 	}
+	
+	@PostMapping("idCheck")
+	@ResponseBody
+	public String idCheck(UserDto user)
+	{
+		Integer result=service.idCheck(user);
+		
+		if(result!=0)
+		{
+			
+			return "1"; //아이디있음
+		}else
+		{
+			
+			return "0"; //없음
+		}
+	}
+	
+	
 	
 
 }

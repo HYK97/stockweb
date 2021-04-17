@@ -1,29 +1,19 @@
 package com.stock.web;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.io.IOException;
 
-import java.time.LocalDate;
-import java.util.Date;
-
-import org.junit.Before;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.stock.web.user.controller.UserController;
-import com.stock.web.user.domain.UserDto;
-import com.stock.web.user.mapper.UserMapper;
-import com.stock.web.user.service.UserService;
-
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import lombok.RequiredArgsConstructor;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 import lombok.extern.log4j.Log4j;
 
 
@@ -33,16 +23,16 @@ import lombok.extern.log4j.Log4j;
 @WebAppConfiguration
 public class userTest {
 
-	@Autowired
-	private UserService service;
-	
-	@Autowired
-	private UserController contoller;
-	
-	
-	@Autowired 
-    private	MockMvc mockMvc;
-	@Test
+//	@Autowired
+//	private UserService service;
+//	
+//	@Autowired
+//	private UserController contoller;
+//	
+//	
+//	@Autowired 
+//    private	MockMvc mockMvc;
+//	@Test
 //	public void dbinsertTest() {
 //		service.deleteall();
 //		Date time = new Date();
@@ -64,20 +54,102 @@ public class userTest {
 //		service.register(dto);
 //	}
 	
-	@Before
-    public void createController() {
-        mockMvc = MockMvcBuilders.standaloneSetup(contoller).build();
-    }
 
-
+	
+	
+	
 	@Test
-	public void controller() throws Exception {
-		mockMvc.perform(post("/user/register").param("id", "isuisu").param("password", "김테스트").param("name", "여").param("birthday", "2012-03-12"))	// (5)
-         .andExpect(status().isOk())
-         .andDo(print());// (6)(7)
-      
+	public void header(){
+		String URL = "https://finance.naver.com/sise/";
+		Document doc;
+		String[] sup1 = null;
+		String[] buf1 = null;
+		String[] sup2 = null;
+		String[] sdown1 = null;
+		String[] buf2 = null;
+		String[] sdown2  =null;
+		try {
+			doc = Jsoup.connect(URL).get();
+			Elements up1 = doc.select("#siselist_tab_0 tbody .tltle");//원하는 태그 선택
+			Elements up2 = doc.select("#siselist_tab_0 tbody .number .tah");//원하는 태그 선택
+			Elements down1 = doc.select("#siselist_tab_1 tbody .tltle");//원하는 태그 선택
+			Elements down2 = doc.select("#siselist_tab_1 tbody .number .tah");//원하는 태그 선택
 		
+			sup1 = up1.text().split(" ");//정보 파싱
+			buf1 = up2.text().split(" ");//정보 파싱
+			sdown1 = down1.text().split(" ");//정보 파싱
+			buf2 = down2.text().split(" ");//정보 파싱
+				//0 1 2 3 4 5
+			sup2= new String[buf1.length/2];
+			sdown2= new String[buf2.length/2];
+	
+			int odd=0;
+			for(int i=0;i<buf1.length;i++){
+				if(i % 2 == 1){
+					sup2[odd]= buf1[i];
+					odd++;
+				}	
+			}
+			odd=0;
+			for(int i=0;i<buf2.length;i++){
+				if(i % 2 == 1){
+					sdown2[odd]= buf2[i];
+					odd++;
+				}
+						
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //HTML로 부터 데이터 가져오기
+		for (String L: sup1)
+		{
+			log.info("확인 _-----------------: " +L);
+			
+		}
+		for (String L: sup2)
+		{
+			log.info("확인 _-----------------: " +L);
+			
+		}
+		
+		for (String L: sdown1)
+		{
+			log.info("확인 _-----------------: " +L);
+			
+		}
+		for (String L: sdown2)
+		{
+			log.info("확인 _-----------------: " +L);
+			
+		}
+		int count=0;
+		 JsonArray infoArray = new JsonArray();
+		 for(int i=0 ;i<sup1.length;i++){
+			 JsonObject jsonobject = new JsonObject();
+			 jsonobject.addProperty("name", sup1[i]);
+			 jsonobject.addProperty("per", sup2[i]);
+			 infoArray.add(jsonobject);  		
+			 count++;
+		 }
+		 for(int i=0 ;i<sdown1.length;i++){
+			 JsonObject jsonobject = new JsonObject();
+			 jsonobject.addProperty("name", sdown1[i]);
+			 jsonobject.addProperty("per", sdown2[i]);
+			 
+			 infoArray.add(jsonobject);
+			 count++;
+		 }
+		 JsonObject jsonobject = new JsonObject();
+		 jsonobject.addProperty("count", count);
+		 infoArray.add(jsonobject); 
+		 log.info(infoArray.toString());
 	}
+	
+	
+	
+	
+	
 	}
 	
 	
