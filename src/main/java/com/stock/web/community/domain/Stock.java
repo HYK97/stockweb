@@ -14,10 +14,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class HearderDto {
-	private String id;
-	private String name;
-	private String password;
-	private String birthday; 
+public class Stock {
+
+	private String code;
+	private String long_name;
+	private String short_name;
+	private String eng_name;
 
 }

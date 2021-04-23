@@ -10,10 +10,8 @@
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
 
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+         <script src="../../../resources/js/main.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
@@ -29,8 +27,7 @@
 
     <body>
         <!------------------header---------------------------->
-        <header class="p-3 mb-3 border-bottom"
-            style="z-index: 1; position: sticky; top: 0px; background-color: white;">
+         <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
             <div class="container" style=" margin-right: auto; margin-left: auto;">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"">
                     <div style="margin :0 5% 0 0">
@@ -42,9 +39,9 @@
                     </div>
                     <div style="display:flex; width:80%; justify-content: space-around;">
 					<div style="width: 50%">
-	                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <input type="search" class="form-control" placeholder="검색...">
-                    </form>
+	                    <form action="/community/autocomplete" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        	<input type="search" id="search" class="form-control" placeholder="검색...">
+                    	</form>
 					</div>
 					<div style="display: flex;">
 						<div style="margin: 0 3%">

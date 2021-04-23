@@ -154,16 +154,7 @@
                             placeholder="birthday"
                             required>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    아이디저장
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    
 					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="회원가입" name="" id="registerBtn">
                 </form>
             </div>

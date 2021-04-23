@@ -1,11 +1,10 @@
 package com.stock.web.community.service;
 
-import com.stock.web.user.domain.UserDto;
+import java.util.List;
+
+import com.stock.web.community.domain.Stock;
 
 public interface CommunityService {
 	
-	public void register(UserDto user);
-	public int deleteAll();
-	public Integer login(UserDto user);
-
+	public List<Stock> autocomplete(String search);
 }

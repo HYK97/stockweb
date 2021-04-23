@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.stock.web.community.mapper.CommunityMapper">
+  
+  
+  <select id="autocomplete" resultType="com.stock.web.community.domain.Stock">
+  	SELECT
+    	code,
+   		long_name,
+    	short_name,
+    	eng_name
+	FROM
+    	stock
+	WHERE 
+    	UPPER(code) Like UPPER('%'||#{search}||'%')  or UPPER(long_name) Like ('%'||#{search}||'%') 
+    	 or UPPER(short_name) Like UPPER('%'||#{search}||'%')  or UPPER(eng_name) Like UPPER('%'||#{search}||'%') 
+  </select>
+ 
+  
+
+  
+  
+
+</mapper>	
