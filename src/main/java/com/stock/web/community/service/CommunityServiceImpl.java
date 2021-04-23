@@ -1,34 +1,29 @@
 package com.stock.web.community.service;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import com.stock.web.user.domain.UserDto;
-import com.stock.web.user.mapper.UserMapper;
+import com.stock.web.community.domain.Stock;
+import com.stock.web.community.mapper.CommunityMapper;
 
 import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class CommunityServiceImpl implements CommunityService {
 	
-	private final UserMapper mapper;
-	@Override
-	public void register(UserDto user) {
-		// TODO Auto-generated method stub
-		mapper.insert(user);
+	private final CommunityMapper mapper;
 
-	}
 	@Override
-	public int deleteAll() {
+	public List<Stock> autocomplete(String search) {
 		// TODO Auto-generated method stub
-		return mapper.deleteAll();
+		return mapper.autocomplete(search);
+	}
 
-	}
-	@Override
-	public Integer login(UserDto user) {
-		// TODO Auto-generated method stub
-		return mapper.login(user);
-	}
+
+
+	
 	
 
 }

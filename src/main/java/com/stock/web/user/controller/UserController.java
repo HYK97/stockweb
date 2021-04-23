@@ -64,12 +64,11 @@ public class UserController {
 	}
 	
 	@GetMapping("logout")
-	@ResponseBody
 	public String logout(HttpSession session)
 	{
 		
 		session.removeAttribute("login");
-		return "/"; 
+		return "/community/community"; 
 		
 	}
 	

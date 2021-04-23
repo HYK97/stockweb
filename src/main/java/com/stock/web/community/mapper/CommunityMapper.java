@@ -1,13 +1,14 @@
 package com.stock.web.community.mapper;
 
-import com.stock.web.user.domain.UserDto;
+import java.util.List;
+
+import com.stock.web.community.domain.Stock;
+
 
 
 public interface CommunityMapper {
 	
-	public void insert(UserDto user);
-	public int deleteall();
-	public Integer login(UserDto user);
-	
+
+	public List<Stock> autocomplete(String search);
 	
 }

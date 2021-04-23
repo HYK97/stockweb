@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,10 +14,7 @@
 		        <script src="../../../resources/js/modernizr.custom.js"></script>
         <script src="../../../resources/js/main.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+    
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
@@ -107,9 +106,14 @@
                     font-size: 11px;
                 }
             }
+            
+            .box{ -ms-overflow-style: none; } .box::-webkit-scrollbar{ display:none; }
+
+
         </style>
     </head>
     <body>
+    <div>
         <!------------------header---------------------------->
           <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style=" margin-right: auto; margin-left: auto;">
@@ -121,7 +125,7 @@
                     <div style="margin-bottom: 1.5%;">
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" style="display: flex; justify-content: space-around;">
                             <li>
-                                <a href="#" class="nav-link px-2 link-secondary">종목별등락</a>
+                                <a href="#" class="nav-link px-2 link-dark">종목별등락</a>
                             </li>
                             <li>
                                 <a href="/community/padcast" class="nav-link px-2 link-secondary">팟캐스트</a>
@@ -130,7 +134,7 @@
                                 <a href="/community/community" class="nav-link px-2 link-dark">커뮤니티</a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-2 link-dark">차트</a>
+                                <a href="/community/chart" class="nav-link px-2 link-dark">차트</a>
                             </li>
                         </ul>
                     </div>
@@ -140,8 +144,8 @@
                                 <img style="width: 20px;" src="../../../resources/img/stop.png" alt="">
                             </button>
                         </div>
-                        <div style="width: 700px; overflow: hidden;">
-                            <ul id="stockheader" class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 text-center" style="position: relative; width: 1000px; height: 50px; left: -96px; vertical-align: middle; justify-content: space-between !important;">
+                        <div id="headDiv" style="width: 700px; overflow: hidden;">
+                            <ul id="stockheader" class="nav col-12 col-lg-auto me-lg-auto mb-2  mb-md-0 text-center" style="position: relative;   height: 50px;  vertical-align: middle;">
 							</ul>                        
                         </div>
                     </div>
@@ -151,6 +155,7 @@
                     <input type="search" class="form-control" placeholder="검색..." style="width: 195px;">
                 </form>
 
+			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -163,16 +168,18 @@
                             <a class="dropdown-item" href="#">알람</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">계정정보</a>
+                               <a class="dropdown-item" href="#">${sessionScope.login.id} 님 계정정보</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">로그아웃</a>
+                            <a class="dropdown-item" href="/user/logout">로그아웃</a>
                         </li>
                     </ul>
                 </div>
+               </c:if> 
+                
             </div>
         </div>
     </header>
@@ -648,6 +655,6 @@ dots[slideIndex - 1].className += " active";
 setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
-
+</div>
 </body>
 </html>
