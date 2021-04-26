@@ -48,6 +48,15 @@ public class CommuController {
 	}
 	
 	
+	@PostMapping("write")
+	public void write(CommunityDto com,HttpSession session)
+	{
+		
+		service.write(com);
+		session.setAttribute("login",session.getAttribute("login"));
+	}
+	
+	
 	@GetMapping("padcast")
 	public void padcast(HttpSession session)
 	{
@@ -63,18 +72,17 @@ public class CommuController {
 	
 	@PostMapping("autocomplete") 
 	@ResponseBody
-	public String autocomplete(HttpSession session,String search)
+	public String autocomplete(HttpSession session)
 	{
+		log.info("실행=--------------------------------------------------------------------------------");
+		List<Stock> stockList=service.autocomplete();
 		
-		List<Stock> stockList=service.autocomplete("카카오");
-		
-		 JSONArray jsonArray = JSONArray.fromObject(stockList);
-		 log.info(jsonArray);
-        return jsonArray.toString();
-		
-	
-		
+		JSONArray jsonArray = JSONArray.fromObject(stockList);
+		log.info(jsonArray);
+        return jsonArray.toString();	
 	}
+	
+	
 	
 	
 	@PostMapping("header")

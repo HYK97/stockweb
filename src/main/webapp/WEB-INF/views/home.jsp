@@ -8,21 +8,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
-
+      	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-         <script src="../../../resources/js/main.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
-        <title>main</title>
+        <title>Community</title>
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
+        <!-- 네모틀 -->
+        <script src="../../../resources/js/modernizr.custom.js"></script>
+        <script src="../../../resources/js/main.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+        <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
         <style>
             .text-center {
                 text-align: center;
             }
         </style>
+        <title>main</title>
     </head>
 
     <body>
@@ -34,13 +42,13 @@
                     <a
                         href="/"
                         class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                        <img src="../../../resources/img/logo.png">
+                        <img src="../../resources/img/logo.png">
                     </a>
                     </div>
                     <div style="display:flex; width:80%; justify-content: space-around;">
 					<div style="width: 50%">
 	                    <form action="/community/autocomplete" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        	<input type="search" id="search" class="form-control" placeholder="검색...">
+                        	<input type="text" id="search" class="form-control" placeholder="검색...">
                     	</form>
 					</div>
 					<div style="display: flex;">

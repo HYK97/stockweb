@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.mapper.CommunityMapper;
 
@@ -16,9 +17,15 @@ public class CommunityServiceImpl implements CommunityService {
 	private final CommunityMapper mapper;
 
 	@Override
-	public List<Stock> autocomplete(String search) {
+	public List<Stock> autocomplete() {
 		// TODO Auto-generated method stub
-		return mapper.autocomplete(search);
+		return mapper.autocomplete();
+	}
+
+	@Override
+	public void write(CommunityDto com) {
+		mapper.insert(com);
+		
 	}
 
 
