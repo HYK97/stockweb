@@ -9,26 +9,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
+      	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
         <title>Community</title>
-        <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css"></head>
-    <body>
-        <!-- 글자 -->
-        <link
-        rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css">
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
         <!-- 네모틀 -->
         <script src="../../../resources/js/modernizr.custom.js"></script>
         <script src="../../../resources/js/main.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+        <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
         <style>
             .text-center {
                 text-align: center;
             }
+        <title>Community</title>
+        </head>
+    <body>
+        <!-- 글자 -->
         </style>
         <div>
         <!------------------header---------------------------->
@@ -69,7 +74,7 @@
                 </div>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <input type="search" class="form-control" placeholder="검색..." style="width: 195px;">
+                  <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
                 </form>
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
@@ -134,7 +139,7 @@
       
   <!-- 차트 끝 -->
         
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
 			  <div class="modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -142,28 +147,29 @@
 			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			      </div>
 			      <div class="modal-body" >
-			        <form>
+			        <form action="/community/write" method="post" >
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">제목 : </label>
-			            <input type="text" class="form-control" id="title">
+			            <input type="text" class="form-control" id="title" name="title" placeholder="제목" required>
 			          </div>
 			          <div class="mb-3">
 			            <label for="message-text" class="col-form-label">내용:</label>
-			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);"></textarea>
+			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);" name="content" placeholder="내용" required></textarea>
 			          </div>
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			            <input type="text" class="form-control" id="hashtag">
+			               <input type="text" class="form-control" id="hashTag" name="hashTag" placeholder="해시태그 ,로 구분 최대 5개까지" required >
 			          </div>
-			        </form>
-			      </div>
-			      <div class="modal-footer">
+			    
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-			        <button type="button" class="btn btn-primary">글쓰기</button>
+			        <input  type="submit" class="btn btn-primary" value="글쓰기">
+			
+			        </form>
 			      </div>
 			    </div>
 			  </div>
 			</div>
+
         
        </div>
     </body>

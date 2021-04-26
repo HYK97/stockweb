@@ -14,9 +14,7 @@
     	eng_name
 	FROM
     	stock
-	WHERE 
-    	UPPER(code) Like UPPER('%'||#{search}||'%')  or UPPER(long_name) Like ('%'||#{search}||'%') 
-    	 or UPPER(short_name) Like UPPER('%'||#{search}||'%')  or UPPER(eng_name) Like UPPER('%'||#{search}||'%') 
+
   </select>
  
   
