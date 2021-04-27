@@ -39,16 +39,23 @@ public class CommuController {
 	@GetMapping("community")
 	public void community(HttpSession session)
 	{
+		List<CommunityDto> list =service.getList();
 		
 		session.setAttribute("login",session.getAttribute("login"));
 	}
-	@PostMapping("community")
-	public void community(CommunityDto com,HttpSession session)
+	
+	@PostMapping("communityList")
+	@ResponseBody
+	public String communityList(HttpSession session)
 	{
-		
-		
+		List<CommunityDto> list =service.getList();
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		log.info(jsonArray);
 		session.setAttribute("login",session.getAttribute("login"));
+        return jsonArray.toString();	
 	}
+	
+	
 	
 	
 	@PostMapping("write")
@@ -59,9 +66,9 @@ public class CommuController {
 		{
 			return "redirect:/user/login";
 		}
-		com.setHashTag(com.getHashTag().replaceAll("\\p{Z}",""));
-		com.setUserId(user.getId());
-		com.setCount(StringUtils.countMatches(com.getHashTag(), "#"));
+		com.setHASHTAG(com.getHASHTAG().replaceAll("\\p{Z}",""));
+		com.setUSER_ID(user.getId());
+		com.setCOUNT(StringUtils.countMatches(com.getHASHTAG(), "#"));
 		service.write(com);
 		session.setAttribute("login",session.getAttribute("login"));
 		return "redirect:/community/community";

@@ -193,7 +193,7 @@ public class userTest {
 		CommunityDto com =new CommunityDto();
 		com.setContent("안녕하세요");
 		com.setHashTag("#안녕하세요#인사글#데이터# 444");
-		com.setTitle("바이바이");
+		
 		com.setUserId("asd");
 		com.setHashTag(com.getHashTag().replaceAll("\\p{Z}",""));
 	

@@ -139,7 +139,7 @@
       
   <!-- 차트 끝 -->
         
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
 			  <div class="modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -149,8 +149,9 @@
 			      <div class="modal-body" >
 			        <form action="/community/write" method="post" >
 			          <div class="mb-3">
-			            <label for="recipient-name" class="col-form-label">제목 : </label>
-			            <input type="text" class="form-control" id="title" name="title" placeholder="제목" required>
+			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
+
 			          </div>
 			          <div class="mb-3">
 			            <label for="message-text" class="col-form-label">내용:</label>
@@ -158,7 +159,7 @@
 			          </div>
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			               <input type="text" class="form-control" id="hashTag" name="hashTag" placeholder="해시태그 ,로 구분 최대 5개까지" required >
+			            <input type="text" class="form-control" id="hashTag" name="hashTag" placeholder="해시태그 ,로 구분 최대 5개까지" required >
 			          </div>
 			    
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -169,6 +170,7 @@
 			    </div>
 			  </div>
 			</div>
+
 
         
        </div>

@@ -22,6 +22,7 @@
         <!-- 네모틀 -->
         <script src="../../../resources/js/modernizr.custom.js"></script>
         <script src="../../../resources/js/main.js"></script>
+         <script src="../../../resources/js/content.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
         <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -106,239 +107,8 @@
         <!-- -----------------------body---------------------------------- -->
     
         
-         <div class="contents" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼
-                             </label>
-                    </div>
-                </div>
-            </div>
-
-           
-
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div><div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div><div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-            
-            
+         <div id="contentList" class="contents" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
+          
             <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
                 <div style=" background-color: blue;">
                     <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
@@ -381,16 +151,17 @@
 			      <div class="modal-body" >
 			        <form action="/community/write" method="post" >
 			          <div class="mb-3">
-			            <label for="recipient-name" class="col-form-label">제목 : </label>
-			            <input type="text" class="form-control" id="title" name="title" placeholder="제목" required>
+			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
+
 			          </div>
 			          <div class="mb-3">
 			            <label for="message-text" class="col-form-label">내용:</label>
-			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);" name="content" placeholder="내용" required></textarea>
+			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);" name="CONTENT" placeholder="내용" required></textarea>
 			          </div>
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			             <input type="text" class="form-control" id="hashTag" name="hashTag" placeholder="해시태그 ,로 구분 최대 5개까지" required >
+			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 ,로 구분 최대 5개까지" required >
 			          </div>
 			    
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -401,6 +172,7 @@
 			    </div>
 			  </div>
 			</div>
+
 
         
        </div>
