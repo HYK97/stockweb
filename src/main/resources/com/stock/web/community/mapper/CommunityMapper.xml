@@ -14,9 +14,14 @@
     	eng_name
 	FROM
     	stock
-
   </select>
- 
+  <insert id="insert" parameterType="com.stock.web.community.domain.CommunityDto" statementType="CALLABLE">
+        {CALL 
+            HASG_TAG_PR (#{userId},#{title},#{content},#{hashTag},#{count})
+        }
+    </insert>
+    
+   
   
 
   

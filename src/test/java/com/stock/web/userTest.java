@@ -1,7 +1,13 @@
 package com.stock.web;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.collections.ArrayStack;
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -11,9 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.service.CommunityService;
 
@@ -167,10 +175,10 @@ public class userTest {
 			
 		try {
 			
-			List<Stock> stockList=service.autocomplete("카카오");
+			//List<Stock> stockList=service.autocomplete("카카오");
 			
-			 JSONArray jsonArray = JSONArray.fromObject(stockList);
-			 log.info(jsonArray.toString());
+			// JSONArray jsonArray = JSONArray.fromObject(stockList);
+			// log.info(jsonArray.toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -179,11 +187,29 @@ public class userTest {
 		
 	}
 	
+	@Test
+	public void ListTest()
+	{
+		CommunityDto com =new CommunityDto();
+		com.setContent("안녕하세요");
+		com.setHashTag("#안녕하세요#인사글#데이터# 444");
+		com.setTitle("바이바이");
+		com.setUserId("asd");
+		com.setHashTag(com.getHashTag().replaceAll("\\p{Z}",""));
+	
+		com.setCount(StringUtils.countMatches(com.getHashTag(), "#"));
+
+
+		//service.write(com);
+		log.info("ssssssssssssssssssssssssssssssssssssssss"+com.getCount() +com.getHashTag());
+	
+	
 	
 	
 	
 	
 	}
+}
 	
 	
 
