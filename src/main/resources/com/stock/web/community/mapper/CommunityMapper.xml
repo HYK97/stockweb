@@ -17,9 +17,13 @@
   </select>
   <insert id="insert" parameterType="com.stock.web.community.domain.CommunityDto" statementType="CALLABLE">
         {CALL 
-            HASG_TAG_PR (#{userId},#{title},#{content},#{hashTag},#{count})
+            HASG_TAG_PR (#{userId},#{content},#{hashTag},#{count})
         }
     </insert>
+    
+    <select id="selectList" resultType="com.stock.web.community.domain.CommunityDto">
+  	select * from bbs a left join vhashtag b on a.id=b.id
+  </select>
     
    
   

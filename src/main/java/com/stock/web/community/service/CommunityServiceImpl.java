@@ -28,6 +28,12 @@ public class CommunityServiceImpl implements CommunityService {
 		mapper.insert(com);
 		
 	}
+
+	@Override
+	public List<CommunityDto> getList() {
+		// TODO Auto-generated method stub
+		return mapper.selectList();
+	}
 	
 
 

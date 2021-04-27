@@ -15,13 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class CommunityDto {
-	private Long id;
-	private String userId;
-	private String title;
-	private String content;
-	private Date writeDate;
-	private String likeCount;
-	private String hashTag;
-	private int count;
+	private Long ID;
+	private String USER_ID;
+	private String CONTENT;
+	private String WRITEDATE;
+	private String LIKECOUNT;
+	private String HASHTAG;
+	private int COUNT;
 	
 }

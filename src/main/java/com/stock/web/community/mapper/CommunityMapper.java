@@ -11,5 +11,6 @@ public interface CommunityMapper {
 	
 	public List<Stock> autocomplete();
 	public void insert(CommunityDto com);
+	public List<CommunityDto> selectList();
 
 }
