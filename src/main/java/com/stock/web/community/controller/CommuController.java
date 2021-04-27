@@ -1,10 +1,12 @@
 package com.stock.web.community.controller;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -20,6 +22,7 @@ import com.google.gson.JsonObject;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.service.CommunityService;
+import com.stock.web.user.domain.UserDto;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -49,11 +52,19 @@ public class CommuController {
 	
 	
 	@PostMapping("write")
-	public void write(CommunityDto com,HttpSession session)
+	public String write(CommunityDto com,HttpSession session)
 	{
-		
+		UserDto user =(UserDto)session.getAttribute("login");
+		if(user.getId().isEmpty())
+		{
+			return "redirect:/user/login";
+		}
+		com.setHashTag(com.getHashTag().replaceAll("\\p{Z}",""));
+		com.setUserId(user.getId());
+		com.setCount(StringUtils.countMatches(com.getHashTag(), "#"));
 		service.write(com);
 		session.setAttribute("login",session.getAttribute("login"));
+		return "redirect:/community/community";
 	}
 	
 	

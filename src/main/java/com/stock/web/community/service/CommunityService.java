@@ -9,4 +9,5 @@ public interface CommunityService {
 	
 	public List<Stock> autocomplete();
 	public void write(CommunityDto com);
+	
 }

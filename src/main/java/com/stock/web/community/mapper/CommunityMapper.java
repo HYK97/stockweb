@@ -9,8 +9,7 @@ import com.stock.web.community.domain.Stock;
 
 public interface CommunityMapper {
 	
-
 	public List<Stock> autocomplete();
 	public void insert(CommunityDto com);
-	
+
 }

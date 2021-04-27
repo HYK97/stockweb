@@ -4,6 +4,7 @@ package com.stock.web.community.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
@@ -21,12 +22,13 @@ public class CommunityServiceImpl implements CommunityService {
 		// TODO Auto-generated method stub
 		return mapper.autocomplete();
 	}
-
+	
 	@Override
 	public void write(CommunityDto com) {
 		mapper.insert(com);
 		
 	}
+	
 
 
 
