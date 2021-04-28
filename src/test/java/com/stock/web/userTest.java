@@ -204,7 +204,18 @@ public class userTest {
 		log.info("ssssssssssssssssssssssssssssssssssssssss"+com.getCount() +com.getHashTag());
 	
 	
+	}
 	
+	@Test
+	public void ListTest2()
+	{
+		
+		List<CommunityDto> list=service.getList(20);
+		
+		log.info("È®ÀÎ===========" +list.toString());
+		
+
+		//service.write(com);
 	
 	
 	
