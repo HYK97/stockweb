@@ -39,16 +39,16 @@ public class CommuController {
 	@GetMapping("community")
 	public void community(HttpSession session)
 	{
-		List<CommunityDto> list =service.getList();
+		
 		
 		session.setAttribute("login",session.getAttribute("login"));
 	}
 	
 	@PostMapping("communityList")
 	@ResponseBody
-	public String communityList(HttpSession session)
+	public String communityList(HttpSession session, int fpage, int epage)
 	{
-		List<CommunityDto> list =service.getList();
+		List<CommunityDto> list =service.getList(fpage,epage);
 		JSONArray jsonArray = JSONArray.fromObject(list);
 		log.info(jsonArray);
 		session.setAttribute("login",session.getAttribute("login"));

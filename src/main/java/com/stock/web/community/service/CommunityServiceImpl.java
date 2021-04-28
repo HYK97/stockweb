@@ -30,9 +30,9 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public List<CommunityDto> getList() {
+	public List<CommunityDto> getList(int fpage,int epage) {
 		// TODO Auto-generated method stub
-		return mapper.selectList();
+		return mapper.selectList(fpage,epage);
 	}
 	
 

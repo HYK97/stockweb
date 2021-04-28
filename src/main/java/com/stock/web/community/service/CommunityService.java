@@ -9,5 +9,5 @@ public interface CommunityService {
 	
 	public List<Stock> autocomplete();
 	public void write(CommunityDto com);
-	public List<CommunityDto> getList();
+	public List<CommunityDto> getList(int fpage,int epage);
 }

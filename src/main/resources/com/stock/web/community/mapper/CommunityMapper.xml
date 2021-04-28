@@ -17,12 +17,14 @@
   </select>
   <insert id="insert" parameterType="com.stock.web.community.domain.CommunityDto" statementType="CALLABLE">
         {CALL 
-            HASG_TAG_PR (#{userId},#{content},#{hashTag},#{count})
+            HASG_TAG_PR (#{USER_ID},#{CONTENT},#{HASHTAG},#{COUNT})
         }
     </insert>
     
-    <select id="selectList" resultType="com.stock.web.community.domain.CommunityDto">
-  	select * from bbs a left join vhashtag b on a.id=b.id
+   <select id="selectList" resultType="com.stock.web.community.domain.CommunityDto">
+     <![CDATA[
+  		select * from (select ROWNUM num ,c.*  from (select * from bbs a left join vhashtag b on a.id=b.id) c ) where num>=#{fpage} and num <= #{epage}
+  		 ]]>
   </select>
     
    
