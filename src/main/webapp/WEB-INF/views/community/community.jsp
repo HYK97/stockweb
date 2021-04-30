@@ -5,6 +5,9 @@
 
 <html>
     <head>
+    <script type="text/javascript">		
+		var sessionData = '<c:out value="${sessionScope.login.id}"/>';
+			</script>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,11 +34,19 @@
             .text-center {
                 text-align: center;
             }
+            #back:hover
+            {
+            background-color:#f0f0f0;
+			transition: background .5s ease-in-out;
+            }
         </style>
+        			
+        
         </head>
     	<body>
         <!-- 글자 -->
         <div>
+        <label id="session" hidden="true">${sessionScope.login }</label>
         <!------------------header---------------------------->
         <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style="position: sticky; margin-right: auto; margin-left: auto;">
@@ -73,11 +84,10 @@
                     </div>
                 </div>
 
-                
-                    <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
-             
-		<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
-				
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                  <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
+                </form>
+			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -101,43 +111,22 @@
                     </ul>
                 </div>
 			</c:if>
+			<c:if test="${empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
+                <div style="margin: 0 10px; ">
+						
+						<div style="margin: 0 3%">
+						<a href="/user/login"><button style="width: 110%; padding: 7px"  class=" lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd  lib_3-XmGDP lib_12C0HKX lib_3wnZQA7">로그인</button></a>
+						</div>
+					</div>
+			</c:if>
             </div>
         </div>
     </header>
         <!-- -----------------------body---------------------------------- -->
     
         
-         <div id="contentList" class="contents" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
-          
-            <div style="background-color: yellow; display: flex; width: inherit; overflow:auto; margin: 50px 0 ; " >
-                <div style=" background-color: blue;">
-                    <div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  ">
-                        <label for="">
-                            사진
-                             </label>
-                    </div>
-                </div>
-                <div style="flex-grow: 7; background-color: red; justify-content: space-between; display: flex; flex-direction: column;  ">
-                    <div style="background-color: pink; height: 50px; margin-bottom: 30px;">
-                        <label for="">
-                            id / 시간
-                             </label>
-
-                    </div>
-                    <div style="background-color: wheat;">
-                        <label for="">
-                       내용
-                        </label>
-
-                    </div>
-                    <div style="background-color: green; height: 50PX; margin-top: 30px; ">
-                        <label for="">
-                            버튼들
-                             </label>
-                    </div>
-                </div>
-            </div>
-            
+         
+<div id="contentList" class="contents" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
           
 
         </div>
@@ -172,6 +161,7 @@
 			    </div>
 			  </div>
 			</div>
+			
 
 
         

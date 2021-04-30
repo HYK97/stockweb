@@ -190,6 +190,14 @@
                     </ul>
                 </div>
                </c:if> 
+               <c:if test="${empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
+                <div style="margin: 0 10px; ">
+						
+						<div style="margin: 0 3%">
+						<a href="/user/login"><button style="width: 110%; padding: 7px"  class=" lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd  lib_3-XmGDP lib_12C0HKX lib_3wnZQA7">로그인</button></a>
+						</div>
+					</div>
+			</c:if>
                 
             </div>
         </div>

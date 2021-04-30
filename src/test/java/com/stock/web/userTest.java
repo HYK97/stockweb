@@ -2,7 +2,9 @@ package com.stock.web;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -23,10 +25,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
+import com.stock.web.community.mapper.CommunityMapper;
 import com.stock.web.community.service.CommunityService;
+import com.stock.web.user.domain.UserDto;
 
+import lombok.Builder;
 import lombok.extern.log4j.Log4j;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -169,6 +175,10 @@ public class userTest {
 	@Autowired
 	private CommunityService service;
 	
+	@Autowired
+	private CommunityMapper mapper;
+	
+	
 	@Test
 	public void autoTest()
 	{
@@ -210,9 +220,64 @@ public class userTest {
 	public void ListTest2()
 	{
 		
-		List<CommunityDto> list=service.getList(20);
+		List<CommunityDto> list=service.getList(1,10);
+		JSONObject jsonObj1 = new JSONObject();
+
+		jsonObj1.put("session", "kkk");
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		jsonArray.add(jsonObj1);
+		log.info(jsonArray);
+	
 		
-		log.info("확인===========" +list.toString());
+		
+
+		//service.write(com);
+	
+	
+	
+	}
+	@Test
+	public void likePush()
+	{
+		
+		CommunityDto bid = CommunityDto.builder().ID(1L).build();
+		UserDto user =UserDto.builder().id("222").build();
+		Map<String ,Object> map =new HashMap<String, Object>();
+		map.put("v_user_id", "222");
+		map.put("v_bbs_id", 57L );
+		map.put("v_result", "" );
+		map.put("v_result2", "" );
+		mapper.likePush(map);
+		JSONObject resultObj = new JSONObject();
+		resultObj.put("v_result","100");
+		JSONArray jsonArray = JSONArray.fromObject(map.get("v_result"));
+		
+		//Map<String, Object> map =service.likePush(user, bid);
+		log.info("결과--------------------------------------"+map.get("v_result2"));
+	
+		
+		
+
+		//service.write(com);
+	
+	
+	
+	}
+	
+	
+	@Test
+	public void selectConetent()
+	{
+		
+		//CommunityDto dto=mapper.selectContent(57L,"222");
+		CommunityDto dto=service.selectContent(56L,"");
+
+	
+		JSONArray jsonArray = JSONArray.fromObject(dto);
+	
+		log.info(jsonArray.toString());
+	
+		
 		
 
 		//service.write(com);

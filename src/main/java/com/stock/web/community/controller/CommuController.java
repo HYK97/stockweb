@@ -1,7 +1,6 @@
 package com.stock.web.community.controller;
 
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.stock.web.community.domain.CommunityDto;
@@ -44,18 +42,69 @@ public class CommuController {
 		session.setAttribute("login",session.getAttribute("login"));
 	}
 	
+	
+	@PostMapping("viewContent")
+	@ResponseBody
+	public String viewContent(HttpSession session,int id)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "error";
+		}else{
+			session.setAttribute("login",session.getAttribute("login"));
+			user=(UserDto) session.getAttribute("login");
+		}
+		log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디 : "+ user.getId());
+		CommunityDto dto=service.selectContent(Long.valueOf(id), user.getId());
+		JSONArray jsonArray = JSONArray.fromObject(dto);
+		return jsonArray.toString();
+	}
+	
+	
+	@PostMapping("likePush")
+	@ResponseBody
+	public String likePush(HttpSession session,int id)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			return "error";
+		}else{
+			session.setAttribute("login",session.getAttribute("login"));
+		}
+		CommunityDto com =new CommunityDto();
+		com.setID(Long.valueOf(id));
+		
+		String result2=service.likePush((UserDto)session.getAttribute("login"), com);
+		log.info("ddddddddddddddddddddddddddddddd");
+		log.info("ddddddddddddddddddddddddddddddd"+ result2);
+		return result2;
+		
+		
+		
+		
+	}
+	
 	@PostMapping("communityList")
 	@ResponseBody
 	public String communityList(HttpSession session, int fpage, int epage)
 	{
-		List<CommunityDto> list =service.getList(fpage,epage);
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		List<CommunityDto> list =service.getList(fpage,epage,user.getId());
+
 		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
 		log.info(jsonArray);
 		session.setAttribute("login",session.getAttribute("login"));
         return jsonArray.toString();	
 	}
-	
-	
 	
 	
 	@PostMapping("write")
@@ -92,11 +141,11 @@ public class CommuController {
 	@ResponseBody
 	public String autocomplete(HttpSession session)
 	{
-		log.info("실행=--------------------------------------------------------------------------------");
+		//log.info("실행=--------------------------------------------------------------------------------");
 		List<Stock> stockList=service.autocomplete();
 		
 		JSONArray jsonArray = JSONArray.fromObject(stockList);
-		log.info(jsonArray);
+		//log.info(jsonArray);
         return jsonArray.toString();	
 	}
 	
@@ -123,8 +172,8 @@ public class CommuController {
 			Elements up2 = doc.select("#siselist_tab_0 tbody .number .tah");//원하는 태그 선택
 			Elements down1 = doc.select("#siselist_tab_1 tbody .tltle");//원하는 태그 선택
 			Elements down2 = doc.select("#siselist_tab_1 tbody .number .tah");//원하는 태그 선택
-			log.info("----------------------------여기");
-			log.info("----------------------------"+down1.toString());
+			//log.info("----------------------------여기");
+			//log.info("----------------------------"+down1.toString());
 			String check= down1.toString();
 			sup1 = up1.text().split(" ");//정보 파싱
 			buf1 = up2.text().split(" ");//정보 파싱
@@ -172,34 +221,34 @@ public class CommuController {
 			 }
 			 }
 		
-			 log.info(infoArray.toString());
+		//	 log.info(infoArray.toString());
 			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} //HTML로 부터 데이터 가져오기
-		for (String L: sup1)
-		{
-			log.info("확인 _-----------------: " +L);
-			
-		}
-		for (String L: sup2)
-		{
-			log.info("확인 _-----------------: " +L);
-			
-		}
-		
-		for (String L: sdown1)
-		{
-			log.info("확인 _-----------------: " +L);
-			
-		}
-		for (String L: sdown2)
-		{
-			log.info("확인 _-----------------: " +L);
-			
-		}
+//		for (String L: sup1)
+//		{
+//			log.info("확인 _-----------------: " +L);
+//			
+//		}
+//		for (String L: sup2)
+//		{
+//			log.info("확인 _-----------------: " +L);
+//			
+//		}
+//		
+//		for (String L: sdown1)
+//		{
+//			log.info("확인 _-----------------: " +L);
+//			
+//		}
+//		for (String L: sdown2)
+//		{
+//			log.info("확인 _-----------------: " +L);
+//			
+//		}
 		return infoArray.toString();
 	
 	}
