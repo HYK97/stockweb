@@ -30,12 +30,12 @@
             .text-center {
                 text-align: center;
             }
+        </style>
         <title>Community</title>
         </head>
     <body>
         <!-- 글자 -->
-        </style>
-        <div>
+       
         <!------------------header---------------------------->
         <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style="position: sticky; margin-right: auto; margin-left: auto;">
@@ -100,6 +100,14 @@
                     </ul>
                 </div>
 			</c:if>
+			<c:if test="${empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
+                <div style="margin: 0 10px; ">
+						
+						<div style="margin: 0 3%">
+						<a href="/user/login"><button style="width: 110%; padding: 7px"  class=" lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd  lib_3-XmGDP lib_12C0HKX lib_3wnZQA7">로그인</button></a>
+						</div>
+					</div>
+			</c:if>
             </div>
         </div>
     </header>
@@ -139,7 +147,7 @@
       
   <!-- 차트 끝 -->
         
-       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
 			  <div class="modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
