@@ -46,7 +46,7 @@
     <result property="HASHTAG" column="hashtag"/>
     <result property="LIKECOUNT" column="likecount"/>
     <result property="commentcount" column="commentcount"/>
-     <result property="user_like" column="user_like"/>
+    <result property="user_like" column="user_like"/>
     
    	<!-- <collection property="HASHTAGLIST" javaType="java.util.ArrayList" resultMap="HASH" /> -->
    <!--  <collection property="Like" javaType="java.util.ArrayList" resultMap="USER" /> -->
@@ -65,7 +65,7 @@ FROM   (SELECT ROWNUM num,
                c.*
         FROM   (SELECT a.id        "bbs_id",
                        a.user_id   "author_id",
-                       a.writedate "writedate",
+                        TO_CHAR(a.writedate,'YYYY-MM-DD HH24:MI')"writedate",
                        a.content   "content",
                        '#'||b.hashtag "hashtag",
                        nvl(k."likecount",0)"likecount", 
@@ -99,13 +99,13 @@ FROM   (SELECT ROWNUM num,
                c.*
         FROM   (SELECT a.id        "bbs_id",
                        a.user_id   "author_id",
-                       a.writedate "writedate",
+                       TO_CHAR(a.writedate,'YYYY-MM-DD HH24:MI')"writedate",
                        a.content   "content",
                        '#'||b.hashtag "hashtag",
                        nvl(k."likecount",0)"likecount", 
                        nvl(n."commentcount",0)"commentcount",
                         <choose>
-       						 <when test='!user.equals("")'>
+       						 <when test='user !=null'>
                        		nvl(m."user_like",0)"user_like"
                        		</when>
 							<otherwise>
@@ -119,11 +119,38 @@ FROM   (SELECT ROWNUM num,
                               ON a.id = k.BS2
                        left join (select s.bbs_id"BS3",count(s.bbs_id)"commentcount" from comments s group by s.bbs_id) n
                             ON a.id = n.BS3
-                       <if test='!user.equals("")'>
+                       <if test='user !=null'>
                        left join (select o.bbs_id"user_like" from likebbs o where o.user_id= #{user}) m
                             ON a.id = m."user_like"
                              </if>
                 ORDER  BY a.writedate DESC) c) f  where <![CDATA["bbs_id" = #{bid}]]>
+  </select>
+  
+  
+  
+    <resultMap id="commentsResult" type="com.stock.web.community.domain.Comments">
+    <id property="comment_id" column="comment_id"/>
+    <result property="comments" column="comment_content"/>
+    <result property="USER_ID" column="comment_author"/>
+    <result property="writedate" column="comment_writedate"/>
+	</resultMap>
+  
+   <select id="commentsList" resultMap="commentsResult">
+		  select * from(select ROWNUM num , com.* 
+from (SELECT
+       
+        comment_id,
+        bbs_id,
+        comment_content,
+        comment_author,
+        TO_CHAR(comment_writedate,'YYYY-MM-DD HH24:MI')"comment_writedate"
+    FROM
+        comments
+    where 
+        bbs_id = #{bid}
+    order by comment_writedate
+    ) com ) k where <![CDATA[num >= #{fpage} and num <= #{epage}]]>
+   
   </select>
    
   

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.stock.web.userTest;
+import com.stock.web.community.domain.Comments;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.mapper.CommunityMapper;
@@ -56,8 +57,15 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public CommunityDto selectContent(Long bid, String user) {
+		log.info("게시판" +bid+"유저명"+user);
 		// TODO Auto-generated method stub
 		return mapper.selectContent(bid, user);
+	}
+
+	@Override
+	public List<Comments> commentsList(int fpage, int epage, Long bid) {
+		// TODO Auto-generated method stub
+		return mapper.commentsList(fpage, epage, bid);
 	}
 	
 

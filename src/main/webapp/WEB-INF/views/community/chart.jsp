@@ -73,9 +73,10 @@
                     </div>
                 </div>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                  <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
-                </form>
+                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
+                    	</form>
+                
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -121,10 +122,13 @@
         <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
         <script type="text/javascript">
         var search = '<c:out value="${search}"/>';
+        var searchs='<c:out value="${param.jong}" />';
+
+
         new TradingView.widget({
             "width": 660,
             "height": 370,
-            "symbol": "search",
+            "symbol": searchs,
             "interval": "D",
             "timezone": "exchange",
             "theme": "White",

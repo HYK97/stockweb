@@ -45,7 +45,7 @@
         </head>
     	<body>
         <!-- 글자 -->
-        <div>
+      
         <label id="session" hidden="true">${sessionScope.login }</label>
         <!------------------header---------------------------->
         <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
@@ -84,9 +84,9 @@
                     </div>
                 </div>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                  <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
-                </form>
+                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
+                    	</form>
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,6 +95,7 @@
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#bbs">확인용 </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">알람</a>
@@ -126,11 +127,11 @@
     
         
          
-<div id="contentList" class="contents" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
+<div id="contentList" class="contentList" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
           
 
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
+       		 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
 			  <div class="modal-dialog">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -150,7 +151,7 @@
 			          </div>
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 ,로 구분 최대 5개까지" required >
+			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 #으로 구분" required >
 			          </div>
 			    
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -162,9 +163,82 @@
 			  </div>
 			</div>
 			
+			
+			 <div class="modal fade bs-example-modal-lg" id="bbs" tabindex="-1" aria-labelledby="bbs" aria-hidden="true" >
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">피드</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body" >
+			          <div class="mb-3">
+					
+			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+			            <label id="comments-author" for="recipient-name"  class="col-form-label"> 글쓴이 </label>
+			            <label id="comments-date" for="recipient-name"  class="col-form-label">  날짜</label>
 
-
-        
-       </div>
+			          </div>
+			          <div class="mb-3">
+			         <div id="modal-contents">
+			         	
+      				 </div>
+      				 <div id="modal-hash">
+			         	
+      				 </div>
+      				 
+      				 </div>
+      				 <div class="mb-3">
+      				 <div id="rep-like" style="display:flex;align-items: center; ">
+      				 	<div id="likebtns"></div>
+			             <label id="like" class="col-form-label"> </label>
+			             <label  class="col-form-label">댓글 </label>
+			             <label id="com" class="col-form.btn-label"> </label>
+			          </div>  
+			          </div> 
+					<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->		
+			        <form action="/community/commentsWrite" method="post" >
+			          <div class="mb-3">
+			            <label for="recipient-name" class="col-form-label">댓글 : </label>
+			            <input type="text" class="form-control" id="comment" name="comment" placeholder="${sessionScope.login.id} 님의 생각을 적어보세요" required >
+			          </div>   
+			        <input  type="submit" class="btn btn-primary" value="댓글쓰기">
+			
+			        </form>
+			        </c:if>
+			        <div id=commetsList>
+			        <%-- <div class="mb-3">
+			            <div class="mb-3">
+			            	<div style="display: flex;">
+				          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+				            <label id="comment-author" for="recipient-name"  class="col-form-label"> '+data[i].USER_ID+' </label>
+				            <label id="comment-date" for="recipient-name"  class="col-form-label">  '+data[i].writedate+'</label>
+				            <c:if test="${sessionScope.login.id == '+data[i].USER_ID+'  }">
+				            <div style="margin : 0 10%; display: flex;">
+				            <button id="comdelete">삭제</button>
+				            <button id="comupdate">수정</button>
+				            
+				            </div>
+				            </c:if>
+				            </div>
+				             <div class="mb-3">
+			         <div id="modal-comment">
+			         	'+data[i].comments+'
+			       
+			         	
+      				 </div>
+      				 </div>
+			        
+			            
+			        	</div>
+			        </div>    --%>
+			        
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+   
+       
     </body>
 </html>

@@ -1,6 +1,7 @@
 package com.stock.web.community.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.stock.web.community.domain.Comments;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.service.CommunityService;
@@ -50,14 +54,16 @@ public class CommuController {
 		UserDto user=new UserDto();			
 		if(session.getAttribute("login")==null) {
 			user.setId("");
-			return "error";
+			log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디널일때 : "+ user.getId());
 		}else{
 			session.setAttribute("login",session.getAttribute("login"));
 			user=(UserDto) session.getAttribute("login");
+			log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디널아닐때 : "+ user.getId());
 		}
-		log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디 : "+ user.getId());
+		log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디전체샷 : "+ user.getId());
 		CommunityDto dto=service.selectContent(Long.valueOf(id), user.getId());
 		JSONArray jsonArray = JSONArray.fromObject(dto);
+		log.info("---------------아이디 : "+Long.valueOf(id)+"---------------유저아이디 마지막 : "+ user.getId());
 		return jsonArray.toString();
 	}
 	
@@ -85,6 +91,28 @@ public class CommuController {
 		
 	}
 	
+	@PostMapping("commnets")
+	@ResponseBody
+	public String commnets(HttpSession session, int fpage, int epage,int bid)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		List<Comments> list =service.commentsList(fpage, epage, Long.valueOf(bid));
+
+		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
+		log.info(jsonArray);
+		session.setAttribute("login",session.getAttribute("login"));
+        return jsonArray.toString();	
+	}
+	
+	
 	@PostMapping("communityList")
 	@ResponseBody
 	public String communityList(HttpSession session, int fpage, int epage)
@@ -104,6 +132,23 @@ public class CommuController {
 		log.info(jsonArray);
 		session.setAttribute("login",session.getAttribute("login"));
         return jsonArray.toString();	
+	}
+	
+	@GetMapping("search")
+	public String search(HttpSession session,String search,Model model)
+	{
+		
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		System.out.println("검색값---------ssssssssssssssssssssss--------"+ search);
+		model.addAttribute("jong",search);
+		return "redirect:/community/chart";
+	
 	}
 	
 	
@@ -152,6 +197,7 @@ public class CommuController {
 	
 	
 	
+	
 	@PostMapping("header")
 	@ResponseBody
 	public String header()
@@ -159,30 +205,52 @@ public class CommuController {
 		
 		String URL = "https://finance.naver.com/sise/";
 		Document doc;
-		String[] sup1 = null;
+		JsonArray infoArray = new JsonArray();
+		List<String> sup1 = new ArrayList<String>();
+		List<String> liup1 = new ArrayList<String>();
 		String[] buf1 = null;
 		String[] sup2 = null;
-		String[] sdown1 = null;
+		List<String> sdown1 = new ArrayList<String>();
+		List<String> lidown1 = new ArrayList<String>();
 		String[] buf2 = null;
 		String[] sdown2  =null;
-		JsonArray infoArray = new JsonArray();
 		try {
 			doc = Jsoup.connect(URL).get();
-			Elements up1 = doc.select("#siselist_tab_0 tbody .tltle");//원하는 태그 선택
+			List<Element> up1 = doc.select("#siselist_tab_0 tbody .tltle");//원하는 태그 선택
 			Elements up2 = doc.select("#siselist_tab_0 tbody .number .tah");//원하는 태그 선택
-			Elements down1 = doc.select("#siselist_tab_1 tbody .tltle");//원하는 태그 선택
+			
+			List<Element> down1 = doc.select("#siselist_tab_1 tbody .tltle");//원하는 태그 선택
 			Elements down2 = doc.select("#siselist_tab_1 tbody .number .tah");//원하는 태그 선택
-			//log.info("----------------------------여기");
-			//log.info("----------------------------"+down1.toString());
-			String check= down1.toString();
-			sup1 = up1.text().split(" ");//정보 파싱
+		
+		
+			String check=down1.toString();
+			for (int i=0;i<up1.size();i++) {
+				liup1.add(up1.get(i).attr("href").toString().substring(up1.get(i).attr("href").toString().lastIndexOf("=")).substring(1));
+				log.info(liup1.get(i));
+			}
+			for (int i=0;i<down1.size();i++) {
+				lidown1.add(down1.get(i).attr("href").toString().substring(down1.get(i).attr("href").toString().lastIndexOf("=")).substring(1));
+				
+				log.info(lidown1.get(i));
+			}
+			for (int i=0;i<up1.size();i++) {
+				sup1.add(up1.get(i).text().toString());
+				//log.info(sup1.get(i));
+			}
+			for (int i=0;i<down1.size();i++) {
+			
+				sdown1.add(down1.get(i).text().toString());
+				//log.info(sdown1.get(i));
+			}
+
 			buf1 = up2.text().split(" ");//정보 파싱
-			sdown1 = down1.text().split(" ");//정보 파싱
+			
 			buf2 = down2.text().split(" ");//정보 파싱
+
 				//0 1 2 3 4 5
 			sup2= new String[buf1.length/2];
 			sdown2= new String[buf2.length/2];
-	
+
 			int odd=0;
 			for(int i=0;i<buf1.length;i++){
 				if(i % 2 == 1){
@@ -196,32 +264,31 @@ public class CommuController {
 					sdown2[odd]= buf2[i];
 					odd++;
 				}
-						
+	
 			}
+	
 			
-			
-			
-			 
-			 for(int i=0 ;i<sup1.length;i++){
+			 for(int i=0 ;i<sup1.size();i++){
 				 JsonObject jsonobject = new JsonObject();
-				 jsonobject.addProperty("name", sup1[i]);
+				 jsonobject.addProperty("name", sup1.get(i));
 				 jsonobject.addProperty("per", sup2[i]);
+				 jsonobject.addProperty("h", liup1.get(i));
 				 infoArray.add(jsonobject);  		
 				
 			 }
 			 if(!check.isEmpty()) {
-				 
-			 for(int i=0 ;i<sdown1.length;i++){
+			 for(int i=0 ;i<sdown1.size();i++){
 				 JsonObject jsonobject = new JsonObject();
-				 jsonobject.addProperty("name", sdown1[i]);
+				 jsonobject.addProperty("name", sdown1.get(i));
 				 jsonobject.addProperty("per", sdown2[i]);
+				 jsonobject.addProperty("h", lidown1.get(i));
 				 
 				 infoArray.add(jsonobject);
 				 
 			 }
 			 }
 		
-		//	 log.info(infoArray.toString());
+			 log.info(infoArray.toString());
 			
 			
 		} catch (Exception e) {
@@ -230,23 +297,23 @@ public class CommuController {
 		} //HTML로 부터 데이터 가져오기
 //		for (String L: sup1)
 //		{
-//			log.info("확인 _-----------------: " +L);
+//			log.info("sup1확인 _-----------------: " +L);
 //			
 //		}
 //		for (String L: sup2)
 //		{
-//			log.info("확인 _-----------------: " +L);
+//			log.info("sup2확인 _-----------------: " +L);
 //			
 //		}
 //		
 //		for (String L: sdown1)
 //		{
-//			log.info("확인 _-----------------: " +L);
+//			log.info("sdown1확인 _-----------------: " +L);
 //			
 //		}
 //		for (String L: sdown2)
 //		{
-//			log.info("확인 _-----------------: " +L);
+//			log.info("sdown2확인 _-----------------: " +L);
 //			
 //		}
 		return infoArray.toString();

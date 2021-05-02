@@ -9,9 +9,9 @@ $(document).ready(function() {
             for (var i = 0; i < data.length; i++) {
                 var dynamicTag = null;
                 if (data[i].per.charAt(0) == "-") {
-                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="#" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: red;">' + data[i].per + '</div></a></li>';
+                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="/community/search?search='+data[i].h+'" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: red;">' + data[i].per + '</div></a></li>';
                 } else {
-                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="#" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: green;">' + data[i].per + '</div></a></li>';
+                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="/community/search?search='+data[i].h+'" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: green;">' + data[i].per + '</div></a></li>';
                 }
                 $("#stockheader").append(dynamicTag);
             }
@@ -89,15 +89,18 @@ $(document).ready(function() {
         });
 
 
+
 $("#search").autocomplete({
-    source: function(request, response) {      
-                if ($.ui.autocomplete.filter(array, request.term) != 0) {
-                    response($.ui.autocomplete.filter(array, request.term));
+    source: function(request, response) {   
+    		if(request.term[0]=='@'){
+                if ($.ui.autocomplete.filter(array, request.term.substr(1)) != 0) {
+                    response($.ui.autocomplete.filter(array, request.term.substr(1)));
                 } else {
                     var result = [{
                         label: 'no result',
                     }];
                     response(result);
+                }
                 }
     },
     select: function(event, ui) {},
