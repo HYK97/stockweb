@@ -162,9 +162,9 @@
                     </div>
                 </div>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <input type="text" id="search" class="form-control" placeholder="검색..." style="width: 195px;">
-                </form>
+                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
+                    	</form>
 
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.stock.web.community.domain.Comments;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.user.domain.UserDto;
@@ -16,4 +17,5 @@ public interface CommunityService {
 	public List<CommunityDto> getList(int fpage,int epage,String user);
 	public String likePush(UserDto user, CommunityDto bid);
 	public CommunityDto selectContent(Long bid,String user);
+	public List<Comments> commentsList(int fpage,int epage,Long bid);
 }
