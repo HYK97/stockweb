@@ -169,6 +169,10 @@ public class CommuController {
 	}
 	
 	
+	
+	
+	
+	
 	@GetMapping("padcast")
 	public void padcast(HttpSession session)
 	{

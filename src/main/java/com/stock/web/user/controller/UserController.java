@@ -32,6 +32,12 @@ public class UserController {
 	
 	}
 	
+	@GetMapping("userinfo")
+	public void userinfo()
+	{
+	
+	}
+	
 	@PostMapping("register")
 	public String register(UserDto user)
 	{

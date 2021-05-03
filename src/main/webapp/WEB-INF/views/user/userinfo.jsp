@@ -25,7 +25,7 @@
         <!-- 네모틀 -->
         <script src="../../../resources/js/modernizr.custom.js"></script>
         <script src="../../../resources/js/main.js"></script>
-         <script src="../../../resources/js/content.js"></script>
+<!--          <script src="../../../resources/js/content.js"></script> -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
         <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -39,6 +39,54 @@
             background-color:#f0f0f0;
 			transition: background .5s ease-in-out;
             }
+            
+           
+            body {
+                padding: 0;
+                margin: 0;
+                height: 100vh;
+                font-family: "Nunito Sans";
+            }
+
+            .form-control {
+                line-height: 2;
+            }
+
+            .bg-custom {
+                background-color: #6C63FF;
+            }
+
+            .btn-custom {
+                background-color: #3e3d56;
+                color: #fff;
+            }
+
+            .btn-custom:hover {
+                background-color: #33313f;
+                color: #fff;
+            }
+
+            label {
+                color: #fff;
+            }
+
+            a,
+            a:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            a,
+            a:hover {
+                text-decoration: none;
+            }
+
+            @media(max-width: 932px) {
+                .display-none {
+                    display: none !important;
+                }
+            }
+        </style>
         </style>
         			
         
@@ -58,16 +106,16 @@
                     <div style="margin-bottom: 1.5%;">
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" style="display: flex; justify-content: space-around;">
                             <li>
-                                <a href="#" class="nav-link px-2 link-dark">종목별등락</a>
+                                <a href="#" class="nav-link px-2 link-secondary">회원정보변경</a>
                             </li>
                             <li>
-                                <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
+                                <a href="#" class="nav-link px-2 link-dark">내가쓴글</a>
                             </li>
                             <li>
-                                <a href="/community/community" class="nav-link px-2 link-secondary">커뮤니티</a>
+                                <a href="#" class="nav-link px-2 link-dark">좋아요글</a>
                             </li>
                             <li>
-                                <a href="/community/chart" class="nav-link px-2 link-dark">차트</a>
+                                <a href="#" class="nav-link px-2 link-dark">접속내역</a>
                             </li>
                         </ul>
                     </div>
@@ -94,19 +142,6 @@
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#bbs">확인용 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">알람</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="/user/logout">로그아웃</a>
                         </li>
                     </ul>
@@ -124,13 +159,77 @@
         </div>
     </header>
         <!-- -----------------------body---------------------------------- -->
-    
-        
-         
-<div id="contentList" class="contentList" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
+
+   	<div style="margin-top:100px; width: 800px;  text-align: left; margin: 5% auto; overflow: auto;" class="col p-0  d-flex justify-content-center align-items-center flex-column ">
+                <form class="w-75" action="/user/userEdit" method="post" id="loginForm">
+                 <label for="id" class="form-label">아이디</label>
+                	
+                       
+                    <div class="mb-3">
+                        <input
+                        	disabled="disabled"
+                            type="text"
+                            class="form-control"
+                            id="id"
+                            check_result="fail"
+							name="id"
+                            placeholder="ID"
+                            required>
+                    </div>
+
+                	
+                    
+                    <div class="mb-3">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+							name="password"
+                            placeholder="PASSWORD"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="check" class="form-label">비밀번호확인</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="check"
+                            placeholder="PASSWORD"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">이름</label>
+                        <input
+                        	disabled="disabled"
+                            type="text"
+                            class="form-control"
+                            id="name"
+							name="name"
+                            placeholder="name"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthday" class="form-label">생일</label>
+                        <input
+                        	disabled="disabled"
+                            type="date"
+                            class="form-control"
+                            id="birthday"
+							name="birthday"
+                            placeholder="birthday"
+                            required>
+                    </div>
+                    
+					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="회원가입" name="" id="registerBtn">
+                </form>
+            </div>  
+<%-- <div id="contentList" class="contentList" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
           
 
         </div>
+        
+        
        		 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
 			  <div class="modal-dialog">
 			    <div class="modal-content">
@@ -207,7 +306,7 @@
 			        </form>
 			        </c:if>
 			        <div id=commetsList>
-			        <%-- <div class="mb-3">
+			        <div class="mb-3">
 			            <div class="mb-3">
 			            	<div style="display: flex;">
 				          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -231,13 +330,13 @@
 			        
 			            
 			        	</div>
-			        </div>    --%>
+			        </div>   
 			        
 			        </div>
 			      </div>
 			    </div>
 			  </div>
-			</div>
+			</div> --%>
    
        
     </body>

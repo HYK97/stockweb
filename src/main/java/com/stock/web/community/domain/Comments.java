@@ -18,4 +18,5 @@ public class Comments {
 	private String USER_ID;
 	private String writedate;
 	private String comments;
+	private String bbs_id;
 }
