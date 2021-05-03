@@ -90,7 +90,7 @@
                             <a class="dropdown-item" href="#">알람</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">${sessionScope.login.id} 님 계정정보</a>
+                           <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
