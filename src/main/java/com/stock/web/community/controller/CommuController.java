@@ -1,8 +1,10 @@
 package com.stock.web.community.controller;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,12 +19,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.stock.web.community.domain.Comments;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
+import com.stock.web.community.domain.imagesDto;
 import com.stock.web.community.service.CommunityService;
 import com.stock.web.user.domain.UserDto;
 
@@ -153,16 +157,51 @@ public class CommuController {
 	
 	
 	@PostMapping("write")
-	public String write(CommunityDto com,HttpSession session)
+	public String write(CommunityDto com,HttpSession session,List<MultipartFile> uploadFile)
 	{
-		UserDto user =(UserDto)session.getAttribute("login");
-		if(user.getId().isEmpty())
-		{
+		com.setImglist(new ArrayList<imagesDto>());
+		String path = "D:\\lgcns 2021-1\\spring\\stock1\\stocksk\\file";
+		
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
 			return "redirect:/user/login";
+		}else{
+			user=(UserDto) session.getAttribute("login");
 		}
+		
+		
+		if(com.getHASHTAG()!="" || com.getHASHTAG().isEmpty()) {
 		com.setHASHTAG(com.getHASHTAG().replaceAll("\\p{Z}",""));
 		com.setUSER_ID(user.getId());
 		com.setCOUNT(StringUtils.countMatches(com.getHASHTAG(), "#"));
+		}else {
+			com.setCOUNT(0);
+		}
+		if(uploadFile.size()!=0) {
+		for(MultipartFile multipartFile : uploadFile) {
+			
+			log.info("--------------------");
+			log.info("Upload File Name : " + multipartFile.getOriginalFilename());
+			log.info("Upload File size : " + multipartFile.getSize());
+			UUID uuid = UUID.randomUUID();
+			String uploadFileName = multipartFile.getOriginalFilename();
+			String uploadFileUuid= uuid.toString() + "_" + uploadFileName;
+			File saveFile = new File(path, uploadFileUuid);
+			imagesDto img=new imagesDto();
+			img.setFileName(uploadFileName);
+			img.setFileId(uploadFileUuid);
+		
+			com.getImglist().add(img);
+		try {
+			multipartFile.transferTo(saveFile);
+
+		} catch(Exception e) {
+			log.error(e.getMessage());;
+		}
+		}
+		}
+		log.info("ÄÁÆ®·Ñ·µ------"+com.getImglist().toString());
 		service.write(com);
 		session.setAttribute("login",session.getAttribute("login"));
 		return "redirect:/community/community";

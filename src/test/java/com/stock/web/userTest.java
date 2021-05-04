@@ -27,6 +27,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
+import com.stock.web.community.domain.imagesDto;
 import com.stock.web.community.mapper.CommunityMapper;
 import com.stock.web.community.service.CommunityService;
 import com.stock.web.user.domain.UserDto;
@@ -307,6 +308,28 @@ public class userTest {
 		
 		
 
+		//service.write(com);
+	
+	
+	
+	}
+	@Test
+	public void insertImage()
+	{	
+		imagesDto k =new imagesDto();
+		k.setFileName("22");
+		k.setFileId("22");
+		imagesDto b =new imagesDto();
+		b.setFileName("44");
+		b.setFileId("44");
+		List<imagesDto> a =new ArrayList<imagesDto>();
+		a.add(k);
+		a.add(b);
+	
+		Map<String ,Object> map2 =new HashMap<String, Object>();
+		map2.put("list", a);
+		map2.put("bbs_id", 70L);
+		mapper.insertImage(map2);
 		//service.write(com);
 	
 	

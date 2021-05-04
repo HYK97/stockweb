@@ -32,8 +32,18 @@ public class CommunityServiceImpl implements CommunityService {
 	
 	@Override
 	public void write(CommunityDto com) {
-		mapper.insert(com);
-		
+		Map<String ,Object> map =new HashMap<String, Object>();
+		map.put("v_user_id", com.getUSER_ID());
+		map.put("v_content", com.getCONTENT());
+		map.put("v_hash_title", com.getHASHTAG());
+		map.put("v_hash_count", com.getCOUNT());
+		map.put("v_bbs_id","");
+		mapper.insert(map);
+		log.info(com.getImglist().toString());
+		Map<String ,Object> map2 =new HashMap<String, Object>();
+		map2.put("list", com.getImglist());
+		map2.put("bbs_id", map.get("v_bbs_id"));
+		mapper.insertImage(map2);
 	}
 
 	@Override
@@ -49,7 +59,7 @@ public class CommunityServiceImpl implements CommunityService {
 		map.put("v_user_id", user.getId());
 		map.put("v_bbs_id", bid.getID());
 		map.put("v_result", "" );
-		log.info("아이디 : "+map.get("v_user_id")+"글번호 : "+map.get("v_bbs_id"));
+	
 		mapper.likePush(map);
 		log.info("온값 ------"+map.get("v_result2"));
 		return (String) map.get("v_result2");

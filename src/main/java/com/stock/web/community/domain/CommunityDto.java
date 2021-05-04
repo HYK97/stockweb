@@ -1,5 +1,6 @@
 package com.stock.web.community.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,5 +30,6 @@ public class CommunityDto {
 	private int COUNT;
 	private List<UserDto> Like;
 	private List<HashTag> HASHTAGLIST;
+	private List<imagesDto> imglist;
 	
 }
