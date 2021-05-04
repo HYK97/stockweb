@@ -37,5 +37,11 @@
 		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
+	<logger name="jdbc.sqltiming" additivity="false">
+    <level value="warn" />
+    <appender-ref ref="console"/> 
+</logger>
+
+	
 	
 </log4j:configuration>

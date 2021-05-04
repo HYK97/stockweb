@@ -166,6 +166,24 @@ $("#search").autocomplete({
             console.log(event);
         }
     });*/
+    
+    
+    
+    $("#gdsImg").change(function(){
+	 $(".select_img *").remove();
+    	for(var i=0;i<this.files.length;i++){
+
+    var reader = new FileReader;
+    reader.onload = function(data) {
+    		
+		    var	dy= '<img class="thum" src="'+data.target.result+'" style="width: 100px;"/>'
+		    $(".select_img").append(dy);
+    	}
+    
+    reader.readAsDataURL(this.files[i]);
+   
+    }
+  });
 
 
 
@@ -175,6 +193,9 @@ $("#search").autocomplete({
 
 
     return false;
+    
+    
+    
 
 
 

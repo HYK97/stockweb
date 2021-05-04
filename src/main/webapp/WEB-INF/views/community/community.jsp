@@ -139,7 +139,7 @@
 			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			      </div>
 			      <div class="modal-body" >
-			        <form action="/community/write" method="post" >
+			        <form action="/community/write" method="post"  enctype="multipart/form-data" >
 			          <div class="mb-3">
 			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
 			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
@@ -151,8 +151,21 @@
 			          </div>
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 #으로 구분" required >
+			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 #으로 구분"  >
 			          </div>
+			          <div class="mb-3">
+			          
+      				 <div class="inputArea">
+      				 			 
+      				 			 	<label for="gdsImg">이미지</label>
+							        <input id="gdsImg" multiple type="file" name="uploadFile" />
+							 		<hr>
+							
+							 <div style="display: flex; overflow: auto;" class="select_img">
+							
+							 </div>
+      				  </div>
+      				 </div>
 			    
 			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
 			        <input  type="submit" class="btn btn-primary" value="글쓰기">
@@ -187,7 +200,8 @@
 			         	
       				 </div>
       				 
-      				 </div>
+      				 
+      				 
       				 <div class="mb-3">
       				 <div id="rep-like" style="display:flex;align-items: center; ">
       				 	<div id="likebtns"></div>
@@ -207,6 +221,7 @@
 			        </form>
 			        </c:if>
 			        <div id=commetsList>
+			        
 			        <%-- <div class="mb-3">
 			            <div class="mb-3">
 			            	<div style="display: flex;">
@@ -238,7 +253,8 @@
 			    </div>
 			  </div>
 			</div>
-   
+			</div>
+
        
     </body>
 </html>

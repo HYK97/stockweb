@@ -28,14 +28,37 @@
   </select>
 
 
+ <parameterMap id="bbsid" type="hashmap">
+    <parameter property="v_user_id" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_content" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_hash_title" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_hash_count" mode="IN" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+    <parameter property="v_bbs_id" mode="OUT" jdbcType="NUMERIC" javaType="java.lang.Long"/>
+</parameterMap>
 
   
   
-  <insert id="insert" parameterType="com.stock.web.community.domain.CommunityDto" statementType="CALLABLE">
+  <insert id="insert" statementType="CALLABLE" parameterMap="bbsid">
         {CALL 
-            HASG_TAG_PR (#{USER_ID},#{CONTENT},#{HASHTAG},#{COUNT})
+            HASG_TAG_PR (?,?,?,?,?)
         }
     </insert>
+    
+   <insert id="insertImage" parameterType="hashMap">
+     <foreach collection="list" item="i"  separator=" " open="INSERT ALL" close="SELECT * FROM SYS.DUAL">
+   	INTO image (
+    file_id,
+    file_name,
+    bbs_id
+	)
+    VALUES 
+        (
+        #{i.fileId},
+       	 #{i.fileName},
+       	 #{bbs_id}
+        )
+    </foreach>
+</insert>
     
     
     <resultMap id="boradResult" type="com.stock.web.community.domain.CommunityDto">
