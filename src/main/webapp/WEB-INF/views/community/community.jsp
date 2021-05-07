@@ -39,6 +39,37 @@
             background-color:#f0f0f0;
 			transition: background .5s ease-in-out;
             }
+            .im{
+            max-height: 800px;
+            max-width:707px;
+            }
+            .rolul{
+            	display:flex;
+          		position:relative;
+          		top: 0;
+          		left: 0;
+          		align-items: center;
+            }
+            .nextB{
+              position: absolute;
+ 			  top: 50%;
+  		      right : 44px; 
+  		      z-index: 1;
+  		      visibility: hidden;
+            }
+            .preB{
+              position: absolute;
+ 			  top: 50%;
+  		      left : 44px; 
+  		      z-index: 1;
+  		      visibility: hidden;
+            }
+            .roller
+            {
+            	position: relative;
+            	width:707px;
+            	overflow :hidden;
+            }
         </style>
         			
         

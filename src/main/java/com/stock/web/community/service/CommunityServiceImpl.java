@@ -1,6 +1,7 @@
 package com.stock.web.community.service;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,17 +40,31 @@ public class CommunityServiceImpl implements CommunityService {
 		map.put("v_hash_count", com.getCOUNT());
 		map.put("v_bbs_id","");
 		mapper.insert(map);
-		log.info(com.getImglist().toString());
+		if(!com.getImglists().isEmpty())
+		{
+		log.info(com.getImglists().toString());
 		Map<String ,Object> map2 =new HashMap<String, Object>();
-		map2.put("list", com.getImglist());
+		map2.put("list", com.getImglists());
 		map2.put("bbs_id", map.get("v_bbs_id"));
 		mapper.insertImage(map2);
+		}
 	}
 
 	@Override
 	public List<CommunityDto> getList(int fpage,int epage,String user) {
 		// TODO Auto-generated method stub
-		return mapper.selectList(fpage,epage,user);
+		List<CommunityDto> list =mapper.selectList(fpage,epage,user);
+		
+		for (CommunityDto communityDto : list) {
+			if (!communityDto.getImg().equals("0"))
+			{	
+				List<String>a=Arrays.asList(communityDto.getImg().split("\\|"));
+				communityDto.setImglist(a);
+				
+			}
+		}
+		
+		return list;
 	}
 
 	@Override

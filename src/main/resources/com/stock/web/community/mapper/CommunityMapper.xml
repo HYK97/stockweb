@@ -70,7 +70,7 @@
     <result property="LIKECOUNT" column="likecount"/>
     <result property="commentcount" column="commentcount"/>
     <result property="user_like" column="user_like"/>
-    
+    <result property="img" column="image"/>
    	<!-- <collection property="HASHTAGLIST" javaType="java.util.ArrayList" resultMap="HASH" /> -->
    <!--  <collection property="Like" javaType="java.util.ArrayList" resultMap="USER" /> -->
 	</resultMap>
@@ -93,6 +93,7 @@ FROM   (SELECT ROWNUM num,
                        '#'||b.hashtag "hashtag",
                        nvl(k."likecount",0)"likecount", 
                        nvl(n."commentcount",0)"commentcount",
+                       i."image",
                         <choose>
        						 <when test='!user.equals("")'>
                        		nvl(m."user_like",0)"user_like"
@@ -108,6 +109,8 @@ FROM   (SELECT ROWNUM num,
                               ON a.id = k.BS2
                        left join (select s.bbs_id"BS3",count(s.bbs_id)"commentcount" from comments s group by s.bbs_id) n
                             ON a.id = n.BS3
+                        left join imageview i
+                            ON a.id = i.id
                        <if test='!user.equals("")'>
                        left join (select o.bbs_id"user_like" from likebbs o where o.user_id=#{user}) m
                             ON a.id = m."user_like"
