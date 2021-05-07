@@ -1,5 +1,6 @@
 package com.stock.web;
 
+import java.awt.font.ImageGraphicAttribute;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -335,6 +336,31 @@ public class userTest {
 	
 	
 	}
+	
+	
+	@Test
+	public void listTest3()
+	{
+		
+		List<CommunityDto> list=service.getList(1,10,"222");
+		
+		
+		
+		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
+		log.info(jsonArray);
+		log.info(jsonArray);
+	
+		
+		
+
+		//service.write(com);
+	
+	
+	
+	}
+	
 	
 	
 

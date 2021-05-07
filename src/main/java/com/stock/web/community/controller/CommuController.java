@@ -159,8 +159,8 @@ public class CommuController {
 	@PostMapping("write")
 	public String write(CommunityDto com,HttpSession session,List<MultipartFile> uploadFile)
 	{
-		com.setImglist(new ArrayList<imagesDto>());
-		String path = "D:\\lgcns 2021-1\\spring\\stock1\\stocksk\\file";
+		com.setImglists(new ArrayList<imagesDto>());
+		String path = "D:\\lgcns 2021-1\\spring\\stock1\\file";
 		
 		UserDto user=new UserDto();			
 		if(session.getAttribute("login")==null) {
@@ -178,7 +178,9 @@ public class CommuController {
 		}else {
 			com.setCOUNT(0);
 		}
-		if(uploadFile.size()!=0) {
+		log.info("empty : " + uploadFile.get(0).isEmpty());
+
+		if(!uploadFile.get(0).isEmpty()) {
 		for(MultipartFile multipartFile : uploadFile) {
 			
 			log.info("--------------------");
@@ -189,10 +191,10 @@ public class CommuController {
 			String uploadFileUuid= uuid.toString() + "_" + uploadFileName;
 			File saveFile = new File(path, uploadFileUuid);
 			imagesDto img=new imagesDto();
-			img.setFileName(uploadFileName);
-			img.setFileId(uploadFileUuid);
+			img.setFileName(uploadFileUuid);
+			img.setFileId(uuid.toString());
 		
-			com.getImglist().add(img);
+			com.getImglists().add(img);
 		try {
 			multipartFile.transferTo(saveFile);
 
@@ -201,7 +203,7 @@ public class CommuController {
 		}
 		}
 		}
-		log.info("ÄÁÆ®·Ñ·µ------"+com.getImglist().toString());
+		log.info("ÄÁÆ®·Ñ·µ------"+com.getImglists().toString());
 		service.write(com);
 		session.setAttribute("login",session.getAttribute("login"));
 		return "redirect:/community/community";

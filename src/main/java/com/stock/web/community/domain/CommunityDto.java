@@ -30,6 +30,8 @@ public class CommunityDto {
 	private int COUNT;
 	private List<UserDto> Like;
 	private List<HashTag> HASHTAGLIST;
-	private List<imagesDto> imglist;
+	private List<String> imglist;
+	private List<imagesDto> imglists;
+	private String img;
 	
 }
