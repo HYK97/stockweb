@@ -21,6 +21,7 @@
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
         <title>Community</title>
         <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css">
+        
         <link rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
         <!-- 네모틀 -->
         <script src="../../../resources/js/modernizr.custom.js"></script>
@@ -53,16 +54,27 @@
             .nextB{
               position: absolute;
  			  top: 50%;
-  		      right : 44px; 
+  		      right : 10px; 
   		      z-index: 1;
   		      visibility: hidden;
+  		      background: url('../../../resources/img/right.png');
+  		      width:30px;
+  		      height:30px;
+  		      background-size: 30px 30px;
+  		      opacity: 0.9;
             }
             .preB{
               position: absolute;
  			  top: 50%;
-  		      left : 44px; 
+  		      left : 10px; 
   		      z-index: 1;
   		      visibility: hidden;
+  		      background: url('../../../resources/img/left.png');
+  		      width:30px;
+  		      height:30px;
+  		      background-size: 30px 30px;
+  		      opacity: 0.9;
+  		      
             }
             .roller
             {
@@ -70,16 +82,26 @@
             	width:707px;
             	overflow :hidden;
             }
+            .mroller.roller
+            {
+            	position: relative;
+            	width:100%;
+            	max-width: 707px;
+            	overflow :hidden;
+            	text-align: center;
+            }
+            
         </style>
         			
         
         </head>
     	<body>
+    	<div>
         <!-- 글자 -->
       
         <label id="session" hidden="true">${sessionScope.login }</label>
         <!------------------header---------------------------->
-        <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
+        <header class="p-3 mb-3 border-bottom" style="z-index: 2;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style="position: sticky; margin-right: auto; margin-left: auto;">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -219,14 +241,18 @@
 			          <div class="mb-3">
 					
 			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-			            <label id="comments-author" for="recipient-name"  class="col-form-label"> 글쓴이 </label>
-			            <label id="comments-date" for="recipient-name"  class="col-form-label">  날짜</label>
+			            <label id="comments-author" for="recipient-name"  class="col-form-label"style="margin: 1%;"> 글쓴이 </label>
+			            <label id="comments-date" for="recipient-name"  class="col-form-label" style="font-size: 8;color: gray;font-style: italic;">  날짜</label>
 
 			          </div>
 			          <div class="mb-3">
 			         <div id="modal-contents">
 			         	
       				 </div>
+      				  </div>
+      				 <div class="mroller roller">
+      				 </div>
+      				 <div class="mb-3">
       				 <div id="modal-hash">
 			         	
       				 </div>
@@ -241,13 +267,14 @@
 			             <label id="com" class="col-form.btn-label"> </label>
 			          </div>  
 			          </div> 
+			          <hr>
 					<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->		
-			        <form action="/community/commentsWrite" method="post" >
+			        <form action="/community/commentsWrite" method="post" onsubmit="return false;" >
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">댓글 : </label>
-			            <input type="text" class="form-control" id="comment" name="comment" placeholder="${sessionScope.login.id} 님의 생각을 적어보세요" required >
+			            <input type="text" class="form-control" id="comment"  placeholder="${sessionScope.login.id} 님의 생각을 적어보세요" required >
 			          </div>   
-			        <input id="commentsBtn" type="submit" disabled class="btn btn-primary" value="댓글쓰기">
+			        <input id="commentsBtn" type="button" disabled class="btn btn-primary" value="댓글쓰기">
 			
 			        </form>
 			        </c:if>
@@ -285,7 +312,7 @@
 			  </div>
 			</div>
 			</div>
-
+</div>
        
     </body>
 </html>

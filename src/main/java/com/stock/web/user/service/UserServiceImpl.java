@@ -34,6 +34,16 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return mapper.idCheck(user);
 	}
+	@Override
+	public UserDto userInfo(UserDto user) {
+		// TODO Auto-generated method stub
+		return mapper.userInfo(user);
+	}
+	@Override
+	public void userEdit(UserDto user) {
+		// TODO Auto-generated method stub
+		mapper.userUpdate(user);
+	}
 	
 
 }

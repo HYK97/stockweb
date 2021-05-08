@@ -1,20 +1,18 @@
 $(document).ready(function() {
     $.ajax({
         type: "POST",
-        url: "/user/userinfo",
+        url: "/user/userinfos",
         dataType: "json",
         success: function(data) {
-            var width = data.length * 100 + "px"
-            $("#stockheader").css('width', width);
-            for (var i = 0; i < data.length; i++) {
-                var dynamicTag = null;
-                if (data[i].per.charAt(0) == "-") {
-                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="/community/search?search='+data[i].h+'" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: red;">' + data[i].per + '</div></a></li>';
-                } else {
-                    dynamicTag = '<li id=' + i + ' style="font-size:12px; width:100px;overflow:hidden;"><a href="/community/search?search='+data[i].h+'" class="nav-link px-2 link-dark"><div>' + data[i].name + '</div><div style="color: green;">' + data[i].per + '</div></a></li>';
-                }
-                $("#stockheader").append(dynamicTag);
-            }
+            var id =data[0].id;
+            var pw =data[0].password;
+            var name =data[0].name;
+            var birthday =data[0].birthday;
+            $('#id').val(id);
+            $('#name').val(name);
+            $('#birthday').val(birthday);
+            
+               
         },
         error: function(request, error) {
             alert("fail");
@@ -22,4 +20,22 @@ $(document).ready(function() {
         }
 
     });
+    
+    $("#updateBtn").click(function() {
+    	
+		if($('#check').val() != $('#password').val())
+		{
+			alert("비밀번호가 다릅니다.");
+			return false;
+		}
+		if(msg=="success")
+		{
+		alert("성공");
+		}
+  
+
+    
+    
+    });
+    
 });

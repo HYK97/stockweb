@@ -9,5 +9,7 @@ public interface UserMapper {
 	public int deleteAll();
 	public Integer login(UserDto user);
 	public Integer idCheck(UserDto user);
+	public UserDto userInfo(UserDto user);
+	public void userUpdate(UserDto user);
 	
 }

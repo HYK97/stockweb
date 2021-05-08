@@ -50,6 +50,8 @@ public class CommuController {
 		session.setAttribute("login",session.getAttribute("login"));
 	}
 	
+
+	
 	
 	@PostMapping("viewContent")
 	@ResponseBody
@@ -154,6 +156,31 @@ public class CommuController {
 		return "redirect:/community/chart";
 	
 	}
+	
+	
+	@PostMapping("commentsWrite")
+	@ResponseBody
+	public String commentsWrite(HttpSession session,Comments com)
+	{
+		
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+			
+		}else{
+			user=(UserDto) session.getAttribute("login");
+			session.setAttribute("login",session.getAttribute("login"));
+		}
+		com.setUSER_ID(user.getId());
+		log.info("데이터 확인용 ========================================"+com.toString());
+		
+		service.writeComment(com);
+		return "1";
+	
+	}
+	
+	
 	
 	
 	@PostMapping("write")

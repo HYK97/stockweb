@@ -7,6 +7,7 @@
     <head>
     <script type="text/javascript">		
 		var sessionData = '<c:out value="${sessionScope.login.id}"/>';
+		var msg = '<c:out value="${msg}"/>';
 			</script>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
   		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../resources/js/userinfo.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
@@ -221,7 +223,7 @@
                             required>
                     </div>
                     
-					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="회원가입" name="" id="registerBtn">
+					<input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="변경" name="" id="updateBtn">
                 </form>
             </div>  
 <%-- <div id="contentList" class="contentList" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">

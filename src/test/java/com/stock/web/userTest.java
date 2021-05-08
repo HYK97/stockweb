@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.stock.web.community.domain.Comments;
 import com.stock.web.community.domain.CommunityDto;
 import com.stock.web.community.domain.Stock;
 import com.stock.web.community.domain.imagesDto;
@@ -355,6 +356,21 @@ public class userTest {
 		
 		
 
+		//service.write(com);
+	
+	
+	
+	}
+	@Test
+	public void commentWrite()
+	{	
+		Comments com =new Comments();
+		com.setBbs_id(1L);
+		com.setComments("테스트용 댓글");
+		com.setUSER_ID("222");
+		
+		service.writeComment(com);
+		
 		//service.write(com);
 	
 	
