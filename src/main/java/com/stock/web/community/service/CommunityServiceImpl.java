@@ -92,6 +92,12 @@ public class CommunityServiceImpl implements CommunityService {
 		// TODO Auto-generated method stub
 		return mapper.commentsList(fpage, epage, bid);
 	}
+
+	@Override
+	public void writeComment(Comments com) {
+		mapper.writeComment(com);
+		
+	}
 	
 
 

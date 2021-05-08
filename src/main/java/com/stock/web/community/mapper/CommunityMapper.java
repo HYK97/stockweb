@@ -21,4 +21,6 @@ public interface CommunityMapper {
 	public CommunityDto selectContent(@Param("bid")Long bid,@Param("user")String user);
 	public void likePush(Map<String ,Object> map);
 	public void insertImage(Map<String ,Object> map);
+	public void writeComment(Comments com);
+	
 }	

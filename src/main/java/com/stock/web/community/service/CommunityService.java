@@ -18,4 +18,5 @@ public interface CommunityService {
 	public String likePush(UserDto user, CommunityDto bid);
 	public CommunityDto selectContent(Long bid,String user);
 	public List<Comments> commentsList(int fpage,int epage,Long bid);
+	public void writeComment(Comments com);
 }

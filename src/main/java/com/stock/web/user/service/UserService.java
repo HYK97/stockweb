@@ -8,5 +8,6 @@ public interface UserService {
 	public int deleteAll();
 	public Integer login(UserDto user);
 	public Integer idCheck(UserDto user);
-
+	public UserDto userInfo(UserDto user);
+	public void userEdit(UserDto user);
 }

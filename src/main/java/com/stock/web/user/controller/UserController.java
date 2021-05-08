@@ -16,6 +16,7 @@ import com.stock.web.user.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import net.sf.json.JSONArray;
 
 @Controller
 @RequestMapping("/user/*")
@@ -26,16 +27,64 @@ public class UserController {
 	
 	private final UserService service;
 	
+	@PostMapping("userEdit")
+	public String userEdit(HttpSession session,UserDto user,RedirectAttributes red)
+	{
+	
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+		}else{
+			user.setId(((UserDto) session.getAttribute("login")).getId());
+		}
+		
+		red.addFlashAttribute("msg","success");
+		service.userEdit(user);
+		return "redirect:/user/userinfo";
+	}
+	
+	
+	
+	
 	@GetMapping("register")
 	public void register()
 	{
 	
 	}
 	
-	@GetMapping("userinfo")
-	public void userinfo()
+	@PostMapping("userinfos")
+	@ResponseBody
+	public String userinfos(HttpSession session)
 	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		UserDto search=service.userInfo(user);
+		JSONArray jsonArray = JSONArray.fromObject(search);
+
+
+		log.info(jsonArray);
+		
+		return jsonArray.toString();
+	}
 	
+	@GetMapping("userinfo")
+	
+	public void userinfo(HttpSession session)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
 	}
 	
 	@PostMapping("register")

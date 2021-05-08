@@ -19,6 +19,27 @@
   		select COUNT(*) FROM USERS WHERE USER_ID = #{id}
   </select>
   
+  
+  
+  <resultMap id="userResult" type="com.stock.web.user.domain.UserDto">
+    <id property="id" column="USER_ID"/>
+    <result property="password" column="USER_PW"/>
+    <result property="birthday" column="USER_BIRTH"/>
+    <result property="name" column="USER_NAME"/>
+	</resultMap>
+  
+  
+  <select id="userInfo" resultMap="userResult">
+  		select USER_ID,USER_PW,to_char(USER_BIRTH,'yyyy-mm-dd')"USER_BIRTH",USER_NAME from USERS WHERE USER_ID = #{id}
+  </select>
+  
+   <update id="userUpdate">
+  UPDATE users
+SET
+    user_pw = #{password}
+WHERE
+    user_id = #{id}
+  </update>
 
   
   

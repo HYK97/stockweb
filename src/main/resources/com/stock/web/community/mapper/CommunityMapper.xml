@@ -26,6 +26,8 @@
 	FROM
     	stock
   </select>
+  
+  
 
 
  <parameterMap id="bbsid" type="hashmap">
@@ -58,6 +60,25 @@
        	 #{bbs_id}
         )
     </foreach>
+</insert>
+
+
+<insert id="writeComment" >
+   
+   	INSERT INTO comments (
+    comment_id,
+    bbs_id,
+    comment_content,
+    comment_author,
+    comment_writedate
+) VALUES (
+    COMMENT_SEQ.nextval,
+    #{bbs_id},
+    #{comments},
+    #{USER_ID},
+    SYSDATE
+)
+   
 </insert>
     
     
@@ -174,12 +195,50 @@ from (SELECT
         comments
     where 
         bbs_id = #{bid}
-    order by comment_writedate
+    order by comment_writedate desc
     ) com ) k where <![CDATA[num >= #{fpage} and num <= #{epage}]]>
    
   </select>
    
   
+  
+  <!--아직안함 sql문만 작성  -->
+     <select id="search" resultMap="boradResult">
+                  SELECT *
+FROM   (SELECT ROWNUM num,
+               c.*
+        FROM   (SELECT a."id"        "bbs_id",
+                       a."user_id"   "author_id",
+                        TO_CHAR(a."writedate",'YYYY-MM-DD HH24:MI')"writedate",
+                       a."content"   "content",
+                       '#'||b.hashtag "hashtag",
+                       nvl(k."likecount",0)"likecount", 
+                       nvl(n."commentcount",0)"commentcount",
+                       i."image",
+                      <choose>
+       						 <when test='!user.equals("")'>
+                       		nvl(m."user_like",0)"user_like"
+                       		</when>
+							<otherwise>
+							 0"user_like"	
+							</otherwise>
+						</choose>
+                FROM   (select * from bbs_hash_view where "hash_title" like '%'+#{search}+'%' ) a
+                       left join vhashtag b
+                              ON a."id" = b.id
+                       left join (select l.bbs_id"BS2",count(l.bbs_id)"likecount" from likebbs l group by l.bbs_id) k
+                              ON a."id" = k.BS2
+                       left join (select s.bbs_id"BS3",count(s.bbs_id)"commentcount" from comments s group by s.bbs_id) n
+                            ON a."id" = n.BS3
+                        left join imageview i
+                            ON a."id" = i.id
+                    <if test='!user.equals("")'>
+                       left join (select o.bbs_id"user_like" from likebbs o where o.user_id=#{user}) m
+                            ON a.id = m."user_like"
+                             </if>
+                           
+                ORDER  BY a."writedate" DESC) c) f <![CDATA[num >= #{fpage} and num <= #{epage}]]>
+  </select>
 
   
   
