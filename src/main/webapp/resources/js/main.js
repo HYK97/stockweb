@@ -1,4 +1,62 @@
 $(document).ready(function() {
+var auto =0;
+
+ $('#search').keydown(function(e) {
+	 	
+	 	$("#search").autocomplete({
+	    source: function(request, response) {
+	    	  
+	    		if(request.term[0]=='@'){
+	    			auto=1; 
+	    			
+	                if ($.ui.autocomplete.filter(array, request.term.substr(1)) != 0) {
+	                    response($.ui.autocomplete.filter(array, request.term.substr(1)));
+	                } 
+	                }
+	               
+	    },
+	    select: function(event, ui) {},
+	    focus: function(event, ui) {
+	        return false;
+	    },
+	    minLength: 1,
+	    autoFocus: true,
+	    classes: {
+	        "ui-autocomplete": "highlight"
+	    },
+	    position: {
+	        my: "right top",
+	        at: "right bottom"
+	    },
+	    close: function(event) { //자동완성창 닫아질때 호출
+	    	auto =0;
+	        console.log(event);
+   
+	    },function(){
+	    	auto =0;
+	    }
+	    
+	    
+	});
+	
+ 	   
+ 	   
+	   if (e.keyCode == 13&&auto==0) {
+	   var search= $('#search').val();
+	   var key = search.substr(0, 1); //일반검색인지 확인용
+	   if(key =="@"){
+	   		location.href="/community/chart?search="+search.substr(1);
+	   }else{
+	   		if(key=="#"){
+	   			search=search.substr(1);
+	   		}
+	   		location.href="/community/community?search="+search
+	   }
+	      
+	    }
+	});
+	
+
     $.ajax({
         type: "POST",
         url: "/community/header",
@@ -82,7 +140,7 @@ $(document).ready(function() {
                 array = $.map(data, function(item) {
                     return {
                         label: item.short_name,
-                        value: item.code
+                        value: "@"+item.code
                     };
                 });
             }
@@ -90,36 +148,10 @@ $(document).ready(function() {
 
 
 
-$("#search").autocomplete({
-    source: function(request, response) {   
-    		if(request.term[0]=='@'){
-                if ($.ui.autocomplete.filter(array, request.term.substr(1)) != 0) {
-                    response($.ui.autocomplete.filter(array, request.term.substr(1)));
-                } else {
-                    var result = [{
-                        label: 'no result',
-                    }];
-                    response(result);
-                }
-                }
-    },
-    select: function(event, ui) {},
-    focus: function(event, ui) {
-        return false;
-    },
-    minLength: 1,
-    autoFocus: true,
-    classes: {
-        "ui-autocomplete": "highlight"
-    },
-    position: {
-        my: "right top",
-        at: "right bottom"
-    },
-    close: function(event) { //자동완성창 닫아질때 호출
-        console.log(event);
-    }
-});
+
+	
+
+  
 
 
     /*$("#search").autocomplete({
@@ -132,7 +164,7 @@ $("#search").autocomplete({
                     var array = $.map(data, function(item) {
                         return {
                             label: item.short_name,
-                            value: item.code
+                            value: "@"+item.code
                         };
                     });
                     if ($.ui.autocomplete.filter(array, request.term) != 0) {
@@ -185,19 +217,7 @@ $("#search").autocomplete({
     }
   });
 
-
-
-   
-
-
-
-
-    return false;
-    
-    
-    
-
-
+    return false; 
 
 });
 
