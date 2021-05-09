@@ -137,9 +137,11 @@
                     </div>
                 </div>
 
-                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <div style="margin-right: 1%">
+                <!--  <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> -->
                         	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
-                    	</form>
+                    	<!--</form>-->
+				</div>
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -148,11 +150,9 @@
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#bbs">확인용 </a>
+                            
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">알람</a>
-                        </li>
+                       
                         <li>
                           <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
                         </li>

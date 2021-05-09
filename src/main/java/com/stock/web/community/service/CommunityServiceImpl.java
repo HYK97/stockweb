@@ -98,6 +98,57 @@ public class CommunityServiceImpl implements CommunityService {
 		mapper.writeComment(com);
 		
 	}
+
+	@Override
+	public List<CommunityDto> searchList(int fpage, int epage, String user, String search) {
+		// TODO Auto-generated method stub
+		List<CommunityDto> list =mapper.searchList(fpage, epage, user, search);
+		
+		for (CommunityDto communityDto : list) {
+			if (!communityDto.getImg().equals("0"))
+			{	
+				List<String>a=Arrays.asList(communityDto.getImg().split("\\|"));
+				communityDto.setImglist(a);
+				
+			}
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<CommunityDto> myContentList(int fpage, int epage, String user) {
+		// TODO Auto-generated method stub
+		List<CommunityDto> list =mapper.myContentList(fpage,epage,user);
+		
+		for (CommunityDto communityDto : list) {
+			if (!communityDto.getImg().equals("0"))
+			{	
+				List<String>a=Arrays.asList(communityDto.getImg().split("\\|"));
+				communityDto.setImglist(a);
+				
+			}
+		}
+		
+		return list;
+
+	}
+
+	@Override
+	public List<CommunityDto> likeContent(int fpage, int epage, String user) {
+		// TODO Auto-generated method stub
+		List<CommunityDto> list =mapper.likeContent(fpage, epage, user);
+		
+		for (CommunityDto communityDto : list) {
+			if (!communityDto.getImg().equals("0"))
+			{	
+				List<String>a=Arrays.asList(communityDto.getImg().split("\\|"));
+				communityDto.setImglist(a);
+				
+			}
+		}
+		return list;
+	}
 	
 
 

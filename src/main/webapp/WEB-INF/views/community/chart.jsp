@@ -35,7 +35,9 @@
         </head>
     <body>
         <!-- 글자 -->
-       
+       <script type="text/javascript">
+    	
+    </script>
         <!------------------header---------------------------->
         <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style="position: sticky; margin-right: auto; margin-left: auto;">
@@ -73,9 +75,11 @@
                     </div>
                 </div>
 
-                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                 <div style="margin-right: 1%">
+                <!--  <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> -->
                         	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
-                    	</form>
+                    	<!--</form>-->
+				</div>
                 
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
@@ -86,9 +90,7 @@
                         <li>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">알람</a>
-                        </li>
+                      
                         <li>
                            <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
                         </li>
@@ -121,8 +123,20 @@
     <div class="left">
         <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
         <script type="text/javascript">
+        
+        
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+       
+            
         var search = '<c:out value="${search}"/>';
-        var searchs='<c:out value="${param.jong}" />';
+        var url = location.href;
+        var searchs=getParameterByName('search'); 
 
 
         new TradingView.widget({

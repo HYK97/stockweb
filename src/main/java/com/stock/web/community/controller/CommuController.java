@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
@@ -106,6 +107,7 @@ public class CommuController {
 			user.setId("");
 		}else{
 			user=(UserDto) session.getAttribute("login");
+			session.setAttribute("login",session.getAttribute("login"));
 		}
 		
 		List<Comments> list =service.commentsList(fpage, epage, Long.valueOf(bid));
@@ -140,8 +142,9 @@ public class CommuController {
         return jsonArray.toString();	
 	}
 	
-	@GetMapping("search")
-	public String search(HttpSession session,String search,Model model)
+	@PostMapping("search")
+	@ResponseBody
+	public String search(HttpSession session,String search, int fpage, int epage)
 	{
 		
 		UserDto user=new UserDto();			
@@ -151,10 +154,15 @@ public class CommuController {
 			user=(UserDto) session.getAttribute("login");
 		}
 		
-		System.out.println("검색값---------ssssssssssssssssssssss--------"+ search);
-		model.addAttribute("jong",search);
-		return "redirect:/community/chart";
-	
+		List<CommunityDto> list =service.searchList(fpage, epage, user.getId(), search);
+
+		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
+		log.info("search확인용=================="+jsonArray);
+		session.setAttribute("login",session.getAttribute("login"));
+        return jsonArray.toString();	
+
 	}
 	
 	
@@ -184,8 +192,11 @@ public class CommuController {
 	
 	
 	@PostMapping("write")
-	public String write(CommunityDto com,HttpSession session,List<MultipartFile> uploadFile)
+	public String write(HttpServletRequest request,CommunityDto com,HttpSession session,List<MultipartFile> uploadFile)
 	{
+		String referer = request.getHeader("Referer");
+	
+		log.info("이전페이지 확인 ---------------------"+referer);
 		com.setImglists(new ArrayList<imagesDto>());
 		String path = "D:\\lgcns 2021-1\\spring\\stock1\\file";
 		
@@ -233,7 +244,13 @@ public class CommuController {
 		log.info("컨트롤럿------"+com.getImglists().toString());
 		service.write(com);
 		session.setAttribute("login",session.getAttribute("login"));
-		return "redirect:/community/community";
+		if(referer.equals("http://localhost:8080/user/myWrite")||referer.equals("http://localhost:8080/user/likeContent"))
+		{
+			return "redirect:/user/myWrite";
+		}else {
+			return "redirect:/community/community";
+			
+		} 
 	}
 	
 	

@@ -32,10 +32,13 @@ $(document).ready(function() {
 		{
 		alert("성공");
 		}
-  
 
-    
-    
     });
     
+    
+
+    
+
+
 });
+    

@@ -1,6 +1,8 @@
 package com.stock.web.user.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.stock.web.community.domain.CommunityDto;
+import com.stock.web.community.service.CommunityService;
 import com.stock.web.user.domain.UserDto;
 import com.stock.web.user.service.UserService;
 
@@ -26,7 +30,7 @@ import net.sf.json.JSONArray;
 public class UserController {
 	
 	private final UserService service;
-	
+	private final CommunityService comservice;
 	@PostMapping("userEdit")
 	public String userEdit(HttpSession session,UserDto user,RedirectAttributes red)
 	{
@@ -47,10 +51,91 @@ public class UserController {
 	
 	
 	@GetMapping("register")
-	public void register()
+	public String register(HttpSession session)
 	{
-	
+		if(session.getAttribute("login")==null) {
+			
+			return "/user/register";
+			
+		}else{
+			
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/community/community";
+		}
 	}
+	
+	@GetMapping("likeContent")
+	public String likeContent(HttpSession session)
+	{
+		if(session.getAttribute("login")==null) {
+			
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/user/login";
+			
+		}else{
+			
+			return "/user/likeContent";
+		}
+	}
+	
+	@GetMapping("myWrite")
+	public String myWrite(HttpSession session)
+	{
+		
+		if(session.getAttribute("login")==null) {
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/user/login";
+			
+			
+		}else{
+			
+			return "/user/myWrite";
+		}
+	}
+	
+	@PostMapping("communityList")
+	@ResponseBody
+	public String communityList(HttpSession session, int fpage, int epage)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		List<CommunityDto> list =comservice.myContentList(fpage, epage, user.getId());
+
+		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
+		log.info(jsonArray);
+		session.setAttribute("login",session.getAttribute("login"));
+        return jsonArray.toString();	
+	}
+	
+	
+	@PostMapping("likeContentList")
+	@ResponseBody
+	public String likeContentList(HttpSession session, int fpage, int epage)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		List<CommunityDto> list =comservice.likeContent(fpage, epage, user.getId());
+
+		JSONArray jsonArray = JSONArray.fromObject(list);
+
+
+		log.info(jsonArray);
+		session.setAttribute("login",session.getAttribute("login"));
+        return jsonArray.toString();	
+	}
+	
 	
 	@PostMapping("userinfos")
 	@ResponseBody
@@ -74,29 +159,46 @@ public class UserController {
 	}
 	
 	@GetMapping("userinfo")
-	
-	public void userinfo(HttpSession session)
+	public String userinfo(HttpSession session)
 	{
-		UserDto user=new UserDto();			
 		if(session.getAttribute("login")==null) {
-			user.setId("");
-			
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/user/login";
+
 		}else{
-			user=(UserDto) session.getAttribute("login");
+			
+			return "/user/userinfo";
 		}
 		
 	}
 	
 	@PostMapping("register")
-	public String register(UserDto user)
-	{
-		service.register(user);
-		return "redirect:/user/login";
+	public String register(UserDto user,HttpSession session)
+	{	
+		if(session.getAttribute("login")==null) {
+			service.register(user);
+			return "redirect:/user/login";
+			
+		}else{
+			
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/community/community";
+		}
+		
 	}
 	
 	@GetMapping("login")
-	public void login()
+	public String login(HttpSession session)
 	{
+		if(session.getAttribute("login")!=null) {
+			
+			log.info("현재세션======="+session.getAttribute("login").toString());
+			session.setAttribute("login",session.getAttribute("login"));
+			return "redirect:/community/community";
+			
+		}else{
+			return "/user/login";
+		}
 	
 	}
 	
@@ -120,6 +222,15 @@ public class UserController {
 	
 	@GetMapping("logout")
 	public String logout(HttpSession session)
+	{
+		
+		session.removeAttribute("login");
+		return "/community/community"; 
+		
+	}
+	
+	@PostMapping("logout")
+	public String logoutpos(HttpSession session)
 	{
 		
 		session.removeAttribute("login");

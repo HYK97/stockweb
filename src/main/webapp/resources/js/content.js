@@ -1,27 +1,49 @@
 var click;
 $(document).ready(function() {
+
+	 function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+	
+	var search =getParameterByName('search');
+	var url =window.location.pathname;
     var fpage = 1;
     var epage = 10;
 	var commentfpage = 1;
     var commentepage = 10;
     var modalbbsid;
-
+    var ajaxdata={
+            "fpage": fpage,
+            "epage": epage,
+            "search" : search
+        };
+    var ajaxurl;
+	if(search =='' && url=="/community/community"){
+		ajaxurl="/community/communityList";
+	}else if(search !='' && url=="/community/community"){
+		ajaxurl="/community/search";
+	}else if(url=="/user/myWrite"){
+		ajaxurl="/user/communityList";
+	}else if(url=="/user/likeContent"){
+		ajaxurl="/user/likeContentList";
+	}else if(url=="/user/logout"){
+		ajaxurl="/community/communityList";
+	}
+	
+	
+	
     $.ajax({
         type: "POST",
-        url: "/community/communityList",
+        url: ajaxurl,
         dataType: "json",
-        data: {
-            "fpage": fpage,
-            "epage": epage
-        },
+        data: ajaxdata,
         success: function(data) {
 			
             for (var i = 0; i < data.length; i++) {
-                /*var k="";
-	            	for (var j = 0; j < data[i].like.length; j++) 
-	            	{k+=data[i].like[j].id;}*/
-
-				
+            
 
                 var dynamicTag = null;
                 if (data[i].user_like == 0) {
@@ -57,39 +79,32 @@ $(document).ready(function() {
             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
         }
     });
-
-				
-
-
-    //form ='<form class="like" action="#" method ="post"> <input type="hidden" value="'+data[i].ID+'"><input type="submit" value="좋아요"><button>댓글</button></form>'
-	
-	$('#bbs').on("scroll", function() {      
-		
-  		if ($('.modal-dialog.modal-lg').height() <= $('#bbs').scrollTop() + $('#bbs').height()) {
-  				commentfpage =commentfpage+10;
-    			commentepage =commentepage+10;
-    			updateComment();
-    			
-  		}
-	});
-
-
+    
+    
+    
     $(window).scroll(function(e) {
         if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-            fpage = fpage + 10;
+        var k=$(window).scrollTop() + $(window).height()
+        console.log("콘텐츠 높이:"+$(document).height()+"  bbs 스크롤높이"+$(window).scrollTop() +" 콘텐츠높이"+ $(window).height() +" 합계는 "+k);
+        	fpage = fpage + 10;
             epage = epage + 10;
-
+    
+	        ajaxdata={
+            "fpage": fpage,
+            "epage": epage,
+            "search" : search
+        	};
+            
             $.ajax({
                 type: "POST",
-                url: "/community/communityList",
+                url: ajaxurl,
                 dataType: "json",
-                data: {
-                    "fpage": fpage,
-                    "epage": epage
-                },
+                data: ajaxdata,
                 success: function(data) {
                     for (var i = 0; i < data.length; i++) {
-                       var dynamicTag = null;
+            
+
+                var dynamicTag = null;
                 if (data[i].user_like == 0) {
                     dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="unlike"style="background-color: rgb(255, 255, 255);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
                 } else {
@@ -99,15 +114,24 @@ $(document).ready(function() {
              
                 $("#contentList").append(dynamicTag);
               	 if (data[i].img != 0) {
-              	 	  var len=data[i].imglist.length;
-                      for (var j = 0; j < data[i].imglist.length; j++) {
-                      var dyroll='<li><img src="/imggg/'+data[i].imglist[j]+'"></li>'
+              	 	 var len=data[i].imglist.length;
+                     for (var j = 0; j < data[i].imglist.length; j++) {
+                     var dyroll='<li><div style="width:707px"> <img class="im" src="/imggg/'+data[i].imglist[j]+'"></div></li>'
                      var s="#r"+data[i].ID+" ul"
                       $(s).append(dyroll);
+                      var wi=parseInt(len)*707;
+                      $(s).css('width' , wi+"px" )
+                      if(len>1){
+                      	 $(s).next().css('visibility','visible');
+                      	
+                      	 $(s).prev().attr('check_result',len);
+                      }
+                    
                       }
                   }
 
-                    }
+
+            }
                 },
                 error: function(request, error) {
                     alert("fail");
@@ -121,6 +145,29 @@ $(document).ready(function() {
         }
 
     });
+	
+	
+				
+
+
+    //form ='<form class="like" action="#" method ="post"> <input type="hidden" value="'+data[i].ID+'"><input type="submit" value="좋아요"><button>댓글</button></form>'
+	
+	$('#bbs').on("scroll", function() {      
+			var k= $('.modal-dialog.modal-lg').outerHeight(true);
+			
+  		if (k <= $('#bbs').scrollTop() + $(window).height()+0.9) {
+  				  				
+
+  				
+  				commentfpage =commentfpage+10;
+    			commentepage =commentepage+10;
+    			updateComment();
+    			
+  		}
+	});
+
+
+    
 
 
 
@@ -251,7 +298,8 @@ $(document).ready(function() {
        e.stopPropagation()
        	 var last=$(this).prev().prev().attr('check_result');
          var now=$(this).attr('check_result');
-         
+         last =parseInt(last);
+          now =parseInt(now);
        	 if(last>now){
        	  now++;
        	 if(now==1){ //이전버튼 없앰
@@ -278,7 +326,8 @@ $(document).ready(function() {
        e.stopPropagation()
        var last=$(this).attr('check_result');
        var now=$(this).next().next().attr('check_result'); //넥스트는 현재위치 
-      
+       last =parseInt(last);
+       now =parseInt(now);
        if(1<now){
        now--;
         if(now==1){ //이전버튼 없앰
@@ -307,7 +356,7 @@ $(document).ready(function() {
      $("#commentsBtn").click(function() {
      
      var comments = $(this).prev().find("#comment").val();
-    
+      
       $.ajax({
             type: "POST",
             url: "/community/commentsWrite",
@@ -317,13 +366,21 @@ $(document).ready(function() {
                 "comments" : comments
             },
             success: function(data) {
-            	$("#commetsList *").remove();
- 				updateComment();
+            	
+            	commentfpage=1; // 댓글쓸때마다 최신 데이터를 위로올리는작업 
+            	commentepage=10;
+            	
+            	$("#commetsList *").remove();//댓글 리스트 삭제
+ 				updateComment(); 
  				var count =$("#com").text();
  				
  				count++;
  				$("#com").text(count);
- 				  $('#comment').val('');
+ 				$('#comment').val('');
+ 				
+            	
+            	
+            	
             },
             error: function(request, error) {
                 alert("fail");
@@ -365,6 +422,32 @@ $.ajax({
 
         });
 }
+    $("#deleteContent").click(function() {
+    	
+    	$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/community/deleteContent",
+            data: {
+                "bid": modalbbsid
+            },
+            success: function(data) {
+            
+            	alert("게시글이 삭제되었습니다.");
+
+            },
+            error: function(request, error) {
+                alert("fail");
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+
+        });
+		
+		
+		
+		
+
+    });
 
 
 

@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page session="false" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +34,8 @@
     </head>
 
     <body>
+    
+    	
         <!------------------header---------------------------->
          <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
             <div class="container" style=" margin-right: auto; margin-left: auto;">
@@ -47,18 +49,45 @@
                     </div>
                     <div style="display:flex; width:80%; justify-content: space-around;">
 					<div style="width: 50%">
-	                    <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+	                   <!--  <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> -->
                         	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
-                    	</form>
+                    	<!--</form>-->
 					</div>
-					<div style="display: flex;">
+					<c:choose>
+					<c:when test="${not empty sessionScope.login }">  
+					<div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li>
+                          <a class="dropdown-item" href="/community/community">커뮤니티</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/user/logout">로그아웃</a>
+                        </li>
+                    </ul>
+                </div> 
+                </c:when>
+				<c:otherwise> 
+						<div style="display: flex;">
 						<div style="margin: 0 3%">
 						<a href="/user/register"><button class="lib_2cF8aMP lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd lib_q275ObV lib_JZxvQws lib_3RwLEdi lib_yW5-oZX lib_c4bD4Or">회원가입</button></a>
 						</div>
 						<div style="margin: 0 3%">
 						<a href="/user/login"><button class="lib_2cF8aMP lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd lib_q275ObV lib_3-XmGDP lib_12C0HKX lib_3wnZQA7">로그인</button></a>
 						</div>
-					</div>
+					</div> 
+					</c:otherwise>				
+				</c:choose>
+					
+					
 
                     <div hidden="true" class="dropdown text-end" >
                         <a href="#"
@@ -135,9 +164,8 @@
         <!-- -----------------------------visual--------------------------------->
         <div id="visual" style=" height: 270px;">
             <div class="st_1ao2W9y st_Qu5atwI">
-                <a href="#" rel="noopener" target="_blank">
-                    <div
-                        class="st_36gDNqv st_25_T2PJ st_1MDe3Mh st_GnnuqFp st_2-AYUR9 st_jGV698i st_1GuPg4J st_2HqScKh st_2lU9lq1">
+                <a href="/community/community"  >
+                    <div class="st_36gDNqv st_25_T2PJ st_1MDe3Mh st_GnnuqFp st_2-AYUR9 st_jGV698i st_1GuPg4J st_2HqScKh st_2lU9lq1">
                         <div class="st_14mG6N- st_2k2hsCY">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

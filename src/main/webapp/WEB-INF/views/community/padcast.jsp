@@ -85,13 +85,7 @@
                 background-color: #717171;
             }
 
-            /* Fading animation */
-            .fade {
-                -webkit-animation-name: fade;
-                -webkit-animation-duration: 1.5s;
-                animation-name: fade;
-                animation-duration: 1.5s;
-            }
+           
 
             @-webkit-keyframes fade {
                 from {
@@ -161,10 +155,11 @@
                         </div>
                     </div>
                 </div>
-
-                <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+				 <div style="margin-right: 1%">
+                <!--  <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> -->
                         	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
-                    	</form>
+                    	<!--</form>-->
+				</div>
 
 			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                 <div class="dropdown text-end">
@@ -227,17 +222,17 @@
 
                     <div class="slideshow-container">
 
-                        <div class="mySlides fade">
+                        <div class="mySlides ">
                             <div class="numbertext">1 / 3</div>
                             <img src="../../../resources/img/caption1.jpg" style="width:100%">
                         </div>
 
-                        <div class="mySlides fade">
+                        <div class="mySlides ">
                             <div class="numbertext">2 / 3</div>
                             <img src="../../../resources/img/caption2_1.png" style="width:100%">
                         </div>
 
-                        <div class="mySlides fade">
+                        <div class="mySlides ">
                             <div class="numbertext">3 / 3</div>
                             <img src="../../../resources/img/caption3.jpg" style="width:100%">
                         </div>

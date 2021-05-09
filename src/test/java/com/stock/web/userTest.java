@@ -247,7 +247,7 @@ public class userTest {
 	public void ListTest2()
 	{
 		
-		List<CommunityDto> list=service.getList(1,10);
+		List<CommunityDto> list=service.getList(1,10,"222");
 		JSONObject jsonObj1 = new JSONObject();
 
 		jsonObj1.put("session", "kkk");
@@ -371,6 +371,42 @@ public class userTest {
 		
 		service.writeComment(com);
 		
+		//service.write(com);
+	
+	
+	
+	}
+	@Test
+	public void searchList()
+	{
+		
+		List<CommunityDto> list=mapper.searchList(1,10,"222", "¿À·ù");
+	
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		
+		log.info(jsonArray);
+	
+		
+		
+
+		//service.write(com);
+	
+	
+	
+	}
+	@Test
+	public void myContnetList()
+	{
+		
+		List<CommunityDto> list=mapper.myContentList(1,10,"asd");
+	
+		JSONArray jsonArray = JSONArray.fromObject(list);
+		
+		log.info(jsonArray);
+	
+		
+		
+
 		//service.write(com);
 	
 	
