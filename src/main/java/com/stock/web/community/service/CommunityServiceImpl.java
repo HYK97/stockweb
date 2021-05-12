@@ -149,6 +149,12 @@ public class CommunityServiceImpl implements CommunityService {
 		}
 		return list;
 	}
+
+	@Override
+	public int deleteContent(Long ID) {
+		// TODO Auto-generated method stub
+		return mapper.deleteContent(ID);
+	}
 	
 
 

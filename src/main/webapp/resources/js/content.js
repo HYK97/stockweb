@@ -44,7 +44,6 @@ $(document).ready(function() {
 			
             for (var i = 0; i < data.length; i++) {
             
-
                 var dynamicTag = null;
                 if (data[i].user_like == 0) {
                     dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="unlike"style="background-color: rgb(255, 255, 255);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
@@ -423,17 +422,34 @@ $.ajax({
         });
 }
     $("#deleteContent").click(function() {
+    	var listc=$(this).parent().parent().parent().parent().parent().find('.rolul div').children();
+    	var imglist=[];
+    	if(listc.length>0){
+    	for(i=0;i<listc.length;i++){
+    		var f=listc[i].src;  
+    		f=String(f).substr(28); //앞의 경로제거
+    		imglist.push(f);
+    		}
+    	}else{
+    		imglist.push("null");
+    	}
+    	
     	
     	$.ajax({
             type: "POST",
             dataType: "json",
             url: "/community/deleteContent",
             data: {
-                "bid": modalbbsid
+                "ID": parseInt(modalbbsid),
+                "imglist" : imglist
             },
             success: function(data) {
-            
+            	if(data=="0"){            	
+            	alert("게시글 삭제 실패.");
+            	}else{
             	alert("게시글이 삭제되었습니다.");
+            	location.reload();
+            	}
 
             },
             error: function(request, error) {

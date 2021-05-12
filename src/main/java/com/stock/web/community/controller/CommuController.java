@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -187,6 +188,52 @@ public class CommuController {
 		return "1";
 	
 	}
+	
+	@PostMapping("deleteContent")
+	@ResponseBody
+	public String deleteContent(HttpSession session,int ID, @RequestParam(value="imglist[]",required = false)List<String> imglist)
+	{
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+			
+		}else{
+			user=(UserDto) session.getAttribute("login");
+			session.setAttribute("login",session.getAttribute("login"));
+		}
+		
+		log.info("데이터 확인용 ========================================"+ID);
+		for(String k : imglist)
+			log.info("데이터 확인용 ========================================"+k);
+		if(!imglist.get(0).equals("null")) {
+		for(int i=0;i<imglist.size();i++) {
+			String path = "D:\\lgcns 2021-1\\spring\\stock1\\file";
+			path=path+"\\"+imglist.get(i);
+			log.info(path);
+			File file =new File(path);
+			Boolean check =file.delete();
+			
+			if(!check) {
+				log.info("실패");
+				return "0";
+			}
+				
+		}
+		}
+		
+		int result=service.deleteContent(Long.valueOf(ID));
+		log.info("확인ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"+result);
+		if(result!=0)
+		{
+			return "1";
+		}else {
+			return "0";
+		}
+	
+	
+	}
+	
 	
 	
 	
