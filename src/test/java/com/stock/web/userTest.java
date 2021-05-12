@@ -412,6 +412,25 @@ public class userTest {
 	
 	
 	}
+	@Test
+	public void deleteContent()
+	{
+		
+
+		int result =service.deleteContent(44L);
+	
+		
+		
+		log.info(result);
+	
+		
+		
+
+		//service.write(com);
+	
+	
+	
+	}
 	
 	
 	

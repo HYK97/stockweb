@@ -301,9 +301,8 @@ FROM   (SELECT ROWNUM num,
   
   
   
-   <delete id="deleteContent" >
-   
-  
+   <delete id="deleteContent">
+  	DELETE FROM bbs WHERE id = #{ID}
   </delete>
    <select id="ContentimgList" >
    
