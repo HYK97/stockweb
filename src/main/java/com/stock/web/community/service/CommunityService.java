@@ -25,4 +25,5 @@ public interface CommunityService {
 	public int deleteContent(Long ID);
 	public int deleteComment(Comments com);
 	public int modifyComment(Comments com);
+	public void updateContent(CommunityDto com);
 }

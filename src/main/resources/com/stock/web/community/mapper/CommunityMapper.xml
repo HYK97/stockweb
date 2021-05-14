@@ -48,6 +48,21 @@
         }
     </insert>
     
+    
+    <parameterMap id="update" type="hashmap">
+    <parameter property="v_user_id" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_content" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_hash_title" mode="IN" jdbcType="VARCHAR" javaType="java.lang.String" />
+    <parameter property="v_hash_count" mode="IN" jdbcType="NUMERIC" javaType="java.lang.Integer" />
+    <parameter property="v_bbs_id" mode="IN" jdbcType="NUMERIC" javaType="java.lang.Long"/>
+</parameterMap>
+    
+    <insert id="updateContent" statementType="CALLABLE" parameterMap="update">
+        {CALL 
+            update_pr (?,?,?,?,?)
+        }
+    </insert>
+    
    <insert id="insertImage" parameterType="hashMap">
      <foreach collection="list" item="i"  separator=" " open="INSERT ALL" close="SELECT * FROM SYS.DUAL">
    	INTO image (

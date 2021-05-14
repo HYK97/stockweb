@@ -28,5 +28,6 @@ public interface CommunityMapper {
 	public int deleteContent(@Param("ID")Long ID);
 	public int deleteComment(Comments com);
 	public int updateComment(Comments com);
+	public void updateContent(Map<String ,Object> update);
 	
 }	

@@ -168,6 +168,28 @@ public class CommunityServiceImpl implements CommunityService {
 		return mapper.updateComment(com);
 		
 	}
+
+	@Override
+	public void updateContent(CommunityDto com) {
+		log.info("데이터 확인 ---------------------"+com.toString());
+		// TODO Auto-generated method stub
+		Map<String ,Object> map =new HashMap<String, Object>();
+		map.put("v_user_id", com.getUSER_ID());
+		map.put("v_content", com.getCONTENT());
+		map.put("v_hash_title", com.getHASHTAG());
+		map.put("v_hash_count", com.getCOUNT());
+		map.put("v_bbs_id",com.getID());
+		mapper.updateContent(map);
+		if(!com.getImglists().isEmpty())
+		{
+		log.info(com.getImglists().toString());
+		Map<String ,Object> map2 =new HashMap<String, Object>();
+		map2.put("list", com.getImglists());
+		map2.put("bbs_id", map.get("v_bbs_id"));
+		mapper.insertImage(map2);
+		}
+		
+	}
 	
 
 
