@@ -155,6 +155,19 @@ public class CommunityServiceImpl implements CommunityService {
 		// TODO Auto-generated method stub
 		return mapper.deleteContent(ID);
 	}
+
+	@Override
+	public int deleteComment(Comments com) {
+		// TODO Auto-generated method stub
+		return mapper.deleteComment(com);
+	}
+
+	@Override
+	public int modifyComment(Comments com) {
+		// TODO Auto-generated method stub
+		return mapper.updateComment(com);
+		
+	}
 	
 
 

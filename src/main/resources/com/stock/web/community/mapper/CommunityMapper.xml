@@ -304,9 +304,22 @@ FROM   (SELECT ROWNUM num,
    <delete id="deleteContent">
   	DELETE FROM bbs WHERE id = #{ID}
   </delete>
+   <delete id="deleteComment">
+  	DELETE FROM comments WHERE comment_id = #{comment_id}
+  </delete>
+  <update id="updateComment">
+  	UPDATE comments
+		SET
+		    comment_content = #{comments},
+		    comment_writedate = SYSDATE
+		WHERE
+		    comment_id = #{comment_id}
+    
+  </update>
+  
    <select id="ContentimgList" >
    
   
-  </select>
+   </select>
 
 </mapper>	

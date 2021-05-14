@@ -23,4 +23,6 @@ public interface CommunityService {
 	public List<CommunityDto> myContentList(@Param("fpage")int fpage,@Param("epage")int epage,@Param("user")String user);
 	public List<CommunityDto> likeContent(@Param("fpage")int fpage,@Param("epage")int epage,@Param("user")String user);
 	public int deleteContent(Long ID);
+	public int deleteComment(Comments com);
+	public int modifyComment(Comments com);
 }

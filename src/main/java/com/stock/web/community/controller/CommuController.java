@@ -189,6 +189,36 @@ public class CommuController {
 	
 	}
 	
+	
+	@PostMapping("updateComment")
+	@ResponseBody
+	public String updateComment(HttpSession session,Comments com)
+	{
+		
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+			
+		}else{
+			user=(UserDto) session.getAttribute("login");
+			session.setAttribute("login",session.getAttribute("login"));
+		}
+		com.setUSER_ID(user.getId());
+		log.info("汽戚斗 溌昔遂 ========================================"+com.toString());
+		
+		int result=service.modifyComment(com);
+		log.info("溌昔ししししししししししししししし"+result);
+		if(result!=0)
+		{
+			return "1";
+		}else {
+			return "0";
+		}
+	
+	}
+	
+	
 	@PostMapping("deleteContent")
 	@ResponseBody
 	public String deleteContent(HttpSession session,int ID, @RequestParam(value="imglist[]",required = false)List<String> imglist)
@@ -223,6 +253,22 @@ public class CommuController {
 		}
 		
 		int result=service.deleteContent(Long.valueOf(ID));
+		log.info("溌昔ししししししししししししししし"+result);
+		if(result!=0)
+		{
+			return "1";
+		}else {
+			return "0";
+		}
+	
+	
+	}
+	
+	@PostMapping("deleteComment")
+	@ResponseBody
+	public String deleteComment(HttpSession session,Comments com)
+	{
+		int result=service.deleteComment(com);
 		log.info("溌昔ししししししししししししししし"+result);
 		if(result!=0)
 		{
