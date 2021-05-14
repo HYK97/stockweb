@@ -99,7 +99,7 @@
     	<div>
         <!-- 글자 -->
       
-        <label id="session" hidden="true">${sessionScope.login }</label>
+        <label id="session" hidden="true">${sessionScope.login.id }</label>
         <!------------------header---------------------------->
         <header class="p-3 mb-3 border-bottom" style="z-index: 2;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
         <div class="container" style="position: sticky; margin-right: auto; margin-left: auto;">

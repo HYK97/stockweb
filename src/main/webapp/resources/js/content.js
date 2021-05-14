@@ -353,7 +353,7 @@ $(document).ready(function() {
      
      
      $("#commentsBtn").click(function() {
-     
+      $("#commentsBtn").attr("disabled", true);
      var comments = $(this).prev().find("#comment").val();
       
       $.ajax({
@@ -408,7 +408,12 @@ $.ajax({
             },
             success: function(data) {
                 for (var i = 0; i < data.length; i++) {
-                    var dynamicTag = '<div class="mb-3"><div class="mb-3"><div class="mb-3"><img src="../../../resources/img/velog.png"alt="mdo"width="32"height="32"class="rounded-circle"><label id="comments-author"for="recipient-name"class="col-form-label"style="margin: 1%;">' + data[i].USER_ID + '</label><label id="comments-date"for="recipient-name"class="col-form-label"style="font-size: 8;color: gray;font-style: italic;">' + data[i].writedate + '</label><c:if test="${sessionScope.login.id == ' + data[i].USER_ID + '  }"><button style="margin:0 1%" id="comdelete">삭제</button><button id="comupdate">수정</button></c:if></div><div class="mb-3"><div id="modal-comment">' + data[i].comments + '</div></div></div></div>'                    
+                
+                	if(sessionData==data[i].USER_ID){
+                    var dynamicTag = '<div class="mb-3 divComment"><div class="mb-3"><div class="mb-3"><img src="../../../resources/img/velog.png"alt="mdo"width="32"height="32"class="rounded-circle"><label id="comments-author"for="recipient-name"class="col-form-label"style="margin: 1%;">' + data[i].USER_ID + '</label><label id="comments-date"for="recipient-name"class="col-form-label"style="font-size: 8;color: gray;font-style: italic;">' + data[i].writedate + '</label><button style="margin:0 1%" class="btn btn-danger" id="comdelete" value="'+data[i].comment_id+'">삭제</button><button id="comupdate" class="btn btn-info" value="'+data[i].comment_id+'">수정</button></div><div class="mb-3"><div id="modal-comment">' + data[i].comments + '</div></div></div></div>'                    
+                	}else{
+                	var dynamicTag = '<div class="mb-3 divComment"><div class="mb-3"><div class="mb-3"><img src="../../../resources/img/velog.png"alt="mdo"width="32"height="32"class="rounded-circle"><label id="comments-author"for="recipient-name"class="col-form-label"style="margin: 1%;">' + data[i].USER_ID + '</label><label id="comments-date"for="recipient-name"class="col-form-label"style="font-size: 8;color: gray;font-style: italic;">' + data[i].writedate + '</label></div><div class="mb-3"><div id="modal-comment">' + data[i].comments + '</div></div></div></div>'                    
+                	}
                     $("#commetsList").append(dynamicTag);
                 }
 
@@ -458,6 +463,40 @@ $.ajax({
             }
 
         });
+
+
+    });
+  $(document).on('click', '#comdelete', function(e) {
+    	var cid=$(this).val();
+    	var comcount=$(this).parent().parent().parent().parent().parent().parent().find('#com');
+    	var buf=comcount.text();
+    
+    	$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/community/deleteComment",
+            data: {
+                "comment_id": parseInt(cid),
+            },
+            success: function(data) {
+            	if(data=="0"){            	
+            	alert("댓글 삭제 실패")
+            	}else{
+            	$("#commetsList *").remove();//댓글 리스트 삭제
+            	commentfpage=1; // 댓글쓸때마다 최신 데이터를 위로올리는작업 
+            	commentepage=10;
+            	updateComment();
+            	buf=buf-1;
+            	comcount.text(buf);
+            	}
+
+            },
+            error: function(request, error) {
+                alert("fail");
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+
+        });
 		
 		
 		
@@ -465,6 +504,63 @@ $.ajax({
 
     });
 
+ $(document).on('input', '#commentUpdateInput', function(e) {
+        if ($("#commentUpdateInput").val() == '')
+            $("#updateCommentBtn").attr("disabled", true);
+        else
+            $("#updateCommentBtn").attr("disabled", false);
+    });
 
+$(document).on('click', '#comupdate', function(e) {
+    	var cid=$(this).val();
+    	var text=$(this).parent().parent().find("#modal-comment").text();
+    	
+    	var dynamicTag = '<div class="mb-3"><input type="text"class="form-control"id="commentUpdateInput"value="'+text+'"required=""></div><button id="updateCommentBtn"type="button"class="btn btn-primary"value="'+cid+'">수정하기</button><button id="updateCancel" style="margin-left: 1%" class="btn btn-danger">취소</button>'
+        $(this).parent().parent().parent().replaceWith(dynamicTag)
+    });
+    
+ $(document).on('click', '#updateCancel', function(e) {
+    	$("#commetsList *").remove();//댓글 리스트 삭제
+            	commentfpage=1; // 댓글쓸때마다 최신 데이터를 위로올리는작업 
+            	commentepage=10;
+            	updateComment();
+    	
+    });
+    
+    $(document).on('click', '#updateCommentBtn', function(e) {
+    	var comments=$(this).parent().parent().find('#commentUpdateInput').val();
+    	var cid=$(this).val();
+    	$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/community/updateComment",
+            data: {
+                "comments" : comments,
+                "comment_id" : parseInt(cid)
+            },
+            success: function(data) {
+            	if(data=="0"){            	
+            	alert("댓글 수정 실패")
+            	}else{
+            	$("#commetsList *").remove();//댓글 리스트 삭제
+            	commentfpage=1; // 댓글쓸때마다 최신 데이터를 위로올리는작업 
+            	commentepage=10;
+            	updateComment();
+            
+            	}
+
+            },
+            error: function(request, error) {
+                alert("fail");
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+
+        });
+    	
+    });
+    
+    
+    
+    
 
 });
