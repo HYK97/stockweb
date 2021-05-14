@@ -164,7 +164,7 @@
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
+                            <a id="headerWrite" class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -202,7 +202,7 @@
 			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			      </div>
 			      <div class="modal-body" >
-			        <form action="/community/write" method="post"  enctype="multipart/form-data" >
+			        <form id="writeForm" action="/community/write" method="post"  enctype="multipart/form-data" >
 			          <div class="mb-3">
 			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
 			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
@@ -215,6 +215,7 @@
 			          <div class="mb-3">
 			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
 			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 #으로 구분"  >
+			            <input type="hidden" class="form-control" id="formID" name="ID" value="">
 			          </div>
 			          <div class="mb-3">
 			          
@@ -275,6 +276,7 @@
 			         <div id="modal-contents">
 			         	
       				 </div>
+      				
       				  </div>
       				 <div class="mroller roller">
       				 </div>

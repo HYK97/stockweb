@@ -301,7 +301,7 @@ public class CommuController {
 			user=(UserDto) session.getAttribute("login");
 		}
 		
-		
+		log.info("해시태그 " +com.getHASHTAG());
 		if(com.getHASHTAG()!="" || com.getHASHTAG().isEmpty()) {
 		com.setHASHTAG(com.getHASHTAG().replaceAll("\\p{Z}",""));
 		com.setUSER_ID(user.getId());
@@ -336,6 +336,68 @@ public class CommuController {
 		}
 		log.info("컨트롤럿------"+com.getImglists().toString());
 		service.write(com);
+		session.setAttribute("login",session.getAttribute("login"));
+		if(referer.equals("http://localhost:8080/user/myWrite")||referer.equals("http://localhost:8080/user/likeContent"))
+		{
+			return "redirect:/user/myWrite";
+		}else {
+			return "redirect:/community/community";
+			
+		} 
+	}
+	
+	@PostMapping("updateContent")
+	public String updateContent(HttpServletRequest request,CommunityDto com,HttpSession session,List<MultipartFile> uploadFile)
+	{
+		String referer = request.getHeader("Referer");
+	
+		log.info("이전페이지 확인 ---------------------"+referer);
+		com.setImglists(new ArrayList<imagesDto>());
+		String path = "D:\\lgcns 2021-1\\spring\\stock1\\file";
+		
+		UserDto user=new UserDto();			
+		if(session.getAttribute("login")==null) {
+			user.setId("");
+			return "redirect:/user/login";
+		}else{
+			user=(UserDto) session.getAttribute("login");
+		}
+		
+		
+		if(com.getHASHTAG()!="" || com.getHASHTAG().isEmpty()) {
+		com.setHASHTAG(com.getHASHTAG().replaceAll("\\p{Z}",""));
+		com.setUSER_ID(user.getId());
+		com.setCOUNT(StringUtils.countMatches(com.getHASHTAG(), "#"));
+		}else {
+			com.setCOUNT(0);
+		}
+		log.info("수정empty : " + uploadFile.get(0).isEmpty());
+
+		if(!uploadFile.get(0).isEmpty()) {
+		for(MultipartFile multipartFile : uploadFile) {
+			
+			log.info("----------수정----------");
+			log.info("Upload File Name : " + multipartFile.getOriginalFilename());
+			log.info("Upload File size : " + multipartFile.getSize());
+			UUID uuid = UUID.randomUUID();
+			String uploadFileName = multipartFile.getOriginalFilename();
+			String uploadFileUuid= uuid.toString() + "_" + uploadFileName;
+			File saveFile = new File(path, uploadFileUuid);
+			imagesDto img=new imagesDto();
+			img.setFileName(uploadFileUuid);
+			img.setFileId(uuid.toString());
+		
+			com.getImglists().add(img);
+		try {
+			multipartFile.transferTo(saveFile);
+
+		} catch(Exception e) {
+			log.error(e.getMessage());;
+		}
+		}
+		}
+		log.info("수정 컨트롤러------"+com.getImglists().toString());
+		service.updateContent(com);
 		session.setAttribute("login",session.getAttribute("login"));
 		if(referer.equals("http://localhost:8080/user/myWrite")||referer.equals("http://localhost:8080/user/likeContent"))
 		{

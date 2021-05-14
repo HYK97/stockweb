@@ -150,16 +150,10 @@
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#bbs">확인용 </a>
+                            <a id="headerWrite" class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
+                          
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">알람</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
-                        </li>
-                        <li>
+                      	<li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
@@ -195,7 +189,7 @@
 			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			      </div>
 			      <div class="modal-body" >
-			        <form action="/community/write" method="post"  enctype="multipart/form-data" >
+			        <form id="writeForm" action="/community/write" method="post"  enctype="multipart/form-data" >
 			          <div class="mb-3">
 			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
 			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
