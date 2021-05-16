@@ -1,0 +1,95 @@
+
+#likebtn {
+  text-align:center;
+  height:100px;
+  margin:0 auto;
+  position: relative;
+}
+
+#likes {
+  cursor:pointer;
+  padding:10px 12px 8px;
+  background:#fff;
+  border-radius:50%;
+  display:inline-block;
+  color:#b0b4b4;
+  transition:.2s;
+}
+.skyblue svg:hover
+{
+	  animation: up 0.5s forwards;
+}
+#likes:hover {
+  color:rgb(253, 129, 129);
+}
+
+#likes:before {
+  font-family:fontawesome;
+  content:'\f004';
+  font-style:normal;
+}
+
+#liketag {
+  position: absolute;
+  bottom:45px;
+  left:0;
+  right:190px;
+  visibility: hidden;
+  transition:.6s;
+  z-index:1;
+  font-size:2px;
+  color:transparent;
+  font-weight:400;
+}
+.mfooter #liketag {
+  position: absolute;
+  bottom:45px;
+  left:0;
+  right:210px;
+  visibility: hidden;
+  transition:.6s;
+  z-index:1;
+  font-size:2px;
+  color:transparent;
+  font-weight:400;
+}
+
+#likes.press {
+  animation: size .4s;
+  color:#e23b3b;
+  background-color:rgb(255, 168, 168);
+}
+
+#liketag.press {
+  bottom:70px;
+  font-size:14px;
+  visibility:visible;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {color:#transparent;}
+  50% {color:#e23b3b;}
+  100% {color:#transparent;}
+}
+
+@keyframes up {
+	
+	 from {
+     0% {fill:#b0b4b4;}
+  50% {fill:#a3bac3;}
+  100% {fill:#87ceeb;}
+  }
+  to{
+  fill:#87ceeb;
+  }
+}
+
+@keyframes size {
+  0% {padding:10px 12px 8px;background-color:rgb(255, 221, 221);}
+  50% {padding:14px 16px 12px;  
+    margin-top:-4px;
+    background-color:rgb(253, 191, 191);}
+  100% {padding:10px 12px 8px;background-color:rgb(255, 168, 168);}
+ 
+}

@@ -13,9 +13,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
       	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  		<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="../../../resources/css/like.css">
+        <style media="" data-href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	 	@font-face{font-family:'FontAwesome';src:url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/../fonts/fontawesome-webfont.eot?v=4.2.0");
+	 	src:url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0") format('embedded-opentype'),url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/../fonts/fontawesome-webfont.woff?v=4.2.0") format('woff'),url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/../fonts/fontawesome-webfont.ttf?v=4.2.0") format('truetype'),url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format('svg');
+	 	font-weight:normal;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}</style>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
@@ -241,6 +246,10 @@
 			</div>
 			
 			
+			
+			
+		
+			
 			 <div class="modal fade bs-example-modal-lg" id="bbs" tabindex="-1" aria-labelledby="bbs" aria-hidden="true" >
 			  <div class="modal-dialog modal-lg">
 			    <div class="modal-content">
@@ -272,11 +281,10 @@
 							</div>	
 													
 			          </div>
-			          <div class="mb-3">
+			           <div class="mb-3">
 			         <div id="modal-contents">
 			         	
       				 </div>
-      				
       				  </div>
       				 <div class="mroller roller">
       				 </div>
@@ -287,13 +295,9 @@
       				 
       				 
       				 
-      				 <div class="mb-3">
-      				 <div id="rep-like" style="display:flex;align-items: center; ">
-      				 	<div id="likebtns"></div>
-			             <label id="like" class="col-form-label"> </label>
-			             <label  class="col-form-label">댓글 </label>
-			             <label id="com" class="col-form.btn-label"> </label>
-			          </div>  
+      				 <div id="modalcount" class="mb-3">
+      				 
+      				 	
 			          </div> 
 			          <hr>
 					<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->		
