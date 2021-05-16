@@ -9,10 +9,7 @@
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&amp;display=swap"
             rel="stylesheet">
             <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"

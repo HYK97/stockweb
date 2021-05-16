@@ -46,10 +46,10 @@ $(document).ready(function() {
             
                 var dynamicTag = null;
                 if (data[i].user_like == 0) {
-                    dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="unlike"style="background-color: rgb(255, 255, 255);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
+                    dynamicTag = '<div class="contents"style="overflow-x: hidden; border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div class="contentMain" style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="text-align: center; position: relative;align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn" value="' + data[i].ID + '"><i id="likes"></i><span id="liketag">liked!</span></div><label class="likecount" style="font-family: fantasy;font-size: 13px;color: rgb(255, 168, 168);margin: 0 10% 0 1%;">' + data[i].LIKECOUNT + '</label><div class="skyblue" style=" width: 30px; height: 30px; "><svg  viewbox="0 0 24 24" aria-hidden="true" style=" fill: #b0b4b4; width: 20px; margin: 6px 9px 0 0; "><g><path d="M 14.046 2.242 l -4.148 -0.01 h -0.002 c -4.374 0 -7.8 3.427 -7.8 7.802 c 0 4.098 3.186 7.206 7.465 7.37 v 3.828 c 0 0.108 0.044 0.286 0.12 0.403 c 0.142 0.225 0.384 0.347 0.632 0.347 c 0.138 0 0.277 -0.038 0.402 -0.118 c 0.264 -0.168 6.473 -4.14 8.088 -5.506 c 1.902 -1.61 3.04 -3.97 3.043 -6.312 v -0.017 c -0.006 -4.367 -3.43 -7.787 -7.8 -7.788 z m 3.954 5.758 c -1.134 0.96 -4.862 3.405 -6.833 -4.214 V 16.67 c 0 -0.414 -0.167 -9.67 -0.75 -0.75 h 0.75 c -3.66 0 -6.318 -2.476 -0.915 1.08 c 0 -3.534 2.768 -6.302 4 -2 l 4.147 0.01 h 0.002 c 3.532 0 -5.149 -1.01 -7.149 -5.01 c -0.003 1.91 -0.942 3.844 -2.514 5.176 z"></path></g></svg></div><label style="font-family: fantasy;font-size: 13px;color: skyblue;margin: 0 10% 0 1%;" class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
                 } else {
-                    dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="like"style="background-color: rgb(255, 255, 0);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
-                }
+                	dynamicTag = '<div class="contents"style="overflow-x: hidden;border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div class="contentMain" style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="text-align: center; position: relative;align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn" value="' + data[i].ID + '"><i id="likes" class="press"></i><span class="press" id="liketag">liked!</span></div><label class="likecount" style="font-family: fantasy;font-size: 13px;color: rgb(255, 168, 168);margin: 0 10% 0 1%;">' + data[i].LIKECOUNT + '</label><div class="skyblue" style=" width: 30px; height: 30px; "><svg viewbox="0 0 24 24" aria-hidden="true" style=" fill: #b0b4b4; width: 20px; margin: 6px 9px 0 0; "><g><path d="M 14.046 2.242 l -4.148 -0.01 h -0.002 c -4.374 0 -7.8 3.427 -7.8 7.802 c 0 4.098 3.186 7.206 7.465 7.37 v 3.828 c 0 0.108 0.044 0.286 0.12 0.403 c 0.142 0.225 0.384 0.347 0.632 0.347 c 0.138 0 0.277 -0.038 0.402 -0.118 c 0.264 -0.168 6.473 -4.14 8.088 -5.506 c 1.902 -1.61 3.04 -3.97 3.043 -6.312 v -0.017 c -0.006 -4.367 -3.43 -7.787 -7.8 -7.788 z m 3.954 5.758 c -1.134 0.96 -4.862 3.405 -6.833 -4.214 V 16.67 c 0 -0.414 -0.167 -9.67 -0.75 -0.75 h 0.75 c -3.66 0 -6.318 -2.476 -0.915 1.08 c 0 -3.534 2.768 -6.302 4 -2 l 4.147 0.01 h 0.002 c 3.532 0 -5.149 -1.01 -7.149 -5.01 c -0.003 1.91 -0.942 3.844 -2.514 5.176 z"></path></g></svg></div><label style="font-family: fantasy;font-size: 13px;color: skyblue;margin: 0 10% 0 1%;" class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
+                	  }
               
              
                 $("#contentList").append(dynamicTag);
@@ -105,9 +105,9 @@ $(document).ready(function() {
 
                 var dynamicTag = null;
                 if (data[i].user_like == 0) {
-                    dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="unlike"style="background-color: rgb(255, 255, 255);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
+                     dynamicTag = '<div class="contents"style="overflow-x: hidden;border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div class="contentMain" style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="text-align: center; position: relative; align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn" value="' + data[i].ID + '"><i id="likes"></i><span id="liketag">liked!</span></div><label class="likecount" style="font-family: fantasy;font-size: 13px;color: rgb(255, 168, 168);margin: 0 10% 0 1%;">' + data[i].LIKECOUNT + '</label><div style=" width: 30px; height: 30px; "><svg class="skyblue" viewbox="0 0 24 24" aria-hidden="true" style=" fill: #b0b4b4; width: 20px; margin: 6px 9px 0 0; "><g><path d="M 14.046 2.242 l -4.148 -0.01 h -0.002 c -4.374 0 -7.8 3.427 -7.8 7.802 c 0 4.098 3.186 7.206 7.465 7.37 v 3.828 c 0 0.108 0.044 0.286 0.12 0.403 c 0.142 0.225 0.384 0.347 0.632 0.347 c 0.138 0 0.277 -0.038 0.402 -0.118 c 0.264 -0.168 6.473 -4.14 8.088 -5.506 c 1.902 -1.61 3.04 -3.97 3.043 -6.312 v -0.017 c -0.006 -4.367 -3.43 -7.787 -7.8 -7.788 z m 3.954 5.758 c -1.134 0.96 -4.862 3.405 -6.833 -4.214 V 16.67 c 0 -0.414 -0.167 -9.67 -0.75 -0.75 h 0.75 c -3.66 0 -6.318 -2.476 -0.915 1.08 c 0 -3.534 2.768 -6.302 4 -2 l 4.147 0.01 h 0.002 c 3.532 0 -5.149 -1.01 -7.149 -5.01 c -0.003 1.91 -0.942 3.844 -2.514 5.176 z"></path></g></svg></div><label style="font-family: fantasy;font-size: 13px;color: skyblue;margin: 0 10% 0 1%;" class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
                 } else {
-                    dynamicTag = '<div class="contents"style="border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;overflow:auto;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn"><button check_result="like"style="background-color: rgb(255, 255, 0);"class="btn like"value="' + data[i].ID + '">좋아요</button></div><label class="likecount">' + data[i].LIKECOUNT + '</label><label>댓글수:</label><label class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
+                	dynamicTag = '<div class="contents"style="overflow-x: hidden;border-radius: 8px; border: 1px solid #dbdbdb;/* border: teal; *//* background-color: yellow; */display: flex;width: inherit;margin: 50px 0;"value="' + data[i].ID + '"><div style="border-right: 1px solid #dbdbdb;/* background-color: blue; */"><div style="border-radius: 4rem; background-color: hotpink; width: 50px; height: 50px; margin: 20px;  "><img src="../../../resources/img/velog.png"alt="mdo"width="51"height="51"class="rounded-circle"></div></div><div class="contentMain" style="flex-grow: 7;/* border: 1px solid #dbdbdb; *//* background-color: red; */justify-content: space-between;display: flex;flex-direction: column;"><div style="text-align: left;margin-bottom: 10px;"><label hidden="true"id="bid">' + data[i].ID + '</label><label class="context-author" style="margin-right:1%">' + data[i].USER_ID + '</label><label id="context-date"style="font-size: 8;color: gray;font-style: italic;">' + data[i].WRITEDATE + '</label></div><div style="text-align: left;/* background-color: wheat; */border-top: 1px solid #dbdbdb;margin-bottom: 10px;"><label for="">' + data[i].CONTENT + '</label></div><div id="r'+data[i].ID+'" class="roller"><button class="preB" ></button><ul class="rolul"></ul><button class="nextB" check_result="1"></button></div><div class="hashtags" style="text-align: left;color: skyblue;"><label for="">' + data[i].HASHTAG + '</label></div><div class="footer"style="text-align: center; position: relative;align-items: center;justify-content: center;display:flex;border-top: 1px solid #dbdbdb;/* background-color: green; */height: 50PX;margin-top: 20px;"><div class="likebtn" value="' + data[i].ID + '"><i id="likes" class="press"></i><span class="press" id="liketag">liked!</span></div><label class="likecount" style="font-family: fantasy;font-size: 13px;color: rgb(255, 168, 168);margin: 0 10% 0 1%;">' + data[i].LIKECOUNT + '</label><div style=" width: 30px; height: 30px; "><svg class="skyblue" viewbox="0 0 24 24" aria-hidden="true" style=" fill: #b0b4b4; width: 20px; margin: 6px 9px 0 0; "><g><path d="M 14.046 2.242 l -4.148 -0.01 h -0.002 c -4.374 0 -7.8 3.427 -7.8 7.802 c 0 4.098 3.186 7.206 7.465 7.37 v 3.828 c 0 0.108 0.044 0.286 0.12 0.403 c 0.142 0.225 0.384 0.347 0.632 0.347 c 0.138 0 0.277 -0.038 0.402 -0.118 c 0.264 -0.168 6.473 -4.14 8.088 -5.506 c 1.902 -1.61 3.04 -3.97 3.043 -6.312 v -0.017 c -0.006 -4.367 -3.43 -7.787 -7.8 -7.788 z m 3.954 5.758 c -1.134 0.96 -4.862 3.405 -6.833 -4.214 V 16.67 c 0 -0.414 -0.167 -9.67 -0.75 -0.75 h 0.75 c -3.66 0 -6.318 -2.476 -0.915 1.08 c 0 -3.534 2.768 -6.302 4 -2 l 4.147 0.01 h 0.002 c 3.532 0 -5.149 -1.01 -7.149 -5.01 c -0.003 1.91 -0.942 3.844 -2.514 5.176 z"></path></g></svg></div><label style="font-family: fantasy;font-size: 13px;color: skyblue;margin: 0 10% 0 1%;" class="commentsCount">' + data[i].commentcount + '</label></div></div></div>';
                 }
               
              
@@ -170,35 +170,24 @@ $(document).ready(function() {
 
 
 
-    $(document).on('click', '.btn.like', function(e) {
-
+    $(document).on('click', '.likebtn', function(e) {
+		var check =  $(this).find("#likes").attr('class');
         e.stopPropagation()
         if (sessionData == "") {
             alert('로그인해주세요');
             return false;
         } else {
-            var check = $(this).attr('check_result');
-
-            var mainlike = parseInt($(this).parent().next().text());
-            if ($(this).attr('check_result') == "like") {
-
-                $(this).css({
-                    "background-color": "white"
-                });
-
-                $(this).parent().next().text(mainlike - 1);
-                $(this).attr('check_result', 'unlike');
+            $(this).find("#likes,#liketag").toggleClass( "press" );
+            var mainlike = parseInt($(this).next().text());
+            
+            if (check == "press") {
+                $(this).next().text(mainlike - 1);
             } else {
-
-                $(this).css({
-                    "background-color": "yellow"
-                });
-
-                $(this).parent().next().text(mainlike + 1);
-                $(this).attr('check_result', 'like');
+                $(this).next().text(mainlike + 1);
             }
+           
 
-            var k = $(this).val();
+            var k = $(this).attr("value");
             $.ajax({
                 type: "POST",
                 dataType: "json",
@@ -228,13 +217,14 @@ $(document).ready(function() {
 
   
     $(document).on('click', '.contents', function(e) {
+   		 e.stopPropagation();
     	commentfpage = 1;
     	commentepage = 10;
         click = this;
         $("#commetsList *").remove();
         $("#likebtns *").remove();
         e.stopPropagation();
-        modalbbsid=$(this).find('.btn.like').val();
+        modalbbsid=$(this).attr('value');
   
 		var roller =$(this).find(".roller").children();
 		var rollerc =roller.clone();
@@ -242,11 +232,10 @@ $(document).ready(function() {
         var Condate = $(this).children().eq(1).children().eq(0).children().eq(2).text();
         var Cocontent = $(this).children().eq(1).children().eq(1).children().eq(0).text();
         var Cohashtag = $(this).find('.hashtags').text();
-        var Colike = $(this).find('.likecount').text();
-        var Cocomment = $(this).find('.commentsCount').text();
-        var clone = $(this).find('.btn.like');
+        var clone = $(this).find('.footer');
         var btn = clone.clone();
-        var bid = $(this).children().eq(1).children().eq(0).children().eq(0).text();
+        btn.attr('class','mfooter');
+   
         updateComment();
 		
 		$('.mroller.roller').prepend(rollerc);
@@ -254,9 +243,7 @@ $(document).ready(function() {
         $('#comments-date').text(Condate);
         $('#modal-contents').text(Cocontent);
         $('#modal-hash').text(Cohashtag);
-        $('#like').text(Colike);
-        $('#com').text(Cocomment);
-        $('#likebtns').prepend(btn);
+        $('#modalcount').prepend(btn);
         $('.modal-content').attr('value',modalbbsid);
         $('#bbs').modal('show');
 
@@ -265,24 +252,22 @@ $(document).ready(function() {
 
 
     $('#bbs').on('hidden.bs.modal', function() {
-        var like = $(this).find('#like').text();
-        var comment = $(this).find('#com').text();
-        var btn = $(this).find('#likebtns').clone(); //복사
-        var mainl = $(click).find('.likecount');
-        var mainc = $(click).find('.commentsCount');
-        var mainbtn = $(click).find('.likebtn');
+       
+        
+        var btn = $(this).find('.mfooter').clone(); //복사
+        $(this).find('#modalcount').empty();
+        btn.attr('class','footer');
         var roller = $(this).find('.mroller.roller');
         //  var maindiv=$(click).find('.likebtn');
-        var div = $(click).find('.footer');
-        mainl.text(like);
-        mainc.text(comment);
-        mainbtn.remove();
+        $(click).find('.footer').remove();
+        $(click).find('.contentMain').append(btn);
+    
+       
         roller.empty();
-         $("#commentsBtn").attr("disabled", true);
+        $("#commentsBtn").attr("disabled", true);
         $('#comment').val('');
-        btn.removeAttr('id');
-        btn.attr('class', 'likebtn');
-        div.prepend(btn);
+       
+       
 
     });
 
@@ -354,8 +339,8 @@ $(document).ready(function() {
      
      $("#commentsBtn").click(function() {
       $("#commentsBtn").attr("disabled", true);
-     var comments = $(this).prev().find("#comment").val();
-      
+      var comments = $(this).prev().find("#comment").val();
+      var label=$(this).parent().parent().parent().parent().parent().find('.commentsCount')
       $.ajax({
             type: "POST",
             url: "/community/commentsWrite",
@@ -371,10 +356,11 @@ $(document).ready(function() {
             	
             	$("#commetsList *").remove();//댓글 리스트 삭제
  				updateComment(); 
- 				var count =$("#com").text();
+ 				
+ 				var count =label.text();
  				
  				count++;
- 				$("#com").text(count);
+ 				label.text(count);
  				$('#comment').val('');
  				
             	
@@ -468,7 +454,7 @@ $.ajax({
     });
   $(document).on('click', '#comdelete', function(e) {
     	var cid=$(this).val();
-    	var comcount=$(this).parent().parent().parent().parent().parent().parent().find('#com');
+    	var comcount=$(this).parent().parent().parent().parent().parent().parent().find('.commentsCount');
     	var buf=comcount.text();
     
     	$.ajax({
@@ -585,6 +571,6 @@ $(document).on('click', '#comupdate', function(e) {
 		 $('#exampleModal').find('#writeForm').attr('action','/community/write');
     });
     
-  
+   
 
 });
