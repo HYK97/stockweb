@@ -1,6 +1,7 @@
 package com.stock.web;
 
 import java.awt.font.ImageGraphicAttribute;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -430,6 +431,44 @@ public class userTest {
 	
 	
 	
+	}
+	
+	
+	@Test
+	public void upjong(){
+		String URL1 = "https://finance.naver.com/sise/sise_group.nhn?type=upjong";
+		String URL2 = "https://finance.naver.com/sise/theme.nhn";
+		String URL3 = "https://finance.naver.com/sise/sise_group.nhn?type=group";
+		Document doc1 = null;
+		Document doc2 = null;
+		Document doc3 = null;
+		Elements content1;
+		Elements content2;
+		Elements content3;
+		JsonObject jsonobject = new JsonObject();
+			try {
+				doc1 = Jsoup.connect(URL1).get();
+				doc2 = Jsoup.connect(URL2).get();
+				doc3 = Jsoup.connect(URL3).get();
+				content1 = doc1.select("#contentarea_left");//원하는 태그 선택
+				content2 = doc2.select("#contentarea_left");//원하는 태그 선택
+				content3 = doc3.select("#contentarea_left");//원하는 태그 선택
+				
+				
+				jsonobject.addProperty("html1",content1.html().toString());
+				jsonobject.addProperty("html2",content2.html().toString());
+				jsonobject.addProperty("html3",content3.html().toString());
+				log.info(jsonobject.toString());
+				
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+						
+			
+			
+
 	}
 	
 	

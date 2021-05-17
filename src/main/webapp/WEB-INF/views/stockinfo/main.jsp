@@ -12,7 +12,9 @@
       	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   		<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link data-chunk="app" rel="stylesheet" href="../../../resources/css/naver.css">
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../resources/js/stock.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
@@ -114,7 +116,6 @@
             
             .box{ -ms-overflow-style: none; } .box::-webkit-scrollbar{ display:none; }
 
-
         </style>
     </head>
     <body>
@@ -130,10 +131,10 @@
                     <div style="margin-bottom: 1.5%;">
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" style="display: flex; justify-content: space-around;">
                             <li>
-                                <a href="/stockinfo/main" class="nav-link px-2 link-dark">주요시세정보</a>
+                                <a href="/stockinfo/main" class="nav-link px-2 link-secondary">주요시세정보</a>
                             </li>
                             <li>
-                                <a href="/community/padcast" class="nav-link px-2 link-secondary">팟캐스트</a>
+                                <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
                             </li>
                             <li>
                                 <a href="/community/community" class="nav-link px-2 link-dark">커뮤니티</a>
@@ -203,158 +204,36 @@
             <div  class="row">
                 <div class="col-lg-3">
 
-                    <h1 class="my-4">팟캐스트</h1>
+                    <h1 class="my-4">주요시세정보</h1>
                     <div class="list-group">
                         <a id="list1" class="list-group-item">
-                            국내 주식
+                            업종별 시세
                         </a>
                         <a id="list2" class="list-group-item">
-                            해외 주식
+                            테마별 시세
                         </a>
                         <a id="list3" class="list-group-item">
-                            인터넷방송
+                            그룹별 시세
                         </a>
                     </div>
 
                 </div>
 
-                <div id="one" class="col-lg-9">
+            <div id="one" class="col-lg-9">
 
-                    <div class="slideshow-container">
-
-                        <div class="mySlides ">
-                            <div class="numbertext">1 / 3</div>
-                            <img src="../../../resources/img/caption1.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">2 / 3</div>
-                            <img src="../../../resources/img/caption2_1.png" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">3 / 3</div>
-                            <img src="../../../resources/img/caption3.jpg" style="width:100%">
-                        </div>
-
-                    </div>
-                    <br>
-
-                    <div style="text-align:center">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcats1.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">시황맨</a>
-                                    </h4>
-                                    <h5>#경제</h5>
-                                    <p class="card-text">국내 증시, 해외 증시 시황을 이해하기 쉽게 전달해 드립니다.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts2.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">블록킹</a>
-                                    </h4>
-                                    <h5>#가상화폐 #블록체인</h5>
-                                    <p class="card-text">블록체인과 관련된 여러가지 주제들을 알기 쉽게 설명드리고 해당 주제들을 가지고 이야기를 나눕니다.</p>
-                                    비트코인, 이더리움, ICO 과 같은 주제들을 다룹니다. 한 주의 핫 이슈들을 소개합니다.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts3.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">미국주식에 미치다</a>
-                                </h4>
-                                <h5>#해외주식 #미국주식</h5>
-                                <p class="card-text">국내유일의 미국주식전문팟캐스트.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts4.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">절제주식투자연구소</a>
-                                </h4>
-                                <h5>#경제 #종목분석</h5>
-                                <p class="card-text">증시시황, 종목분석 등 매우 높은 수준의 주식 콘텐츠를 무료로 제공합니다.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts5.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
-                                </h4>
-                                <h5>#경제</h5>
-                                <p class="card-text">국내외 경제이슈 및 투자전략, 종목분석까지~ 주식투자의 모든 것!!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts6.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">비트코인 시황 분석 및 블록체인 정보 - 불롱체인</a>
-                                </h4>
-                                <h5>#블록체인 #가상화폐</h5>
-                                <p class="card-text">한국 대표 블록체인 전문 언론사인 한국블록체인뉴스에서 가상자산에 대한 정확한 정보 전달 및 뉴스를 쉽게
-                                    풀이하여 전달하고자 '불롱체인'이란 방송을 기획하였습니다.</p>
-                                방송명에서 '불'은 상승장의 의미인 영어 'bull'을 의미하며 '롱'은 bull 장에서 매수하여 상승을 기대하는것이 'long'이란 의미이기에
-                                블록체인의 상승을 기대하는 의미를 담고 있습니다.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
+                  
+				
             </div>
             <!-- /.row -->
 
-        </div>
         
-		<div hidden id="two" class="col-lg-9">
-			<div>sssssssssssss이거</div>
+        
+		<div hidden="true" id="two" class="col-lg-9">
+			
+		</div>
+		
+		<div hidden="true" id="three" class="col-lg-9">
+			
 		</div>
     </div>
 </div>
@@ -680,29 +559,7 @@
 
 
 <script>
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-}
-slideIndex++;
-if (slideIndex > slides.length) {
-    slideIndex = 1
-}
-for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i]
-        .className
-        .replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-dots[slideIndex - 1].className += " active";
-setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
 
 $('#list1').click( function() {
 	$('#one').removeAttr('hidden');

@@ -49,7 +49,7 @@
                     <div style="margin-bottom: 1.5%;">
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" style="display: flex; justify-content: space-around;">
                             <li>
-                                <a href="#" class="nav-link px-2 link-dark">종목별등락</a>
+                                <a href="/stockinfo/main" class="nav-link px-2 link-dark">주요시세정보</a>
                             </li>
                             <li>
                                 <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
