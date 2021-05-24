@@ -15,6 +15,7 @@
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/naver.css">
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
         <script src="../../../resources/js/stock.js"></script>
+        <link rel="shortcut icon" href="../../../resources/img/logo.png"> 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
@@ -137,6 +138,9 @@
                                 <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
                             </li>
                             <li>
+                                <a href="/stockinfo/guide" class="nav-link px-2 link-dark">주식가이드</a>
+                            </li>
+                            <li>
                                 <a href="/community/community" class="nav-link px-2 link-dark">커뮤니티</a>
                             </li>
                             <li>
@@ -145,7 +149,7 @@
                         </ul>
                     </div>
                     <div style="justify-content: space-around;display: flex;border-top: 1px solid #dee2e6; height: 60px">
-                        <div style="display: flex; justify-content: center; align-items: center;   border-left: 1px solid #dee2e6; border-radius: 1.5em;  border-right: 1px solid #dee2e6;">                   
+                       <div style="display: flex; justify-content: center; align-items: center;  border-radius: 1.5em;  ">     
                             <button id="sliderBtn" style="background :transparent; border-color: transparent;" check_result="stop">
                                 <img style="width: 20px;" src="../../../resources/img/stop.png" alt="">
                             </button>
