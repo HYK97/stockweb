@@ -8,12 +8,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../../../resources/img/logo.png"> 
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
       	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   		<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+  		<link rel="shortcut icon" href="../../../resources/img/logo.png"> 
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link data-chunk="app" rel="stylesheet" href="../../../resources/css/wids.css">
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../resources/js/stock.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
@@ -114,7 +116,15 @@
             }
             
             .box{ -ms-overflow-style: none; } .box::-webkit-scrollbar{ display:none; }
-
+            
+            .k {
+			  display: none;
+ 		      width: 150px;
+  			  top: 100%;
+			  left: -1px;
+			  z-index: 1;
+			  text-align: left;
+			}
 
         </style>
     </head>
@@ -134,10 +144,10 @@
                                 <a href="/stockinfo/main" class="nav-link px-2 link-dark">주요시세정보</a>
                             </li>
                             <li>
-                                <a href="/community/padcast" class="nav-link px-2 link-secondary">팟캐스트</a>
+                                <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
                             </li>
                             <li>
-                                <a href="/stockinfo/guide" class="nav-link px-2 link-dark">주식가이드</a>
+                                <a href="/stockinfo/guide" class="nav-link px-2 link-secondary">주식가이드</a>
                             </li>
                             <li>
                                 <a href="/community/community" class="nav-link px-2 link-dark">커뮤니티</a>
@@ -148,7 +158,7 @@
                         </ul>
                     </div>
                     <div style="justify-content: space-around;display: flex;border-top: 1px solid #dee2e6; height: 60px">
-                        <div style="display: flex; justify-content: center; align-items: center;  border-radius: 1.5em;  ">                   
+                       <div style="display: flex; justify-content: center; align-items: center;  border-radius: 1.5em;  ">     
                             <button id="sliderBtn" style="background :transparent; border-color: transparent;" check_result="stop">
                                 <img style="width: 20px;" src="../../../resources/img/stop.png" alt="">
                             </button>
@@ -207,158 +217,333 @@
             <div  class="row">
                 <div class="col-lg-3">
 
-                    <h1 class="my-4">팟캐스트</h1>
+                    <h1 class="my-4">주식 가이드</h1>
                     <div class="list-group">
-                        <a id="list1" class="list-group-item">
-                            국내 주식
-                        </a>
-                        <a id="list2" class="list-group-item">
-                            해외 주식
-                        </a>
-                        <a id="list3" class="list-group-item">
-                            인터넷방송
-                        </a>
+                    	<ul>
+	                    	<li class="list-group-item"><a>주식가이드 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						      <ul class="k">
+						        <li><a href="#">증권계좌 만들기</a></li>
+						        <li><a href="#">차트 보는방법1</a></li>
+						        <li><a href="#">차트 보는방법2</a></li>
+						      </ul>
+						    </li>
+						    <li class="list-group-item"><a>주식사전 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						      <ul class="k">
+						        <li><a href="#">매수</a></li>
+						        <li><a href="#">매도</a></li>
+						        <li><a href="#">기타</a></li>
+						      </ul>
+						    </li>
+	                       
+                    	</ul>
                     </div>
 
                 </div>
 
-                <div id="one" class="col-lg-9">
-
-                    <div class="slideshow-container">
-
-                        <div class="mySlides ">
-                            <div class="numbertext">1 / 3</div>
-                            <img src="../../../resources/img/caption1.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">2 / 3</div>
-                            <img src="../../../resources/img/caption2_1.png" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">3 / 3</div>
-                            <img src="../../../resources/img/caption3.jpg" style="width:100%">
-                        </div>
-
-                    </div>
-                    <br>
-
-                    <div style="text-align:center">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcats1.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">시황맨</a>
-                                    </h4>
-                                    <h5>#경제</h5>
-                                    <p class="card-text">국내 증시, 해외 증시 시황을 이해하기 쉽게 전달해 드립니다.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts2.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">블록킹</a>
-                                    </h4>
-                                    <h5>#가상화폐 #블록체인</h5>
-                                    <p class="card-text">블록체인과 관련된 여러가지 주제들을 알기 쉽게 설명드리고 해당 주제들을 가지고 이야기를 나눕니다.</p>
-                                    비트코인, 이더리움, ICO 과 같은 주제들을 다룹니다. 한 주의 핫 이슈들을 소개합니다.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts3.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">미국주식에 미치다</a>
-                                </h4>
-                                <h5>#해외주식 #미국주식</h5>
-                                <p class="card-text">국내유일의 미국주식전문팟캐스트.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts4.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">절제주식투자연구소</a>
-                                </h4>
-                                <h5>#경제 #종목분석</h5>
-                                <p class="card-text">증시시황, 종목분석 등 매우 높은 수준의 주식 콘텐츠를 무료로 제공합니다.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts5.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
-                                </h4>
-                                <h5>#경제</h5>
-                                <p class="card-text">국내외 경제이슈 및 투자전략, 종목분석까지~ 주식투자의 모든 것!!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts6.png" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">비트코인 시황 분석 및 블록체인 정보 - 불롱체인</a>
-                                </h4>
-                                <h5>#블록체인 #가상화폐</h5>
-                                <p class="card-text">한국 대표 블록체인 전문 언론사인 한국블록체인뉴스에서 가상자산에 대한 정확한 정보 전달 및 뉴스를 쉽게
-                                    풀이하여 전달하고자 '불롱체인'이란 방송을 기획하였습니다.</p>
-                                방송명에서 '불'은 상승장의 의미인 영어 'bull'을 의미하며 '롱'은 bull 장에서 매수하여 상승을 기대하는것이 'long'이란 의미이기에
-                                블록체인의 상승을 기대하는 의미를 담고 있습니다.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
+            <div id="one" class="col-lg-9">
+				     <div class="wcommunity-section1">
+								
+								</div>
+								<div class="wcommunity-detail-content">
+									<div class="inner-contents">
+										
+										<h3><strong>'증권계좌'란?</strong></h3>
+										<hr>
+										<p>
+											와디즈에서 하는 크라우드 펀딩 투자형 투자는 투자해 주시는 만큼 발행기업의 지분을 증권으로 받게 됩니다. 투자하는 프로젝트가 '주식형'이나 '채권형'인 경우, 최종 배정자로 선정되시면 그 증권을 온라인으로 투자자님 본인의 증권계좌에 입고시켜 드리고 있습니다.
+										</p>
+										<p>
+											즉, 투자 배정 후에 <span style="color: rgb(226, 80, 65);">증권을 받기 위해서는 '증권계좌'</span>가 있어야 합니다 :)
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											<img src="https://cdn.wadiz.kr/ft/images/green001/2016/1024/20161024121315527_69.png/wadiz/format/jpg/quality/80/optimize" class="fr-dii">
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											증권계좌 개설 방법은 은행이나 증권사로 방문해서 개설하거나, 온라인(비대면 실명인증)을 통해 개설할 수 있습니다.
+										</p>
+										<p>
+											오늘은 <strong><span style="color: rgb(226, 80, 65);">직접 은행(증권사)에 방문해서 발급하는 방법</span></strong>을 알려드릴게요!
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>두근두근, 은행 방문</strong></h3>
+										<hr>
+										<p>
+											일단 무작정 신분증만 달랑 들고 은행으로 찾아갔습니다!
+										</p>
+										<p>
+											막상 은행으로 들어가려고 하니 '다른 서류가 더 필요하다고 하면 어쩌지', '주식 왜 하냐고 물어보면 어쩌지??잘못했다고 빌어야 되나ㅠ.ㅠ' 등 온갖 걱정이 앞섰습니다.
+										</p>
+										<p>
+											그래도 마음을 다잡고 침착하게. 일단 번호표부터 뽑고 기다렸습니다.
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											곧바로 저를 맞이해주시는 친절한 은행원 언니.
+										</p>
+										<p>
+											<img src="https://cdn.wadiz.kr/ft/images/green001/2016/1017/20161017152641231_70.jpg/wadiz/format/jpg/quality/80/optimize" class="fr-dii">
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											계좌 개설은 제 걱정과 달리 너무나 간단하게 개설할 수 있었어요.
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>STEP 1. 증권사 선택</strong></h3>
+										<h3><strong>STEP 2. 계좌개설 신청서 작성</strong></h3>
+										<h3><strong>STEP 3. 비밀번호 생성</strong></h3>
+										<h3><strong>STEP 4. 계좌개설대행 신청서 수령</strong></h3>
+										<p data-empty="true">
+											<br>
+										</p>
+										<hr>
+										<h3><br>
+										</h3>
+										<h3 style="text-align: center;"><strong>STEP 1. 증권사 선택</strong></h3>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(247, 218, 100);">은행원)</span>&nbsp; 무슨 일로 오셨어요?^^</em>
+										</div>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(163, 143, 132);">나)</span>&nbsp; 아.....즈..증권계좌 개설하려고요.</em>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(247, 218, 100);">은행원)</span> 어디 증권사 계좌로 만드실거에요?</em>
+										</div>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(163, 143, 132);">나)</span>&nbsp; **증권으로 개설해주세요.</em>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<h3 style="text-align: center;"><strong>STEP 2. 계좌개설 신청서 작성</strong></h3>
+										<p>
+											<em><img src="https://cdn.wadiz.kr/ft/images/green001/2016/1024/20161024150022901_119.png/wadiz/format/jpg/quality/80/optimize" class="fr-dii"></em>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(247, 218, 100);">은행원)</span> 신분증 보여주시고, 여기 '계좌개설신청서' 한 장만 작성해주세요.</em>
+										</div>
+										<div style="text-align: center;">
+											<em>(작성작성)</em>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<h3 style="text-align: center;"><strong>STEP 3. 비밀번호 생성</strong></h3>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(247, 218, 100);">은행원)</span> 은행원 "비밀번호 4자리 입력해주세요^^</em>
+										</div>
+										<div style="text-align: center;">
+											<em>(입력입력)</em>
+										</div>
+										<div data-empty="true" style="text-align: center;">
+											<br>
+										</div>
+										<h3 style="text-align: center;"><br>
+										</h3>
+										<h3 style="text-align: center;"><strong>STEP 4. 계좌개설대행 신청서 수령하면 끝</strong></h3>
+										<div style="text-align: center;">
+											<em><span style="background-color: rgb(247, 218, 100);">은행원)</span> 개설 완료되었습니다^^ 여기 계좌개설대행신청서 확인해보세요^^</em>
+										</div>
+										<h2 style="text-align: center;"><em><span style="background-color: rgb(163, 143, 132);">나)</span><strong>&nbsp;</strong><strong>&nbsp;</strong>네에에?!?!? &nbsp;벌써 다 된거에요???</em></h2>
+										<h3 style="text-align: center;"><br>
+										</h3>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>첫 증권계좌 발급 완료!</strong></h3>
+										<hr>
+										<p>
+											은행 밖으로 나와보니 채 10분도 걸리지 않은 것 같아요.
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											<img src="https://cdn.wadiz.kr/ft/images/green001/2016/1017/20161017152622092_70.jpg/wadiz/format/jpg/quality/80/optimize" class="fr-dii">
+										</p>
+										<p>
+											짠! 이렇게 저의 첫 증권계좌가 성공적으로 개설되었습니다! (짝짝)
+										</p>
+										<p>
+											계좌개설대행 신청서에서 증권계좌번호와 연계계좌번호 등을 확인할 수 있습니다.
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong><span style="color: rgb(226, 80, 65);">여기서 중요한 팁!!!</span></strong></h3>
+										<p>
+											개설대행 신청서에는 연계계좌번호, 은행계좌번호, 증권사계좌번호 등 다양한 계좌번호가 적혀있어요.
+										</p>
+										<p>
+											이중 <span style="color: rgb(226, 80, 65);">와디즈에 등록하는 '증권계좌번호'는 <strong><u>증권사 계좌번호</u></strong>를 기재</span>해주셔야 합니다.
+										</p>
+										<p>
+											(연계계좌번호, 은행계좌번호를 기재하시면 증권계좌로 인증이 안돼요! 이후 최종 투자자 배정에서 배제될 수 있습니다!)
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<div style="text-align: center;">
+											<img src="https://cdn.wadiz.kr/ft/images/green001/2016/1024/20161024154324663_68.png/wadiz/format/jpg/quality/80/optimize" class="fr-dii" style="width: 100px;">
+										</div>
+										<h1 style="text-align: center;"><strong>Q&amp;A</strong></h1>
+										<h1><br>
+										</h1>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>Q1. 가기 전 준비물?</strong></h3>
+										<hr>
+										<p>
+											증권계좌를 발급하러 가기 전 준비해야 할 점은
+										</p>
+										<p>
+											<img src="https://cdn.wadiz.kr/ft/images/green001/2016/1025/20161025164542090_99.png/wadiz/format/jpg/quality/80/optimize" class="fr-dii">
+										</p>
+										<ul>
+											<li><span style="color: rgb(226, 80, 65);">어떤 증권사, 은행에서 개설할지 결정</span>하고 &nbsp;</li>
+											<li><span style="color: rgb(226, 80, 65);">신분증과 도장</span>(도장 없이 서명도 가능)만 챙겨가면 됩니다.&nbsp;</li>
+										</ul>
+										<p>
+											(저는 도장이 없어서.. 신분증만 챙겨갔어요!ㅎㅎ)
+										</p>
+										<h3><br>
+										</h3>
+										<h3><br>
+										</h3>
+										<h3><strong>Q2. 어떤 증권사에서 만들까요?</strong></h3>
+										<hr>
+										<p>
+											어떤 증권사 선택은 주로<strong>&nbsp;<span style="color: rgb(226, 80, 65);">거래 수수료</span>와 <span style="color: rgb(226, 80, 65);">HTS 성능</span></strong>을 많이 보고 선택합니다.
+										</p>
+										<p>
+											<strong><span style="color: rgb(226, 80, 65);">수수료</span></strong>는 주식 거래할 때마다 거래금액에 따라 증권사별로 다 다릅니다. 종종 무료 수수료 등의 프로모션을 진행하기도 하니 확인해보세요!
+										</p>
+										<p>
+											<strong><span style="color: rgb(226, 80, 65);">HTS</span></strong>는 Home Trading System의 줄임말로, 개인 투자자가 객장에 나가지 않고 집이나 사무실에서 주식 거래를 할 수 있는 프로그램을 말합니다. HTS가 잘 되어 있는 증권사를 이용하면 주식 거래를 더 편하게 할 수 있겠죠? :)
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>&nbsp;Q3. 아무 은행에 가도 되나요?</strong></h3>
+										<hr>
+										<p>
+											<strong><span style="color: rgb(226, 80, 65);">증권사별로 거래할 수 있는 은행이 다릅니다.</span></strong>
+										</p>
+										<p>
+											따라서 증권사를 선택하셨으면 해당 증권사 홈페이지에서 거래 가능한 은행을 확인해주세요!
+										</p>
+										<p>
+											그리고 그중 <span style="color: rgb(226, 80, 65);">인터넷 뱅킹을 사용하고 있는 은행</span>으로 가는 게 좋아요. 증권계좌를 만들 때 기존에 사용하고 있는 은행 계좌(입출금계좌)와 연동시켜주는데요, 그 은행계좌를 통해 청약증거금을 편하게 이체할 수 있기 때문이에요.
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											<span style="color: rgb(26, 188, 156);"><strong>Tip</strong><strong>인터넷 뱅킹이 없다면 꼭 신청하세요!</strong><br>
+											청약증거금 이체는 실시간 계좌이체(인터넷 뱅킹)를 통해서만 가능합니다. 투자자님의 실명인증을 확인할 수 있는 방법이기 때문이에요.</span>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<h3><strong>Q4. 증권계좌 개설하면 카드나 통장은 안 나오나요?</strong></h3>
+										<hr>
+										<p>
+											<strong><span style="color: rgb(226, 80, 65);">카드나 통장도 개설하실 수 있습니다.</span></strong> 개설하실 때 카드나 통장 개설하고 싶다고 말씀하시면 됩니다!
+										</p>
+										<p>
+											증권계좌 카드나 통장으로 <span style="color: rgb(226, 80, 65);">청약증거금 이체</span>하실 수 있습니다. 즉, <span style="color: rgb(226, 80, 65);">청약증거금 이체는 시중 은행계좌, 증권계좌 모두 사용 가능</span>하니 편한 방법으로 이용하시면 됩니다.
+										</p>
+										<p>
+											(저는 연계된 은행계좌를 이용하면 수수료없이 이체할 수 있어서, 증권계좌 카드나 통장을 따로 개설하지 않았어요.)
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p data-empty="true">
+											<br>
+										</p>
+										<p>
+											이렇게 저같은 '금알못'도 전혀 어려움없이 증권계좌를 개설하였으니 여러분들도 증권계좌 한 번 개설해보세요 ;)
+										</p>
+									</div>
+									<div class="attach-list">
+										<ul>
+										</ul>
+									</div>
+								</div>
+							</div>
+                  
+				
             </div>
             <!-- /.row -->
 
-        </div>
         
-		<div hidden id="two" class="col-lg-9">
-			<div>sssssssssssss이거</div>
+        
+		<div hidden="true" id="two" class="col-lg-9">
+			
+		</div>
+		
+		<div hidden="true" id="three" class="col-lg-9">
+			
 		</div>
     </div>
 </div>
@@ -684,29 +869,7 @@
 
 
 <script>
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-}
-slideIndex++;
-if (slideIndex > slides.length) {
-    slideIndex = 1
-}
-for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i]
-        .className
-        .replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-dots[slideIndex - 1].className += " active";
-setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
 
 $('#list1').click( function() {
 	$('#one').removeAttr('hidden');

@@ -85,6 +85,18 @@ public class StockInfoController {
 			
 			
 	}
+	@GetMapping("guide")
+	public void guide(HttpSession session)
+	{				
+			if(session.getAttribute("login")==null) {
+				
+			}else{
+				
+				session.setAttribute("login",session.getAttribute("login"));
+			}
+			
+			
+	}
 	
 
 	

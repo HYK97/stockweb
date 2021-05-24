@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+var url =window.location.pathname;
+if(url=="/stockinfo/main"){
     $.ajax({
         type: "POST",
         url: "/stockinfo/data",
@@ -37,6 +38,19 @@ $(document).ready(function() {
         }
 
     });
+    };
+  
+  
+    $(".list-group-item").hover(function() {
+    var isHovered = $(this).is(":hover");
+  if (isHovered) {
+    $(this).children("ul").stop().slideDown(300);
+  } else {
+    $(this).children("ul").stop().slideUp(300);
+  }
+ });
+
+  
     
 
     

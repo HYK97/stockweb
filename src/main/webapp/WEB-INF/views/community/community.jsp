@@ -10,6 +10,7 @@
 			</script>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="../../../resources/img/logo.png">      
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../resources/css/like.css">
@@ -122,6 +123,9 @@
                                 <a href="/community/padcast" class="nav-link px-2 link-dark">팟캐스트</a>
                             </li>
                             <li>
+                                <a href="/stockinfo/guide" class="nav-link px-2 link-dark">주식가이드</a>
+                            </li>
+                            <li>
                                 <a href="/community/community" class="nav-link px-2 link-secondary">커뮤니티</a>
                             </li>
                             <li>
@@ -130,7 +134,7 @@
                         </ul>
                     </div>
                     <div style="justify-content: space-around;display: flex;border-top: 1px solid #dee2e6; height: 60px">
-                        <div style="display: flex; justify-content: center; align-items: center;   border-left: 1px solid #dee2e6; border-radius: 1.5em;  border-right: 1px solid #dee2e6;">                   
+                         <div style="display: flex; justify-content: center; align-items: center;  border-radius: 1.5em;  ">     
                             <button id="sliderBtn" style="background :transparent; border-color: transparent;" check_result="stop">
                                 <img style="width: 20px;" src="../../../resources/img/stop.png" alt="">
                             </button>

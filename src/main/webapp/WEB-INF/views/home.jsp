@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
       	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      	<link rel="shortcut icon" href="../../../resources/img/logo.png"> 
   		<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
@@ -336,19 +337,16 @@
                                 class="lib_3U9ewX1 lib_pmnolf8 lib_3UzYkI9 lib_24UXSFj lib_2p_jTmF lib_23WxpCB lib_2gU77Qd"
                                 style="text-align: left">
                                 <li>
-                                    <a href="#" rel="noopener" target="_blank">회사소개</a>
+                                    <a href="/companyinfo/about" rel="noopener" target="_blank">회사소개</a>
                                 </li>
                                 <li>
                                     <a href="#">개인정보처리방침</a>
                                 </li>
                                 <li>
-                                    <a href="#" rel="noopener" target="_blank">1대1 문의하기</a>
-                                </li>
-                                <li>
                                     <a href="#">모범사례</a>
                                 </li>
                                 <li>
-                                    <a href="#" rel="noopener" target="_blank">블로그</a>
+                                    <a href="https://velog.io/@ddh963963" rel="noopener" target="_blank">블로그</a>
                                 </li>
                                 <li>
                                     <a href="#" rel="noopener" target="_blank">개발자</a>
@@ -357,7 +355,7 @@
                                     <a href="#">공지사항</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank">자주하는질문</a>
+                                    <a href="/companyinfo/helpdesk" target="_blank">고객센터</a>
                                 </li>
                                 <li>
                                     <a href="#">이용약관</a>
@@ -366,7 +364,7 @@
                                     <a href="#">조건</a>
                                 </li>
                                 <li>
-                                    <a class="lib_1Nq1Qic lib_3RwLEdi" href="#">광고문의</a>
+                                   <a class="lib_1Nq1Qic lib_3RwLEdi" href="mailto:ddh963963@naver.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">광고문의</font></font></a>
                                 </li>
                             </ul>
                         </div>
@@ -407,32 +405,37 @@
                         </div>
                     </form>
                     <div class="lib_3Kvwi5g lib_3UzYkI9 lib_iAc2fkL lib_24UXSFj lib_lPsmyQd">
-                        <ul
-                            class="lib_VbRVgfB lib_3UzYkI9 lib_iAc2fkL lib_2p_jTmF lib_23WxpCB lib_2gU77Qd lib_2S7tmc- lib_65XwjLA lib_1XCy-SC">
-
-                            <li>
-                                <a href="#" rel="noopener" target="_blank">
-                                    <svg
-                                        class="lib_1e7YeD3 lib_3NGW_J6 lib_2jbIWTp lib_2bmVxh4 lib_1LUBAjF"
-                                        height="100%"
-                                        viewbox="0 0 512 512"
-                                        width="100%">
-                                        <path
-                                            d="M463.7450866699219,0.000020274907981408406 h-416.2419128417969 q-20.198352813720703,0 -33.841270446777344,14.790528711004299 t-13.66191577911377,34.33447827361488 v414.85442975873957 q0,20.13102589680966 13.66191577911377,33.72846710481417 t33.841270446777344,13.616376042606134 h207.2279052734375 v-223.7138508632961 h-64.71833801269531 v-63.915535695623475 h64.71833801269531 v-32.55431443641601 q0,-39.656040624818615 28.19788932800293,-67.17286062272524 t66.80847930908203,-27.516822835011 h64.71833801269531 v64.50261202982256 h-64.71833801269531 q-13.072876930236816,0 -22.858531951904297,9.771974781305289 t-9.804656982421875,22.195263320911636 v32.55431443641601 h95.0063705444336 l-13.072876930236816,62.135371858424605 h-79.57733917236328 v223.7138508632961 h144.29566955566406 q19.590314865112305,0 33.556251525878906,-13.616376042606134 t13.946935653686523,-33.72846710481417 v-414.85442975873957 q0,-19.525013309456767 -13.946935653686523,-34.33447827361488 t-33.556251525878906,-14.790528711004299 z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" rel="noopener" target="_blank"><img
+                    	
+                        <ul class="lib_VbRVgfB lib_3UzYkI9 lib_iAc2fkL lib_2p_jTmF lib_23WxpCB lib_2gU77Qd lib_2S7tmc- lib_65XwjLA lib_1XCy-SC">
+							        <li>
+							            <a href="https://twitter.com/" rel="noopener" target="_blank" class="lib_3j2aFgq lib_1LUBAjF lib_3Bez1rH lib_2jbIWTp lib_3kUdsG1">
+							                <i class="lib_3f0Solj lib_AHwHgd8"></i>
+							            </a>
+							        </li>
+							        <li>
+							            <a href="https://www.instagram.com/" rel="noopener" target="_blank" class="lib_3j2aFgq lib_1LUBAjF lib_3Bez1rH lib_2jbIWTp lib_3kUdsG1">
+							                <i class="lib_aGamf0f lib_AHwHgd8"></i>
+							            </a>
+							        </li>
+							        <li>
+							            <a href="https://facebook.com/" rel="noopener" target="_blank">
+							                <svg class="lib_1e7YeD3 lib_3NGW_J6 lib_2jbIWTp lib_2bmVxh4 lib_1LUBAjF" height="100%" viewbox="0 0 512 512" width="100%">
+							                    <path d="M463.7450866699219,0.000020274907981408406 h-416.2419128417969 q-20.198352813720703,0 -33.841270446777344,14.790528711004299 t-13.66191577911377,34.33447827361488 v414.85442975873957 q0,20.13102589680966 13.66191577911377,33.72846710481417 t33.841270446777344,13.616376042606134 h207.2279052734375 v-223.7138508632961 h-64.71833801269531 v-63.915535695623475 h64.71833801269531 v-32.55431443641601 q0,-39.656040624818615 28.19788932800293,-67.17286062272524 t66.80847930908203,-27.516822835011 h64.71833801269531 v64.50261202982256 h-64.71833801269531 q-13.072876930236816,0 -22.858531951904297,9.771974781305289 t-9.804656982421875,22.195263320911636 v32.55431443641601 h95.0063705444336 l-13.072876930236816,62.135371858424605 h-79.57733917236328 v223.7138508632961 h144.29566955566406 q19.590314865112305,0 33.556251525878906,-13.616376042606134 t13.946935653686523,-33.72846710481417 v-414.85442975873957 q0,-19.525013309456767 -13.946935653686523,-34.33447827361488 t-33.556251525878906,-14.790528711004299 z"></path>
+							                </svg>
+							            </a>
+							        </li>
+							        <li>
+                                <a href="https://www.apple.com/kr/app-store/" rel="noopener" target="_blank"><img
                                     class="lib_2oZJc-h lib_2CZJ9Xf"
                                     src="https://s3.amazonaws.com/st-assets/production/new-web/badge-apple.png"></a>
                             </li>
                             <li>
-                                <a href="#" rel="noopener" target="_blank"><img
+                                <a href="https://play.google.com/store" rel="noopener" target="_blank"><img
                                     class="lib_2oZJc-h lib_2CZJ9Xf"
                                     src="https://s3.amazonaws.com/st-assets/production/new-web/badge-android.png"></a>
-                            </li>
-                        </ul>
+                            </li> </ul>
+                          
+                       
                     </div>
                 </div>
             </div>
