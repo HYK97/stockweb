@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko" class="wf-lato-n3-active wf-lato-n4-active wf-lato-n5-active wf-lato-i3-active wf-lato-i1-active wf-lato-i2-active wf-lato-i4-active wf-lato-i5-active wf-lato-n1-active wf-lato-n2-active wf-lato-n6-active wf-lato-n7-active wf-lato-i8-active wf-lato-i9-active wf-lato-i6-active wf-lato-i7-active wf-lato-n8-active wf-lato-n9-active wf-active Chrome Chrome90 cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform translated-ltr cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform">
-    <head>
+<html style="overflow-x: hidden;" lang="ko" class="wf-lato-n3-active wf-lato-n4-active wf-lato-n5-active wf-lato-i3-active wf-lato-i1-active wf-lato-i2-active wf-lato-i4-active wf-lato-i5-active wf-lato-n1-active wf-lato-n2-active wf-lato-n6-active wf-lato-n7-active wf-lato-i8-active wf-lato-i9-active wf-lato-i6-active wf-lato-i7-active wf-lato-n8-active wf-lato-n9-active wf-active Chrome Chrome90 cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform translated-ltr cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform cssanimations csstransitions no-touchevents js_active vc_desktop vc_transform vc_transform"><head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="format-detection" content="telephone=no">
         <title>Jutipia 정보</title>
-        <script async="" src="//www.google-analytics.com/analytics.js"></script>
+        <script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script>
         <script async="" src="//www.google-analytics.com/analytics.js"></script>
         <script async="" src="//www.google-analytics.com/analytics.js"></script>
         <script type="text/javascript">
@@ -21,6 +20,8 @@
                 height: 100%;
                 margin: 0;
                 padding: 0
+                
+
             }
             .page-preloader {
                 top: 0;
@@ -767,7 +768,7 @@
         <link rel="stylesheet" id="ms-main-css" href="https://about.stocktwits.com/wp-content/plugins/masterslider/public/assets/css/masterslider.main.css?ver=3.2.2" type="text/css" media="all">
         <link rel="stylesheet" id="ms-custom-css" href="https://about.stocktwits.com/wp-content/uploads/masterslider/custom.css?ver=1.7" type="text/css" media="all">
         <script type="text/javascript" src="https://about.stocktwits.com/wp-content/themes/jupiter/assets/js/plugins/wp-enqueue/webfontloader.js?ver=5.7.1" id="mk-webfontloader-js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><script type="text/javascript" id="mk-webfontloader-js-after">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900" media="all"><script type="text/javascript" id="mk-webfontloader-js-after">
             WebFontConfig = {
                 timeout: 2000
             }
@@ -799,8 +800,7 @@
         <script type="text/javascript" src="https://about.stocktwits.com/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.transitions.js?ver=6.7.1" id="layerslider-transitions-js"></script>
         <script type="text/javascript" src="https://about.stocktwits.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.7.2" id="tp-tools-js"></script>
         <script type="text/javascript" src="https://about.stocktwits.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.7.2" id="revmin-js"></script>
-        <meta
-        name="generator" content="Powered by LayerSlider 6.7.1 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress.">
+        <meta name="generator" content="Powered by LayerSlider 6.7.1 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress.">
         <!-- LayerSlider updates and docs at: https://layerslider.kreaturamedia.com -->
         <link rel="https://api.w.org/" href="https://about.stocktwits.com/wp-json/"><link rel="alternate" type="application/json" href="https://about.stocktwits.com/wp-json/wp/v2/pages/11"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://about.stocktwits.com/xmlrpc.php?rsd">
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://about.stocktwits.com/wp-includes/wlwmanifest.xml">
@@ -822,8 +822,7 @@
                 padding: 0 !important;
                 margin: 0 !important;
             }
-        </style><meta
-        name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+        </style><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
         <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://about.stocktwits.com/wp-content/plugins/js_composer_theme/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
         <meta name="generator" content="Powered by Slider Revolution 5.4.7.2 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
         <script type="text/javascript">
@@ -1080,9 +1079,13 @@
                 margin-right: 17px;
             }
         </style>
-    </head>
-    <body
-        class="page-template-default page page-id-11 _masterslider _msp_version_3.2.2 wpb-js-composer js-comp-ver-5.4.5 vc_responsive" itemscope="itemscope" itemtype="https://schema.org/WebPage" data-adminbar="">
+    <style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><style type="text/css">[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}
+@keyframes element-queries { 0% { visibility: inherit; } }</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><style type="text/css">[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}
+@keyframes element-queries { 0% { visibility: inherit; } }</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><style type="text/css">[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}
+@keyframes element-queries { 0% { visibility: inherit; } }</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><style type="text/css">[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}
+@keyframes element-queries { 0% { visibility: inherit; } }</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><style type="text/css">[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}
+@keyframes element-queries { 0% { visibility: inherit; } }</style><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+    <body class="page-template-default page page-id-11 _masterslider _msp_version_3.2.2 wpb-js-composer js-comp-ver-5.4.5 vc_responsive" itemscope="itemscope" itemtype="https://schema.org/WebPage" data-adminbar="">
         <!-- Target for scroll anchors to achieve native browser bahaviour + possible enhancements like smooth scrolling -->
         <div id="top-of-page"></div>
         <div id="mk-boxed-layout">
@@ -1092,7 +1095,9 @@
                         <div class="mk-header-inner add-header-height">
                             <div class="mk-header-bg "></div>
                             <div class="mk-grid header-grid">
-                                <div class="mk-header-nav-container one-row-style menu-hover-style-1" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+                                <div class="mk-header-nav-container one-row-style menu-hover-style-1" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" style="
+    /* margin-top: 20; */
+">
                                     <nav class="mk-main-navigation js-main-nav">
                                         <ul id="menu-main-menu" class="main-navigation-ul dropdownJavascript">
                                             <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home no-mega-menu">
@@ -1102,14 +1107,8 @@
                                                     </font>
                                                 </a>
                                             </li>
-                                            <li id="menu-item-337" class="menu-item menu-item-type-post_type menu-item-object-page no-mega-menu">
-                                                <a class="menu-item-link js-smooth-scroll" href="/companyinfo/history">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">연혁</font>
-                                                    </font>
-                                                </a>
-                                            </li>
-                                            <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11 current_page_item no-mega-menu">
+                                            <li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-288 current_page_item no-mega-menu"><a class="menu-item-link js-smooth-scroll" href="/companyinfo/history"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">연혁</font></font></a></li>
+                                            <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page no-mega-menu">
                                                 <a class="menu-item-link js-smooth-scroll" href="/companyinfo/contact">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">회사정보</font>
@@ -1168,311 +1167,111 @@
                     <div class="master-holder-bg-holder">
                         <div id="theme-page-bg" class="master-holder-bg js-el"></div>
                     </div>
-                    <div class="mk-main-wrapper-holder">
+                    <div class="mk-main-wrapper-holder" style="
+    height: 200px;
+">
                         <div id="mk-page-id-11" class="theme-page-wrapper mk-main-wrapper mk-grid full-layout no-padding">
                             <div class="theme-content no-padding" itemprop="mainEntityOfPage">
-                                <div class="mk-page-section-wrapper" data-mk-full-width="true" data-mk-full-width-init="true" data-mk-stretch-content="true" style="position: relative; box-sizing: border-box; width: 1342px; left: -106px;">
-                                    <div id="page-section-2" class="mk-page-section self-hosted full_layout full-width-2 js-el js-master-row center-y mk-in-viewport" data-intro-effect="false">
-                                        <div class="mk-page-section-inner">
-                                            <div class="mk-video-color-mask"></div>
-                                            <div class="mk-section-preloader js-el" data-mk-component="Preloader" style="display: none;">
-                                                <div class="mk-section-preloader__icon"></div>
-                                            </div>
-                                            <div class="background-layer-holder">
-                                                <div id="background-layer--2" data-mk-lazyload="false" class="background-layer mk-background-stretch none-blend-effect js-el" data-mk-component="Parallax" data-parallax-config="{&quot;speed&quot; : 0.3 }" data-mk-img-set="{&quot;landscape&quot;:{&quot;desktop&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/contact-us.jpg&quot;,&quot;tablet&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/contact-us-1024x768.jpg&quot;,&quot;mobile&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/contact-us-736x414.jpg&quot;},&quot;responsive&quot;:&quot;true&quot;}" mk-img-loaded="" style="background-image: url(&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/contact-us.jpg&quot;); background-attachment: scroll; will-change: transform; transform: translateY(376.5px) translateZ(0px);">
-                                                    <div class="mk-color-layer"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="page-section-content vc_row-fluid mk-grid ">
-                                            <div class="mk-padding-wrapper wpb_row">
-                                                <div class="vc_col-sm-12 wpb_column column_container   _ height-full">
-                                                    <h2 id="fancy-title-4" class="mk-fancy-title  simple-style   color-single">
-                                                        <span>
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">당신을 기다립니다</font>
-                                                                </font>
-                                                                <span style="color: #00baff;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">.</font>
-                                                                    </font>
-                                                                </span>
-                                                            </p>
-                                                        </span>
-                                                    </h2>
-                                                    <div class="clearboth"></div>
-                                                    <style>
-                                                        #fancy-title-4 {
-                                                            font-family: "Lato"
-                                                        }
-                                                    </style>
-                                                </div>
-                                            </div>
-                                            <div class="clearboth"></div>
-                                        </div>
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </div>
+                                <div class="mk-page-section-wrapper" data-mk-full-width="true" data-mk-full-width-init="true" data-mk-stretch-content="true" style="position: relative; box-sizing: border-box; width: 1549px; left: -209.5px;">
+	<div id="page-section-2" class="mk-page-section self-hosted full_layout full-width-2 js-el js-master-row center-y mk-in-viewport" data-intro-effect="false">
+
+			<div class="mk-page-section-inner">
+<div class="mk-video-color-mask"></div>
+			<div class="mk-section-preloader js-el" data-mk-component="Preloader" style="display: none;">
+			<div class="mk-section-preloader__icon"></div>
+		</div>
+		
+	<div class="background-layer-holder">
+		<div id="background-layer--2" data-mk-lazyload="false" class="background-layer mk-background-stretch none-blend-effect js-el" data-mk-component="Parallax" data-parallax-config="{&quot;speed&quot; : 0.3 }" data-mk-img-set="{&quot;landscape&quot;:{&quot;desktop&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/placeholder-5.jpg&quot;,&quot;tablet&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/placeholder-5-1024x768.jpg&quot;,&quot;mobile&quot;:&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/placeholder-5-736x414.jpg&quot;},&quot;responsive&quot;:&quot;true&quot;}" mk-img-loaded="" style="background-image: url(&quot;https://about.stocktwits.com/wp-content/uploads/2018/04/placeholder-5.jpg&quot;); background-attachment: scroll; will-change: transform; transform: translateY(0px) translateZ(0px);">
+									<div class="mk-color-layer"></div>
+		</div>
+	</div>
+			</div>
+
+        <div class="page-section-content vc_row-fluid mk-grid ">
+            <div class="mk-padding-wrapper wpb_row">
+<div class="vc_col-sm-12 wpb_column column_container   _ height-full">
+<h1 id="fancy-title-4" class="mk-fancy-title  simple-style   color-single">
+	<span>
+				<p style="
+"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">연혁 </font></font><span style="color: #00baff;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.</font></font></span></p>
+			</span>
+</h1>
+<div class="clearboth"></div>
+
+
+
+<style>#fancy-title-4 {font-family: "Lato"}</style></div>
+</div>
+            <div class="clearboth"></div>
+        </div>
+
+
+			
+			
+			
+		<div class="clearboth"></div>
+	</div>
+</div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-mk-full-width="true" data-mk-full-width-init="true" data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-true attched-false js-master-row mk-full-content-true mk-in-viewport" style="position: relative; box-sizing: border-box; width: 1342px; left: -121px;">
+                                <div data-mk-full-width="true" data-mk-full-width-init="true" data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-true attched-false js-master-row mk-full-content-true mk-in-viewport vc_hidden" style="position: relative;box-sizing: border-box;width: 2000px;left: -500px;">
                                     <div class="vc_col-sm-12 wpb_column column_container   _ height-full">
-                                        <div id="divider-6" class="mk-divider     divider_full_width center thin_solid  ">
+                                        <div id="divider-6" class="mk-divider     divider_full_width center thin_solid  " style="
+    width: 100%;
+">
                                             <div class="divider-inner"></div>
                                         </div>
                                         <div class="clearboth"></div>
                                     </div>
                                 </div>
-                                <div class="vc_row-full-width vc_clearfix"></div>
-                                <div class="mk-page-section-wrapper" data-mk-full-width="true" data-mk-full-width-init="true" data-mk-stretch-content="true" style="position: relative; box-sizing: border-box; width: 1342px; left: -106px;">
-                                    <div id="page-section-7" class="mk-page-section self-hosted full_layout full-width-7 js-el js-master-row mk-in-viewport" data-intro-effect="false">
-                                        <div class="mk-page-section-inner">
-                                            <div class="mk-video-color-mask"></div>
-                                        </div>
-                                        <div class="page-section-content vc_row-fluid mk-grid ">
-                                            <div class="mk-padding-wrapper wpb_row">
-                                                <div class="vc_col-sm-4 wpb_column column_container   _ height-full">
-                                                    <h4 id="fancy-title-9" class="mk-fancy-title  simple-style   color-single">
-                                                        <span>
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">정보</font>
-                                                                </font>
-                                                            </p>
-                                                        </span>
-                                                    </h4>
-                                                    <div class="clearboth"></div>
-                                                    <style>
-                                                        #fancy-title-9 {
-                                                            font-family: "Lato"
-                                                        }
-                                                    </style>
-                                                </div>
-                                                <div class="vc_col-sm-2 wpb_column column_container   _ height-full">
-                                                    <div class="mk-font-icons icon-align-left" id="mk-font-icons-11">
-                                                        <i class="font-icon mk-size-x-large">
-                                                            <svg class="mk-svg-icon" data-name="mk-moon-location-4" data-cacheid="icon-60a4a1a740528" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
-                                                                <defs>
-                                                                    <linearGradient id="gradient-icon-60a4a1a740528" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                                        <stop offset="0%" stop-color="#33435e"></stop>
-                                                                        <stop offset="100%" stop-color="#00baff"></stop>
-                                                                    </linearGradient>
-                                                                </defs>
-                                                                <path fill="url(#gradient-icon-60a4a1a740528)" d="M256 0c-88.366 0-160 71.634-160 160 0 160 160 288 160 288s160-128 160-288c0-88.366-71.635-160-160-160zm0 258c-54.124 0-98-43.876-98-98s43.876-98 98-98 98 43.876 98 98-43.876 98-98 98zm-62-98c0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62s-27.758-62-62-62c-34.242 0-62 27.758-62 62zm199.128 188.815c-7.091 11.137-14.438 21.69-21.828 31.613 1.173.551 2.333 1.108 3.471 1.677 24.335 12.169 35.229 25.791 35.229 33.895s-10.894 21.726-35.229 33.895c-30.64 15.319-73.93 24.105-118.771 24.105s-88.131-8.786-118.771-24.105c-24.336-12.169-35.229-25.791-35.229-33.895s10.893-21.726 35.229-33.895c1.138-.568 2.298-1.126 3.47-1.677-7.39-9.923-14.737-20.477-21.827-31.613-33.937 17.316-54.872 41.026-54.872 67.185 0 53.02 85.961 96 192 96s192-42.98 192-96c0-26.159-20.935-49.869-54.872-67.185z"></path>
-                                                            </svg>
-                                                        </i>
-                                                    </div>
-                                                    <div id="padding-12" class="mk-padding-divider   clearfix"></div>
-                                                    <h5 id="fancy-title-13" class="mk-fancy-title  simple-style   color-single">
-                                                        <span>
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">주소</font>
-                                                                </font>
-                                                            </p>
-                                                        </span>
-                                                    </h5>
-                                                    <div class="clearboth"></div>
-                                                    <div class=" vc_custom_1563390963558">
-                                                        <div id="text-block-14" class="mk-text-block   ">
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Jutopia, 주식
-                                                                    </font>
-                                                                </font><br><font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        (171), Dongdaejeon-RO, 동구
-                                                                    </font>
-                                                                </font><br><font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        , 대전
-                                                                    </font>
-                                                                </font><br><font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        , 대한민국</font>
-                                                                </font>
-                                                            </p>
-                                                            <div class="clearboth"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="padding-15" class="mk-padding-divider visible-sm  clearfix"></div>
-                                                </div>
-                                                <div class="vc_col-sm-4 wpb_column column_container   _ height-full">
-                                                    <div class="mk-font-icons icon-align-left" id="mk-font-icons-17">
-                                                        <i class="font-icon mk-size-x-large">
-                                                            <svg class="mk-svg-icon" data-name="mk-li-mail" data-cacheid="icon-60a4a1a741165" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
-                                                                <defs>
-                                                                    <linearGradient id="gradient-icon-60a4a1a741165" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                                        <stop offset="0%" stop-color="#33435e"></stop>
-                                                                        <stop offset="100%" stop-color="#00baff"></stop>
-                                                                    </linearGradient>
-                                                                </defs>
-                                                                <path fill="url(#gradient-icon-60a4a1a741165)" d="M460.038 75.505h-408.076c-26.003 0-47.086 21.083-47.086 47.086v266.818c0 26.002 21.082 47.086 47.086 47.086h408.075c26.002 0 47.086-21.083 47.086-47.086v-266.818c0-26.003-21.083-47.086-47.085-47.086zm11.908 324.001l-128.703-128.708 132.49-132.489v251.1c0 3.862-1.457 7.357-3.787 10.097zm-435.679-10.097v-251.039l131.493 131.497-128.581 128.581c-1.824-2.56-2.912-5.667-2.912-9.039zm153.688-97.352l39.138 39.138c7.173 7.181 16.722 11.135 26.876 11.135s19.703-3.954 26.876-11.135l38.203-38.204 112.104 112.112h-356.237l113.04-113.046zm270.083-185.161c.843 0 1.663.122 2.467.249l-201.854 201.857c-1.686 1.69-3.655 1.938-4.682 1.938-1.027 0-2.997-.249-4.683-1.938l-201.845-201.854c.827-.13 1.655-.253 2.522-.253h408.075z"></path>
-                                                            </svg>
-                                                        </i>
-                                                    </div>
-                                                    <div id="padding-18" class="mk-padding-divider   clearfix"></div>
-                                                    <h5 id="fancy-title-19" class="mk-fancy-title  simple-style   color-single">
-                                                        <span>
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">이메일</font>
-                                                                </font>
-                                                            </p>
-                                                        </span>
-                                                    </h5>
-                                                    <div class="clearboth"></div>
-                                                    <div class=" vc_custom_1547834132699">
-                                                        <div id="text-block-20" class="mk-text-block   ">
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">고객 지원 :
-                                                                    </font>
-                                                                </font>
-                                                                <a href="mailto:support@stocktwits.com">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">support@Jutopia.com
-                                                                        </font>
-                                                                    </font>
-                                                                </a>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <a href="mailto:advertising@stocktwits.com">
-                                                                        <font style="vertical-align: inherit;">광고</font>
-                                                                    </a>
-                                                                </font><br><font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        문의 :
-                                                                    </font>
-                                                                </font>
-                                                                <a href="mailto:advertising@stocktwits.com">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Advertising@Jutopia.com</font>
-                                                                    </font>
-                                                                </a><br><font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        미디어 문의 :
-                                                                    </font>
-                                                                </font>
-                                                                <a href="mailto:press@stocktwits.com">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">press@Jutopia.com</font>
-                                                                    </font>
-                                                                </a>
-                                                            </p>
-                                                            <div class="clearboth"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="padding-21" class="mk-padding-divider visible-sm  clearfix"></div>
-                                                </div>
-                                                <div class="vc_col-sm-2 wpb_column column_container   _ height-full">
-                                                    <div class="mk-font-icons icon-align-left" id="mk-font-icons-23">
-                                                        <i class="font-icon mk-size-x-large">
-                                                            <svg class="mk-svg-icon" data-name="mk-moon-bubbles-4" data-cacheid="icon-60a4a1a741d30" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512">
-                                                                <defs>
-                                                                    <linearGradient id="gradient-icon-60a4a1a741d30" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                                        <stop offset="0%" stop-color="#33435e"></stop>
-                                                                        <stop offset="100%" stop-color="#00baff"></stop>
-                                                                    </linearGradient>
-                                                                </defs>
-                                                                <path fill="url(#gradient-icon-60a4a1a741d30)" d="M240 64c-25.333 0-49.791 3.975-72.693 11.814-21.462 7.347-40.557 17.718-56.751 30.823-30.022 24.295-46.556 55.401-46.556 87.587 0 17.995 5.033 35.474 14.96 51.949 10.343 17.17 25.949 32.897 45.13 45.479 15.22 9.984 25.468 25.976 28.181 43.975.451 2.995.815 6.003 1.09 9.016 1.361-1.26 2.712-2.557 4.057-3.897 12.069-12.02 28.344-18.656 45.161-18.656 2.674 0 5.359.168 8.047.509 9.68 1.226 19.562 1.848 29.374 1.848 25.333 0 49.79-3.974 72.692-11.814 21.463-7.346 40.558-17.717 56.752-30.822 30.023-24.295 46.556-55.401 46.556-87.587s-16.533-63.291-46.556-87.587c-16.194-13.106-35.289-23.476-56.752-30.823-22.902-7.839-47.359-11.814-72.692-11.814zm0-64c132.548 0 240 86.957 240 194.224s-107.452 194.224-240 194.224c-12.729 0-25.223-.81-37.417-2.355-51.553 51.347-111.086 60.554-170.583 61.907v-12.567c32.126-15.677 58-44.233 58-76.867 0-4.553-.356-9.024-1.015-13.397-54.279-35.607-88.985-89.994-88.985-150.945 0-107.267 107.452-194.224 240-194.224zm258 435.343c0 27.971 18.157 52.449 46 65.886v10.771c-51.563-1.159-98.893-9.051-143.571-53.063-10.57 1.325-21.397 2.02-32.429 2.02-47.735 0-91.704-12.879-126.807-34.52 72.337-.253 140.63-23.427 192.417-65.336 26.104-21.126 46.697-45.913 61.207-73.674 15.383-29.433 23.183-60.791 23.183-93.203 0-5.224-.225-10.418-.629-15.584 36.285 29.967 58.629 70.811 58.629 115.838 0 52.244-30.079 98.861-77.12 129.382-.571 3.748-.88 7.58-.88 11.483z"></path>
-                                                            </svg>
-                                                        </i>
-                                                    </div>
-                                                    <div id="padding-24" class="mk-padding-divider   clearfix"></div>
-                                                    <h5 id="fancy-title-25" class="mk-fancy-title  simple-style   color-single">
-                                                        <span>
-                                                            <p>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">SNS</font>
-                                                                </font>
-                                                            </p>
-                                                        </span>
-                                                    </h5>
-                                                    <div class="clearboth"></div>
-                                                    <div class=" vc_custom_1563390973801">
-                                                        <div id="text-block-26" class="mk-text-block   ">
-                                                            <p>
-                                                                <a href="https://stocktwits.com/stocktwits" target="_blank" rel="noopener noreferrer">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Jutopia
-                                                                        </font>
-                                                                    </font>
-                                                                </a><br>
-                                                                <a href="https://twitter.com/stocktwits" target="_blank" rel="noopener noreferrer">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Twitter
-                                                                        </font>
-                                                                    </font>
-                                                                </a><br>
-                                                                <a href="https://facebook.com/stocktwits" target="_blank" rel="noopener noreferrer">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Facebook
-                                                                        </font>
-                                                                    </font>
-                                                                </a><br>
-                                                                <a href="https://www.instagram.com/stocktwits/" target="_blank" rel="noopener noreferrer">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Instagram</font>
-                                                                    </font>
-                                                                </a>
-                                                            </p>
-                                                            <div class="clearboth"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="clearboth"></div>
-                                        </div>
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </div>
-                                <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-false attched-false js-master-row mk-grid mk-in-viewport">
-                                    <div class="vc_col-sm-12 wpb_column column_container   _ height-full">
-                                        <div id="padding-28" class="mk-padding-divider   clearfix"></div>
-                                    </div>
-                                </div>
-                                <div data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-false attched-false js-master-row mk-grid mk-in-viewport">
-                                    <div class="vc_col-sm-12 wpb_column column_container   _ height-full">
-                                        <h3 id="fancy-title-30" class="mk-fancy-title  simple-style   color-single">
-                                            <span>
-                                                <p>
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">위치</font>
-                                                    </font>
-                                                </p>
-                                            </span>
-                                        </h3>
-                                        <div class="clearboth"></div>
-                                        <style>
-                                            #fancy-title-30 {
-                                                font-family: "Lato"
-                                            }
-                                        </style>
-                                        <h4 id="fancy-title-31" class="mk-fancy-title  simple-style   color-single">
-                                            <span>
-                                                <p>
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">지도</font>
-                                                    </font>
-                                                </p>
-                                            </span>
-                                        </h4>
-                                        <div class="clearboth"></div>
-                                        <style>
-                                            #fancy-title-31 {
-                                                font-family: "Lato"
-                                            }
-                                        </style>
-                                        <div class="wpb_gmaps_widget wpb_content_element">
-                                            <div class="wpb_wrapper">
-                                                <div class="wpb_map_wraper">
-                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.945610557578!2d127.44384921476565!3d36.33786800128789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356548f2ba5e76b9%3A0x1f657f2b8b39c4d2!2z7Jqw7Iah64yA7ZWZ6rWQIOyEnOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1621699660899!5m2!1sko!2skr" width="600" height="450" style="border: 0px; pointer-events: none;" allowfullscreen="" loading="lazy"></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<div data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-false attched-false js-master-row mk-grid mk-in-viewport">
+				
+<div class="vc_col-sm-12 wpb_column column_container   _ height-full">
+	
+<h2 id="fancy-title-8" class="mk-fancy-title  simple-style   color-single">
+	<span>
+				<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">연혁</font></font></p>
+			</span>
+</h2>
+<div class="clearboth"></div>
+
+
+
+	<div class=" vc_custom_1522877156072">
+
+<div id="text-block-9" class="mk-text-block   ">
+
+	
+	<h3><a href="http://www.cardrates.com/news/stocktwits-goes-from-twitter-api-to-self-sustaining-social-network/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia, 자립형 소셜 네트워크 구축&nbsp;</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia 플랫폼의 힘은 커뮤니티에 있습니다. </font><font style="vertical-align: inherit;">다양한 의견과 경험 수준으로 인해 서로 다른 주식을 조사하고 비교하는 즉시 최신 프로세스가됩니다.</font></font></p>
+<p><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2021 년 04 월 30 일</font></font></em></p>
+<h3><a href="/"></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+	</div>
+</div>
+	</div>
+                                
+                                
+                                
+                                
+                                
                                 <div data-mk-stretch-content="true" class="wpb_row vc_row vc_row-fluid mk-fullwidth-false attched-false js-master-row mk-grid mk-in-viewport">
                                     <div class="vc_col-sm-12 wpb_column column_container   _ height-full">
                                         <div id="padding-33" class="mk-padding-divider   clearfix"></div>
@@ -1500,7 +1299,7 @@
                                         <ul id="menu-main-menu-2" class="menu">
                                             <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-14">
                                                 <a href="/companyinfo/about" aria-current="page">
-                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 1792">
+                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1792">
                                                         <path d="M595 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"></path>
                                                     </svg>
                                                     <font style="vertical-align: inherit;">
@@ -1510,7 +1309,7 @@
                                             </li>
                                             <li id="menu-item-337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-337">
                                                 <a href="/companyinfo/history">
-                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 1792">
+                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1792">
                                                         <path d="M595 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"></path>
                                                     </svg>
                                                     <font style="vertical-align: inherit;">
@@ -1520,7 +1319,7 @@
                                             </li>
                                             <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
                                                 <a href="/companyinfo/contact">
-                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 1792">
+                                                    <svg class="mk-svg-icon" data-name="mk-icon-angle-right" data-cacheid="icon-60aaff90706e6" style=" height:14px; width: 5px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1792">
                                                         <path d="M595 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"></path>
                                                     </svg>
                                                     <font style="vertical-align: inherit;">
@@ -1541,19 +1340,19 @@
                                     </div>
                                     <div id="social-60aaff9070a9d" class="align-left">
                                         <a href="https://facebook.com" rel="nofollow" class="builtin-icons dark medium facebook-hover" target="_blank" alt="페이스 북으로 우릴 팔로우 해" title="페이스 북으로 우릴 팔로우 해">
-                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-facebook" data-cacheid="icon-60aaff9070c1d" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-facebook" data-cacheid="icon-60aaff9070c1d" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path d="M192.191 92.743v60.485h-63.638v96.181h63.637v256.135h97.069v-256.135h84.168s6.674-51.322 9.885-96.508h-93.666v-42.921c0-8.807 11.565-20.661 23.01-20.661h71.791v-95.719h-83.57c-111.317 0-108.686 86.262-108.686 99.142z"></path>
                                             </svg>
                                         </a>
                                         <a href="https://www.instagram.com" rel="nofollow" class="builtin-icons dark medium instagram-hover" target="_blank" alt="Instagram에서 팔로우" title="Instagram에서 팔로우">
-                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-instagram" data-cacheid="icon-60aaff9070d31" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 81.2 81.2">
+                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-instagram" data-cacheid="icon-60aaff9070d31" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.2 81.2">
                                                 <path d="M81,23.9c-0.2-4.3-0.9-7.3-1.9-9.9c-1-2.7-2.4-4.9-4.7-7.2c-2.3-2.3-4.5-3.6-7.2-4.7c-2.6-1-5.5-1.7-9.9-1.9 C53,0,51.6,0,40.6,0c-11,0-12.4,0-16.7,0.2c-4.3,0.2-7.3,0.9-9.9,1.9c-2.7,1-4.9,2.4-7.2,4.7C4.6,9.1,3.2,11.3,2.1,14 c-1,2.6-1.7,5.5-1.9,9.9C0,28.2,0,29.6,0,40.6c0,11,0,12.4,0.2,16.7c0.2,4.3,0.9,7.3,1.9,9.9c1,2.7,2.4,4.9,4.7,7.2 c2.3,2.3,4.5,3.6,7.2,4.7c2.6,1,5.5,1.7,9.9,1.9c4.3,0.2,5.7,0.2,16.7,0.2c11,0,12.4,0,16.7-0.2c4.3-0.2,7.3-0.9,9.9-1.9 c2.7-1,4.9-2.4,7.2-4.7c2.3-2.3,3.6-4.5,4.7-7.2c1-2.6,1.7-5.5,1.9-9.9c0.2-4.3,0.2-5.7,0.2-16.7C81.2,29.6,81.2,28.2,81,23.9z  M73.6,57c-0.2,4-0.8,6.1-1.4,7.5c-0.7,1.9-1.6,3.2-3,4.7c-1.4,1.4-2.8,2.3-4.7,3c-1.4,0.6-3.6,1.2-7.5,1.4 c-4.3,0.2-5.6,0.2-16.4,0.2c-10.8,0-12.1,0-16.4-0.2c-4-0.2-6.1-0.8-7.5-1.4c-1.9-0.7-3.2-1.6-4.7-3c-1.4-1.4-2.3-2.8-3-4.7 C8.4,63.1,7.7,61,7.6,57c-0.2-4.3-0.2-5.6-0.2-16.4c0-10.8,0-12.1,0.2-16.4c0.2-4,0.8-6.1,1.4-7.5c0.7-1.9,1.6-3.2,3-4.7 c1.4-1.4,2.8-2.3,4.7-3c1.4-0.6,3.6-1.2,7.5-1.4c4.3-0.2,5.6-0.2,16.4-0.2c10.8,0,12.1,0,16.4,0.2c4,0.2,6.1,0.8,7.5,1.4 c1.9,0.7,3.2,1.6,4.7,3c1.4,1.4,2.3,2.8,3,4.7c0.6,1.4,1.2,3.6,1.4,7.5c0.2,4.3,0.2,5.6,0.2,16.4C73.9,51.4,73.8,52.7,73.6,57z"></path>
                                                 <path d="M40.6,19.8c-11.5,0-20.8,9.3-20.8,20.8c0,11.5,9.3,20.8,20.8,20.8c11.5,0,20.8-9.3,20.8-20.8 C61.4,29.1,52.1,19.8,40.6,19.8z M40.6,54.1c-7.5,0-13.5-6.1-13.5-13.5c0-7.5,6.1-13.5,13.5-13.5c7.5,0,13.5,6.1,13.5,13.5 C54.1,48.1,48.1,54.1,40.6,54.1z"></path>
                                                 <circle cx="62.3" cy="18.9" r="4.9"></circle>
                                             </svg>
                                         </a>
                                         <a href="https://twitter.com" rel="nofollow" class="builtin-icons dark medium twitter-hover" target="_blank" alt="트위터에서 우리를 따르라" title="트위터에서 우리를 따르라">
-                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-twitter" data-cacheid="icon-60aaff9070e22" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+                                            <svg class="mk-svg-icon" data-name="mk-jupiter-icon-simple-twitter" data-cacheid="icon-60aaff9070e22" style=" height:24px; width: 24px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                 <path d="M454.058 213.822c28.724-2.382 48.193-15.423 55.683-33.132-10.365 6.373-42.524 13.301-60.269 6.681-.877-4.162-1.835-8.132-2.792-11.706-13.527-49.679-59.846-89.698-108.382-84.865 3.916-1.589 7.914-3.053 11.885-4.388 5.325-1.923 36.678-7.003 31.749-18.079-4.176-9.728-42.471 7.352-49.672 9.597 9.501-3.581 25.26-9.735 26.93-20.667-14.569 1.991-28.901 8.885-39.937 18.908 3.998-4.293 7.01-9.536 7.666-15.171-38.91 24.85-61.624 74.932-80.025 123.523-14.438-13.972-27.239-25.008-38.712-31.114-32.209-17.285-70.722-35.303-131.156-57.736-1.862 19.996 9.899 46.591 43.723 64.273-7.325-.986-20.736 1.219-31.462 3.773 4.382 22.912 18.627 41.805 57.251 50.918-17.642 1.163-26.767 5.182-35.036 13.841 8.043 15.923 27.656 34.709 62.931 30.82-39.225 16.935-15.998 48.234 15.93 43.565-54.444 56.244-140.294 52.123-189.596 5.08 128.712 175.385 408.493 103.724 450.21-65.225 31.23.261 49.605-10.823 60.994-23.05-17.99 3.053-44.072-.095-57.914-5.846z"></path>
                                             </svg>
                                         </a>
@@ -1627,11 +1426,11 @@
                     </div>
                     <div class="contract-trigger"></div>
                 </div>
-            </div>
+            <div class="resize-triggers"><div class="expand-trigger"><div style="width: 1439px; height: 1988px;"></div></div><div class="contract-trigger"></div></div><div class="resize-triggers"><div class="expand-trigger"><div style="width: 1439px; height: 1261px;"></div></div><div class="contract-trigger"></div></div><div class="resize-triggers"><div class="expand-trigger"><div style="width: 1138px; height: 1427px;"></div></div><div class="contract-trigger"></div></div><div class="resize-triggers"><div class="expand-trigger"><div style="width: 949px; height: 1518px;"></div></div><div class="contract-trigger"></div></div><div class="resize-triggers"><div class="expand-trigger"><div style="width: 1550px; height: 1261px;"></div></div><div class="contract-trigger"></div></div></div>
         </div>
         <div class="bottom-corner-btns js-bottom-corner-btns">
-            <a href="#top-of-page" class="mk-go-top js-smooth-scroll js-bottom-corner-btn js-bottom-corner-btn--back is-active">
-                <svg class="mk-svg-icon" data-name="mk-icon-chevron-up" data-cacheid="icon-60aaf623d8d38" style=" height:16px; width: 16px; " xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1792 1792">
+            <a href="#top-of-page" class="mk-go-top js-smooth-scroll js-bottom-corner-btn js-bottom-corner-btn--back">
+                <svg class="mk-svg-icon" data-name="mk-icon-chevron-up" data-cacheid="icon-60aaf623d8d38" style=" height:16px; width: 16px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792">
                     <path d="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"></path>
                 </svg>
             </a>
@@ -1987,9 +1786,9 @@
                 });
             };
         </script>
-        <div style="position: absolute;z-index: -10000;top: 0px;left: 0px;right: 0px;height: 2232px;"></div>
+        <div style="position: absolute;z-index: -10000;top: 0px;left: 0px;right: 0px;height: 1252px;"></div>
         <div style="clear: both;"></div>
-        <div style="position: absolute;z-index: -10000;top: 0px;left: 0px;right: 0px;height: 2232px;"></div>
+        <div style="position: absolute;z-index: -10000;top: 0px;left: 0px;right: 0px;height: 1252px;"></div>
         <div id="goog-gt-tt" class="skiptranslate" dir="ltr">
             <div style="padding: 8px;">
                 <div>
@@ -2015,10 +1814,10 @@
         <div style="clear: both;"></div>
         <div class="goog-te-spinner-pos">
             <div class="goog-te-spinner-animation">
-                <svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewbox="0 0 66 66">
+                <svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66">
                     <circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
                 </svg>
             </div>
         </div>
-    </body>
-</html>
+    
+</body></html>

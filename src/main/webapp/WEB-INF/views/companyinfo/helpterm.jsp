@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html class="js svg js_active vc_desktop vc_transform translated-ltr js svg js_active  vc_desktop  vc_transform  vc_transform  js svg js_active  vc_desktop  vc_transform  vc_transform  js svg js_active  vc_desktop  vc_transform  vc_transform " lang="ko">
-    <head>
+<html class="js svg js_active vc_desktop vc_transform translated-ltr js svg js_active  vc_desktop  vc_transform  vc_transform  js svg js_active  vc_desktop  vc_transform  vc_transform  js svg js_active  vc_desktop  vc_transform  vc_transform  js svg js_active  vc_desktop  vc_transform  vc_transform " lang="ko"><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Jutipia 고객센터 |  Jutipia 도움말 센터</title>
@@ -14,6 +13,13 @@
         <link rel="shortcut icon" href="../../../resources/img/logo.png">
         <link rel="alternate" type="application/rss+xml" title="StockTwits 도움말 센터»피드" href="https://help.stocktwits.com/feed/">
         <link rel="alternate" type="application/rss+xml" title="StockTwits 도움말 센터»댓글 피드" href="https://help.stocktwits.com/comments/feed/">
+        <script type="text/javascript">
+            window.onload = function () {
+          
+                var k=$("#content *").removeAttr('href');
+                
+            };
+        </script>
         <script type="text/javascript">
             window._wpemojiSettings = {
                 "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/",
@@ -154,7 +160,7 @@
                         : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))
                 )
             }(window, document, window._wpemojiSettings);
-        </script>
+        </script><script src="https://help.stocktwits.com/wp-includes/js/wp-emoji-release.min.js?ver=5.7.1" type="text/javascript" defer=""></script>
         <script src="https://help.stocktwits.com/wp-includes/js/wp-emoji-release.min.js?ver=5.7.1" type="text/javascript" defer=""></script>
         <script src="https://help.stocktwits.com/wp-includes/js/wp-emoji-release.min.js?ver=5.7.1" type="text/javascript" defer=""></script>
         <script src="https://help.stocktwits.com/wp-includes/js/wp-emoji-release.min.js?ver=5.7.1" type="text/javascript" defer=""></script>
@@ -454,8 +460,7 @@
                 display: inline-block;
             }
         </style>
-        <meta
-        name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress.">
+        <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress.">
         <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://help.stocktwits.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
         <style>
             type="text/css" title="동적 -css" class="options-output" .navbar,
@@ -638,7 +643,7 @@
                             </a>
                         </li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36">
-                            <a title="용어" href="/companyinfo/helpterm">
+                            <a title="지식베이스" href="/companyinfo/helpterm">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">용어</font>
                                 </font>
@@ -672,207 +677,133 @@
                 </button>
             </div>
         </header>
-        <div class="before-main-wrapper">
-            <div class="header-wrapper" data-vide-bg="http://stocktwitshelp.wpengine.com/wp-content/uploads/2018/04/Office-Day" data-vide-options="posterType: none">
-                <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 50% 50%; background-image: none;">
-                    <video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: visible; opacity: 1; width: auto; height: 512px;"><source src="http://stocktwitshelp.wpengine.com/wp-content/uploads/2018/04/Office-Day.mp4" type="video/mp4"><source src="http://stocktwitshelp.wpengine.com/wp-content/uploads/2018/04/Office-Day.webm" type="video/webm"><source src="http://stocktwitshelp.wpengine.com/wp-content/uploads/2018/04/Office-Day.ogv" type="video/ogg"></video>
-                </div>
-                <div class="container header-center">
-                    <div class="header-titles">
-                        <h1>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Jutipia 고객센터</font>
-                            </font>
-                        </h1>
-                    </div>
-                </div>
-                <div class="container header-center">
-                    <div class="header-sidebar">
-                        <div id="widget_pa_live_search-3" class="widget clearfix widget_pa_live_search">
-                            <h3 class="widget-title">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">검색</font>
-                                </font>
-                            </h3>
-                            <div class="live-search">
-                                <form role="search" method="get" id="searchform" class="form-search" action="https://help.stocktwits.com/">
-                                    <div class="input-group">
-                                        <input type="text" id="autocomplete-ajax" name="s" class="searchajax search-query form-control" autocomplete="off" placeholder="도움을 받으세요!  여기에 검색어를 입력하세요.">
-                                        <span class="input-group-btn">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;"><input type="submit" id="searchsubmit" value="검색" class="btn btn-primary" style="
-                                                        height: 65px;
-                                                    "></font>
-                                            </font>
-                                        </span>
-                                    </div>
-                                </form>
-                                <script>
-                                    _url = 'https://help.stocktwits.com/wp-admin/admin-ajax.php';
-                                </script>
-                            </div>
-                            <p class="top-searches">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">인기 검색어 :
-                                    </font>
-                                </font>
-                                <a href="https://help.stocktwits.com/?s=delete%20account">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">삭제 계정</font>
-                                    </font>
-                                </a>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        ,
-                                    </font>
-                                </font>
-                                <a href="https://help.stocktwits.com/?s=%20"></a>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">,
-                                    </font>
-                                </font>
-                                <a href="https://help.stocktwits.com/?s=Delete">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">삭제</font>
-                                    </font>
-                                </a>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">
-                                        ,
-                                    </font>
-                                </font>
-                                <a href="https://help.stocktwits.com/?s=change%20username">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">변경 이름</font>
-                                    </font>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+<div class="before-main-wrapper" style="padding: 0 0 60px 0;"><div class="header-wrapper" "="" data-vide-options="posterType: none" style="
+    padding-top: 20px;
+    padding-bottom: 20px;
+"><div class="container header-left"><div class="header-titles"><h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">용어</font></font></h1></div></div></div></div>
+    
+    
+    <div class="container wrap main-section" id="wrap-main-section">
+		
+		<div id="content" class="content">
+			<div class="row bg">
+				
+				<main class="main col-sm-12" role="main">
+					        <div class="row knowledge-base-row">
+            <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/houserules/" title="숙소의 규칙"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">하우스 룰</font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/what-are-the-house-rules/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">하우스 룰은 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/what-is-pumping/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">펌핑이란 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/what-is-abuse/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">악플이 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/what-are-the-best-practices/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">모범 사례는 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-search-for-a-user-or-symbol-on-stocktwits/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia에서 사용자 또는 기호를 어떻게 검색합니까?</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/houserules/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 5 개 모두보기</font></font></a>
+    </div>
+        <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/getting-started/" title="시작하기"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            시작하기            </font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/i-need-help-verifying-my-account/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">내 계정을 확인하는 데 도움이 필요합니다.</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-to-start-a-new-account/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">새 계정을 시작하는 방법은 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-create-and-build-a-watchlist/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">관심 목록을 생성하고 작성하려면 어떻게합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-post-on-stocktwits/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia에 게시물을 어떻게 게시합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/where-can-i-find-the-stocktwits-privacy-policy/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia 개인 정보 보호 정책은 어디에서 찾을 수 있습니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/where-can-i-find-the-stocktwits-terms-of-use/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia 이용 약관은 어디에서 찾을 수 있습니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/can-you-guide-me-to-your-list-of-disclaimers/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">면책 조항 목록으로 안내해 주시겠습니까?</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/getting-started/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 14 개 모두보기</font></font></a>
+    </div>
+        <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/discover/" title="발견하다"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            알아내기          </font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-follow-earnings-on-stocktwits/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia에서 수익을 어떻게 확인합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/reading-the-news-on-stocktwits/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jutopia 뉴스 읽기</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/discover/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 기사 2 개 모두보기</font></font></a>
+    </div>
             </div>
-        </div>
-        <div class="container wrap main-section" id="wrap-main-section">
-            <div id="content" class="content">
-                <div class="row bg">
-                    <main class="main col-sm-12" role="main">
-                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1523408029721">
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center vc_icon_element-have-style">
-                                            <div class="vc_icon_element-inner vc_icon_element-color-white vc_icon_element-have-style-inner vc_icon_element-size-xl vc_icon_element-style-rounded vc_icon_element-background vc_icon_element-background-color-blue">
-                                                <span class="vc_icon_element-icon fa fa-lightbulb-o"></span>
-                                                <a class="vc_icon_element-link" href="/companyinfo/helpterm" title="" target="_self"></a>
-                                            </div>
-                                        </div>
-                                        <h2 style="font-size: 36px;text-align: center" class="vc_custom_heading">
-                                            <a href="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">용어</font>
-                                                </font>
-                                            </a>
-                                        </h2>
-                                        <h2 style="font-size: 16px;text-align: center" class="vc_custom_heading">
-                                            <a href="/companyinfo/helpterm">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">카테고리별로 검색하고 Jutopia 사용 방법에 대해 자세히 알아보세요.</font>
-                                                </font>
-                                            </a>
-                                        </h2>
-                                        <div class="vc_btn3-container vc_btn3-center">
-                                            <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-outline vc_btn3-color-black" href="/companyinfo/helpterm" title="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">계속하기</font>
-                                                </font>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center vc_icon_element-have-style">
-                                            <div class="vc_icon_element-inner vc_icon_element-color-white vc_icon_element-have-style-inner vc_icon_element-size-xl vc_icon_element-style-rounded vc_icon_element-background vc_icon_element-background-color-green">
-                                                <span class="vc_icon_element-icon fa fa-question-circle-o"></span>
-                                                <a class="vc_icon_element-link" href="/companyinfo/faq" title="" target="_self"></a>
-                                            </div>
-                                        </div>
-                                        <h2 style="font-size: 36px;text-align: center" class="vc_custom_heading">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">자주하는 질문</font>
-                                            </font>
-                                        </h2>
-                                        <h2 style="font-size: 16px;text-align: center" class="vc_custom_heading">
-                                            <a href="/companyinfo/faq">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">빠른 답변이 필요하십니까?
-                                                    </font>
-                                                    <font style="vertical-align: inherit;">가장 자주 묻는 질문보기</font>
-                                                </font>
-                                            </a>
-                                        </h2>
-                                        <div class="vc_btn3-container vc_btn3-center">
-                                            <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-outline vc_btn3-color-black" href="/companyinfo/faq" title="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">계속하기</font>
-                                                </font>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center vc_icon_element-have-style">
-                                            <div class="vc_icon_element-inner vc_icon_element-color-white vc_icon_element-have-style-inner vc_icon_element-size-xl vc_icon_element-style-rounded vc_icon_element-background vc_icon_element-background-color-orange">
-                                                <span class="vc_icon_element-icon fa fa-envelope-o"></span>
-                                                <a class="vc_icon_element-link" href="/companyinfo/question" title="" target="_self"></a>
-                                            </div>
-                                        </div>
-                                        <h2 style="font-size: 36px;text-align: center" class="vc_custom_heading">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">문의하기</font>
-                                            </font>
-                                        </h2>
-                                        <h2 style="font-size: 16px;text-align: center" class="vc_custom_heading">
-                                            <a href="/companyinfo/question">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">원하는 것을 찾을 수 없습니까?
-                                                    </font>
-                                                    <font style="vertical-align: inherit;">문의하기.</font>
-                                                </font>
-                                            </a>
-                                        </h2>
-                                        <div class="vc_btn3-container vc_btn3-center">
-                                            <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-outline vc_btn3-color-black" href="/companyinfo/question" title="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">계속하기</font>
-                                                </font>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="vc_row wpb_row vc_row-fluid">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </main>
-                    <!-- /.main -->
-                    <div class="clearfix"></div>
-                </div>
+                <div class="row knowledge-base-row">
+            <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/faq/" title="자주하는 질문"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            자주하는 질문            </font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-stream-messages-in-real-time/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">실시간으로 메시지를 스트리밍하려면 어떻게합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-delete-my-account/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">내 계정을 어떻게 삭제합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-block-someone/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">누군가를 어떻게 차단합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-unblock-someone/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">누군가 차단을 해제하려면 어떻게합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-filter-my-stream/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">내 스트림을 어떻게 필터링합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-sort-my-watchlist/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">내 관심 목록을 어떻게 정렬합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-delete-a-message/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">메시지를 어떻게 삭제합니까?</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 17 개 모두보기</font></font></a>
+    </div>
+        <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/portfolio/" title="포트폴리오 만들기"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            포트폴리오 만들기            </font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-link-my-robinhood-account-to-stocktwits/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">facebook 계정을 Jutopia에 어떻게 연결합니까?</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/portfolio/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 1 개 모두보기</font></font></a>
+    </div>
+        <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/rooms/" title="객실"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">방</font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/what-are-the-room-rules/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">방의 규칙은 무엇입니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-create-a-room/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">방은 어떻게 만듭니 까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-i-join-a-room/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">방에 어떻게 참여하나요?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-can-i-search-for-existing-rooms/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">기존 회의실을 검색하려면 어떻게해야합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-can-i-find-the-newest-or-most-popular-rooms/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">최신 또는 가장 인기있는 회의실을 찾으려면 어떻게해야합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/how-do-upgrades-and-downgrades-work/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">업그레이드 및 다운 그레이드는 어떻게 작동합니까?</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/i-was-suspended-from-a-room-what-do-i-do/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">방에서 강퇴당했습니다. 어떻게 해야하나요?</font><font style="vertical-align: inherit;">어떡하죠?</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/rooms/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 18 개 모두보기</font></font></a>
+    </div>
             </div>
-            <!-- /.content -->
-        </div>
-        <!-- /.wrap -->
+                <div class="row knowledge-base-row">
+            <div class="col-sm-4 kb-category">
+        <h2>
+            <a href="https://help.stocktwits.com/category/premium-rooms/" title="프리미엄 룸"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            프리미엄 룸            </font></font></a>
+        </h2>
+                    <ul class="category-posts">
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/sp500_system_trading-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SP500_System_Trading FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/ipocandyplus-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IPOCandyPlus FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/the_3x_etf_trader/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The_3X_ETF_TRADER FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/the_3x_etf_trader-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The_3X_ETF_TRADER FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/eminifuturestradingalerts-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">EMINIFuturesTradingAlerts FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/accessatrader-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AccessATrader FAQ</font></font></a></li>
+                            <li class="list-post pa-post-format"><i class="kp-w kp-file-text2"></i> <a href="https://help.stocktwits.com/howtoinvestwithibd-faq/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IBD 대화방 FAQ로 투자하는 방법</font></font></a></li>
+                        </ul>
+                <a class="view-all" href="https://help.stocktwits.com/category/premium-rooms/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 문서 45 개 모두보기</font></font></a>
+    </div>
+    </div>				</main><!-- /.main -->
+
+				
+				
+				
+								<div class="clearfix"></div>			</div>		</div><!-- /.content -->
+			</div>
+        
+        
+        
+    
+
         <footer id="page-footer" class="content-info" role="contentinfo">
             <div class="container">
                 <div class="row"></div>
@@ -928,22 +859,14 @@
         <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 450px; z-index: 9999;"></div>
         <div class="goog-te-spinner-pos">
             <div class="goog-te-spinner-animation">
-                <svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewbox="0 0 66 66">
+                <svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66">
                     <circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
                 </svg>
             </div>
         </div>
         <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 450px; z-index: 9999;"></div>
-        <script type="text/javascript">
-            window.onload = function () {
-                var k = $(".header-wrapper")
-                    .children()
-                    .eq(1)
-                    .remove();
-                k.console();
-            };
-        </script>
+     
         <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 450px; z-index: 9999;"></div>
         <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 450px; z-index: 9999;"></div>
-    </body>
-</html>
+    
+<div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 450px; z-index: 9999;"></div></body></html>

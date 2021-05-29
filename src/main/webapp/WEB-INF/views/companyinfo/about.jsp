@@ -1381,7 +1381,7 @@
         <div id="top-of-page"></div>
         <div id="mk-boxed-layout">
             <div id="mk-theme-container" class="trans-header">
-                <header data-height="90" data-sticky-height="80" data-responsive-height="90" data-transparent-skin="light" data-header-style="1" data-sticky-style="fixed" data-sticky-offset="header" id="mk-header-1" class="mk-header header-style-1 header-align-left toolbar-false menu-hover-1 sticky-style-fixed mk-background-stretch boxed-header transparent-header light-skin bg-true a-sticky" role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+               <header data-height="90" data-sticky-height="80" data-responsive-height="90" data-transparent-skin="light" data-header-style="1" data-sticky-style="fixed" data-sticky-offset="header" id="mk-header-1" class="mk-header header-style-1 header-align-left toolbar-false menu-hover-1 sticky-style-fixed mk-background-stretch boxed-header transparent-header light-skin bg-true" role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
                     <div class="mk-header-holder">
                         <div class="mk-header-inner add-header-height">
                             <div class="mk-header-bg "></div>
@@ -1449,7 +1449,7 @@
                                     <li id="responsive-menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page">
                                         <a class="menu-item-link js-smooth-scroll" href="/companyinfo/contact">
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">문의하기</font>
+                                                <font style="vertical-align: inherit;">회사정보</font>
                                             </font>
                                         </a>
                                     </li>
@@ -1895,7 +1895,7 @@
                                                         <path d="M595 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"></path>
                                                     </svg>
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">문의하기</font>
+                                                        <font style="vertical-align: inherit;">회사정보</font>
                                                     </font>
                                                 </a>
                                             </li>
@@ -1970,7 +1970,7 @@
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13">
                                         <a href="/companyinfo/contact">
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">문의하기</font>
+                                                <font style="vertical-align: inherit;">회사정보</font>
                                             </font>
                                         </a>
                                     </li>
