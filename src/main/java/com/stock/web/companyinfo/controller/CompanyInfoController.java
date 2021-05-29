@@ -54,8 +54,61 @@ public class CompanyInfoController {
 			
 			
 	}
+	
+	
+	@GetMapping("helpterm")
+	public void helpterm(HttpSession session)
+	{				
+			if(session.getAttribute("login")==null) {
+				
+			}else{
+				
+				session.setAttribute("login",session.getAttribute("login"));
+			}
+			
+			
+	}
+	
+	@GetMapping("faq")
+	public void faq(HttpSession session)
+	{				
+			if(session.getAttribute("login")==null) {
+				
+			}else{
+				
+				session.setAttribute("login",session.getAttribute("login"));
+			}
+			
+			
+	}
+	
+	@GetMapping("question")
+	public void question(HttpSession session)
+	{				
+			if(session.getAttribute("login")==null) {
+				
+			}else{
+				
+				session.setAttribute("login",session.getAttribute("login"));
+			}
+			
+			
+	}
 	@GetMapping("contact")
 	public void contact(HttpSession session)
+	{				
+			if(session.getAttribute("login")==null) {
+				
+			}else{
+				
+				session.setAttribute("login",session.getAttribute("login"));
+			}
+			
+			
+	}
+	
+	@GetMapping("history")
+	public void history(HttpSession session)
 	{				
 			if(session.getAttribute("login")==null) {
 				

@@ -340,7 +340,7 @@
                                     <a href="/companyinfo/about" rel="noopener" target="_blank">회사소개</a>
                                 </li>
                                 <li>
-                                    <a href="#">개인정보처리방침</a>
+                                    <a href="/stockinfo/guide">투자용어</a>
                                 </li>
                                 <li>
                                     <a href="#">모범사례</a>
@@ -349,7 +349,7 @@
                                     <a href="https://velog.io/@ddh963963" rel="noopener" target="_blank">블로그</a>
                                 </li>
                                 <li>
-                                    <a href="#" rel="noopener" target="_blank">개발자</a>
+                                    <a href="#" >개발자</a>
                                 </li>
                                 <li>
                                     <a href="#">공지사항</a>
