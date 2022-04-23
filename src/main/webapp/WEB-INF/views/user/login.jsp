@@ -1,70 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html><head>
-             <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="../../../resources/img/logo.png"> 
-        <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&amp;display=swap" rel="stylesheet">
-            <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
-        <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
-                <link rel="stylesheet" type="text/css" href="../../../resources/css/companyinfo.css">
-        <script type="text/javascript" src="../../../resources/js/login.js"></script>
-        <title>로그인</title>
-          <style>
-            body {
-                padding: 0;
-                margin: 0;
-                height: 100vh;
-                font-family: "Nunito Sans";
-            }
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../../../resources/img/logo.png">
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&amp;display=swap" rel="stylesheet">
+    <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
-            .form-control {
-                line-height: 2;
-            }
+    <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/companyinfo.css">
+    <script type="text/javascript" src="../../../resources/js/login.js"></script>
+    <title>로그인</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            font-family: "Nunito Sans";
+        }
 
-            .bg-custom {
-                background-color: #fff;
-            }
+        .form-control {
+            line-height: 2;
+        }
 
-            .btn-custom {
-                background-color: #3e3d56;
-                color: #fff;
-            }
+        .bg-custom {
+            background-color: #fff;
+        }
 
-            .btn-custom:hover {
-                background-color: #33313f;
-                color: #fff;
-            }
+        .btn-custom {
+            background-color: #3e3d56;
+            color: #fff;
+        }
 
-            label {
-                color: #000;
-            }
+        .btn-custom:hover {
+            background-color: #33313f;
+            color: #fff;
+        }
 
-            a,
-            a:hover {
-                color: #fff;
-                text-decoration: none;
-            }
+        label {
+            color: #000;
+        }
 
-            a,
-            a:hover {
-                text-decoration: none;
-            }
+        a,
+        a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
 
-            @media(max-width: 932px) {
-                .display-none {
-                    display: none !important;
-                }
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        @media(max-width: 932px) {
+            .display-none {
+                display: none !important;
             }
-            #body{
+        }
+        #body{
             color : #fff;
-            }
-        </style>
-    </head>
+        }
+    </style>
+</head>
     <body>
         <div class="row m-0 h-100">
             <div class="col p-0 text-center d-flex justify-content-center align-items-center display-none">
@@ -114,7 +115,7 @@
                 </div>
             </div>
             <div class="col p-0 bg-custom d-flex justify-content-center align-items-center flex-column w-100">
-                <form class="w-75" id="loginForm" method="post" action="/user/login">
+                <form class="w-75" id="loginForm" >
                     <div class="mb-3">
                         <label for="ID" class="form-label">아이디</label>
                         <input type="text" class="form-control" id="ID" name="id" placeholder="ID" required="">
