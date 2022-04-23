@@ -17,10 +17,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
         <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
         <title>Community</title>
-        <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css">
-        <link rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
-        <!-- 네모틀 -->
-        <script src="../../../resources/js/modernizr.custom.js"></script>
         <script src="../../../resources/js/main.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
         <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
