@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-	
-<mapper namespace="com.stock.web.user.mapper.UserMapper">
-  
-  <insert id="insert">
-   insert into USERS (USER_ID,USER_PW,USER_BIRTH,USER_NAME) values (#{id}, #{password}, TO_DATE(#{birthday} , 'yyyy/mm/dd hh24:mi:ss'),#{name})   
-  </insert>
-  
-  <delete id="deleteAll">
-    	delete from USERS
-  </delete>
-  <select id="login" resultType="Integer">
-  		select COUNT(*) FROM USERS WHERE USER_ID = #{id} AND USER_PW = #{password}
-  </select>
-   <select id="idCheck" resultType="Integer">
-  		select COUNT(*) FROM USERS WHERE USER_ID = #{id}
-  </select>
-  
-  
-  
-  <resultMap id="userResult" type="com.stock.web.user.domain.UserDto">
-    <id property="id" column="USER_ID"/>
-    <result property="password" column="USER_PW"/>
-    <result property="birthday" column="USER_BIRTH"/>
-    <result property="name" column="USER_NAME"/>
-	</resultMap>
-  
-  
-  <select id="userInfo" resultMap="userResult">
-  		select USER_ID,USER_PW,to_char(USER_BIRTH,'yyyy-mm-dd')"USER_BIRTH",USER_NAME from USERS WHERE USER_ID = #{id}
-  </select>
-  
-   <update id="userUpdate">
-  UPDATE users
-SET
-    user_pw = #{password}
-WHERE
-    user_id = #{id}
-  </update>
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  
-  
+<mapper namespace="com.stock.web.user.mapper.UserMapper">
+
+    <insert id="insert">
+        insert into USERS (USER_ID, USER_PW, USER_BIRTH, USER_NAME)
+        values (#{id}, #{password}, TO_DATE(#{birthday}, 'yyyy/mm/dd hh24:mi:ss'), #{name})
+    </insert>
+
+    <delete id="deleteAll">
+        delete
+        from USERS
+    </delete>
+    <select id="login" resultType="Integer">
+        select COUNT(*)
+        FROM USERS
+        WHERE USER_ID = #{id}
+          AND USER_PW = #{password}
+    </select>
+    <select id="idCheck" resultType="Integer">
+        select COUNT(*)
+        FROM USERS
+        WHERE USER_ID = #{id}
+    </select>
+
+    <resultMap id="loginResult" type="com.stock.web.user.domain.LoginHistory">
+        <id property="id" column="USER_ID"/>
+        <result property="ip" column="IP"/>
+        <result property="date" column="LOGIN_DATE"/>
+    </resultMap>
+
+    <select id="loginList" resultMap="loginResult">
+        select USER_ID, IP, LOGIN_DATE
+        FROM LOGINHISTORY
+        WHERE USER_ID = #{id}
+    </select>
+
+    <insert id="loginHistroy">
+        insert into LOGINHISTORY(LOGINHISTORY_ID, USER_ID, IP, LOGIN_DATE)
+        values (LOGINHISTORY_SEQ.nextval, #{id}, #{ip}, SYSDATE)
+    </insert>
+
+
+    <resultMap id="userResult" type="com.stock.web.user.domain.UserDto">
+        <id property="id" column="USER_ID"/>
+        <result property="password" column="USER_PW"/>
+        <result property="birthday" column="USER_BIRTH"/>
+        <result property="name" column="USER_NAME"/>
+    </resultMap>
+
+
+    <select id="userInfo" resultMap="userResult">
+        select USER_ID, USER_PW, to_char(USER_BIRTH, 'yyyy-mm-dd') "USER_BIRTH", USER_NAME
+        from USERS
+        WHERE USER_ID = #{id}
+    </select>
+
+    <update id="userUpdate">
+        UPDATE users
+        SET user_pw = #{password}
+        WHERE user_id = #{id}
+    </update>
+
 
 </mapper>	
