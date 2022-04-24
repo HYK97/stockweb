@@ -227,18 +227,18 @@
                         <div class="mb-3">
                             <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32"
                                  class="rounded-circle">
-                            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을
+                            <label class="col-form-label"> ${sessionScope.login.id} 님의 생각을
                                 적어보세요</label>
 
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">내용:</label>
+                            <label for="content" class="col-form-label">내용:</label>
                             <textarea class="form-control" id="content"
-                                      style="min-height: calc(1.5em + 22.75rem + 2px);" name="CONTENT" placeholder="내용"
+                                      style="min-height: calc(1.5em + 22.75rem + 2px);" name="content" placeholder="내용"
                                       required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">해시태그 : </label>
+                            <label for="hashTag" class="col-form-label">해시태그 : </label>
                             <input type="text" class="form-control" id="hashTag" name="HASHTAG"
                                    placeholder="해시태그 #으로 구분">
                         </div>
@@ -270,7 +270,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">피드</h5>
+                    <h5 class="modal-title">피드</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -278,9 +278,9 @@
 
                         <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32"
                              class="rounded-circle">
-                        <label id="comments-author" for="recipient-name" class="col-form-label" style="margin: 1%;">
+                        <label id="comments-author" class="col-form-label" style="margin: 1%;">
                             글쓴이 </label>
-                        <label id="comments-date" for="recipient-name" class="col-form-label"
+                        <label id="comments-date" class="col-form-label"
                                style="font-size: 8;color: gray;font-style: italic;"> 날짜</label>
 
                     </div>

@@ -245,18 +245,18 @@
                         <div class="mb-3">
                             <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32"
                                  class="rounded-circle">
-                            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을
+                            <label  class="col-form-label"> ${sessionScope.login.id} 님의 생각을
                                 적어보세요</label>
 
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">내용:</label>
+                            <label for="CONTENT" class="col-form-label">내용:</label>
                             <textarea class="form-control" id="content"
                                       style="min-height: calc(1.5em + 22.75rem + 2px);" name="CONTENT" placeholder="내용"
                                       required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">해시태그 : </label>
+                            <label for="hashTag" class="col-form-label">해시태그 : </label>
                             <input type="text" class="form-control" id="hashTag" name="HASHTAG"
                                    placeholder="해시태그 #으로 구분">
                             <input type="hidden" class="form-control" id="formID" name="ID" value="">
@@ -289,7 +289,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">피드</h5>
+                    <h5 class="modal-title" >피드</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -297,20 +297,20 @@
 
                         <div style="flex-basis: 30px"><img src="../../../resources/img/velog.png" alt="mdo" width="32"
                                                            height="32" class="rounded-circle"></div>
-                        <div style="flex-basis: auto; margin-left:1%"><label id="comments-author" for="recipient-name"
+                        <div style="flex-basis: auto; margin-left:1%"><label id="comments-author"
                                                                              class="col-form-label"> 글쓴이 </label></div>
-                        <div style="flex-basis: auto; margin-left:1%"><label id="comments-date" for="recipient-name"
+                        <div style="flex-basis: auto; margin-left:1%"><label id="comments-date"
                                                                              class="col-form-label"
-                                                                             style="font-size: 8;color: gray;font-style: italic;">
+                                                                             style="font-size: 8px;color: gray;font-style: italic;">
                             날짜</label></div>
                         <div style="flex-basis: 74%;"></div>
 
                         <div class="dropdown text-end">
-                            <a href="#" class="d-block link-dark text-decoration-none  exBtn" id="dropdownUser1"
+                            <a href="#" class="d-block link-dark text-decoration-none  exBtn" id="dropdownUser2"
                                data-bs-toggle="dropdown" aria-expanded="false">
 
                             </a>
-                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser2" style="">
                                 <li>
                                     <a id="modifyContent" class="dropdown-item">수정</a>
                                 </li>
@@ -343,8 +343,8 @@
                         <c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
                             <form action="/community/commentsWrite" method="post" onsubmit="return false;">
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">댓글 : </label>
-                                    <input type="text" class="form-control" id="comment"
+                                    <label for="comment" class="col-form-label">댓글 : </label>
+                                    <input type="text" class="form-control" id="comment" name="comment"
                                            placeholder="${sessionScope.login.id} 님의 생각을 적어보세요" required>
                                 </div>
                                 <input id="commentsBtn" type="button" disabled class="btn btn-primary" value="댓글쓰기">
@@ -353,31 +353,7 @@
                         </c:if>
                         <div id=commetsList>
 
-                            <%-- <div class="mb-3">
-                                <div class="mb-3">
-                                    <div style="display: flex;">
-                                      <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                                    <label id="comment-author" for="recipient-name"  class="col-form-label"> '+data[i].USER_ID+' </label>
-                                    <label id="comment-date" for="recipient-name"  class="col-form-label">  '+data[i].writedate+'</label>
-                                    <c:if test="${sessionScope.login.id == '+data[i].USER_ID+'  }">
-                                    <div style="margin : 0 10%; display: flex;">
-                                    <button id="comdelete">삭제</button>
-                                    <button id="comupdate">수정</button>
 
-                                    </div>
-                                    </c:if>
-                                    </div>
-                                     <div class="mb-3">
-                             <div id="modal-comment">
-                                 '+data[i].comments+'
-
-
-                               </div>
-                               </div>
-
-
-                                </div>
-                            </div>    --%>
 
                         </div>
                     </div>
