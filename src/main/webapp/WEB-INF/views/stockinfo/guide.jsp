@@ -23,13 +23,8 @@
     <title>Community</title>
     <script src="../../../resources/js/header.js"></script>
     <script src="../../../resources/js/main.js"></script>
-
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
-    <script type="text/javascript"
-            src="https://about.stocktwits.com/wp-content/plugins/LayerSlider/static/layerslider/js/greensock.js?ver=1.19.0"
-            id="layerslider-greensock-js"></script>
-
     <link
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
             rel="stylesheet">

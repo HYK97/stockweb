@@ -20,6 +20,7 @@
     <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
     <title>Community</title>
     <script src="../../../resources/js/header.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="../../../resources/js/main.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
@@ -177,7 +178,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcats1.png" alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">시황맨</a>
@@ -193,8 +194,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts2.png"
-                                             alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">블록킹</a>
@@ -211,8 +211,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts3.png"
-                                             alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">코스닥에서 성공을 외치다</a>
@@ -228,8 +227,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts4.png"
-                                             alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">절제주식투자연구소</a>
@@ -245,8 +243,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts5.png"
-                                             alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
@@ -262,8 +259,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts6.png"
-                                             alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">비트코인 시황 분석 및 블록체인 정보 - 불롱체인</a>
@@ -291,8 +287,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top"
-                                                 src="C:\VSCODEWORKS\jutopia_project\img\youtube1.jpg" alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">레져프로뱅브로</a>
@@ -308,8 +303,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top"
-                                                 src="C:\VSCODEWORKS\jutopia_project\img\youtube2.jpg" alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">박곰희TV</a>
@@ -326,8 +320,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts3.png"
-                                                 alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">미국주식에 미치다</a>
@@ -343,8 +336,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top"
-                                                 src="C:\VSCODEWORKS\jutopia_project\img\stockusa.jpg" alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">STOCK USA</a>
@@ -360,8 +352,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts5.png"
-                                                 alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
@@ -377,8 +368,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top"
-                                                 src="C:\VSCODEWORKS\jutopia_project\img\podcast1.png" alt=""></a>
+                                <a href="#"></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                         <a href="#">뱅골호랑이, 강남 왕서방의 해외 주식 토크</a>
