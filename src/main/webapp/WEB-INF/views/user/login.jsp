@@ -90,7 +90,7 @@
     
                 <div class="mk-page-section-inner" style="width: 50%">
                     <div class="mk-video-color-mask" style="
-                                                    background: #2a363b; */
+                                                    background: #2a363b;
                                                     background: -moz-linear-gradient(top, #2a363b 0%, #2e2a3b 100%);
                                                     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a363b), color-stop(100%,#2e2a3b));
                                                     background: -webkit-linear-gradient(top, #2a363b 0%,#2e2a3b 100%);
@@ -103,7 +103,7 @@
                         <div class="mk-section-preloader__icon"></div>
                     </div>
                     <div class="background-layer-holder">
-                        <div id="background-layer--2" data-mk-lazyload="false" class="background-layer mk-background-stretch none-blend-effect js-el" data-mk-component="Parallax" data-parallax-config="{&quot;speed&quot; : 0.3 }" data-mk-img-set="{&quot;landscape&quot;:{&quot;desktop&quot;:&quot;../../../resources/img/team.jpg&quot;,&quot;tablet&quot;:&quot;../../../resources/img/team.jpg&quot;,&quot;mobile&quot;:&quot;&quot;},&quot;responsive&quot;:&quot;true&quot;}" mk-img-loaded="" style="background-image: url(&quot;../../../resources/img/team.jpg&quot;); background-attachment: scroll; will-change: transform; transform: translateY(0px) translateZ(0px);">
+                        <div id="background-layer--1" data-mk-lazyload="false" class="background-layer mk-background-stretch none-blend-effect js-el" data-mk-component="Parallax" data-parallax-config="{&quot;speed&quot; : 0.3 }" data-mk-img-set="{&quot;landscape&quot;:{&quot;desktop&quot;:&quot;../../../resources/img/team.jpg&quot;,&quot;tablet&quot;:&quot;../../../resources/img/team.jpg&quot;,&quot;mobile&quot;:&quot;&quot;},&quot;responsive&quot;:&quot;true&quot;}" mk-img-loaded="" style="background-image: url(&quot;../../../resources/img/team.jpg&quot;); background-attachment: scroll; will-change: transform; transform: translateY(0px) translateZ(0px);">
                             <div class="mk-color-layer"></div>
                         </div>
                     </div>

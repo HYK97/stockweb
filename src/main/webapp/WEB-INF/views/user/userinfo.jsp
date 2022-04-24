@@ -102,7 +102,7 @@
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="../../../resources/img/logo.png">
             </a>
-            <div style="width: 60%;display: block;margin-left: auto;margin-right: auto;height: 140p;">
+            <div style="width: 60%;display: block;margin-left: auto;margin-right: auto; height: 140px;">
                 <div style="margin-bottom: 1.5%;">
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0"
                         style="display: flex; justify-content: space-around;">
@@ -237,119 +237,6 @@
         <input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="변경" name="" id="updateBtn">
     </form>
 </div>
-<%-- <div id="contentList" class="contentList" style="width: 800px;  text-align: center; margin: 0 auto; overflow: auto;">
-          
-
-        </div>
-        
-        
-       		 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">피드쓰기</h5>
-			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      </div>
-			      <div class="modal-body" >
-			        <form action="/community/write" method="post" >
-			          <div class="mb-3">
-			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
-
-			          </div>
-			          <div class="mb-3">
-			            <label for="message-text" class="col-form-label">내용:</label>
-			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);" name="CONTENT" placeholder="내용" required></textarea>
-			          </div>
-			          <div class="mb-3">
-			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			            <input type="text" class="form-control" id="hashTag" name="HASHTAG" placeholder="해시태그 #으로 구분" required >
-			          </div>
-			    
-			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-			        <input  type="submit" class="btn btn-primary" value="글쓰기">
-			
-			        </form>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			
-			
-			 <div class="modal fade bs-example-modal-lg" id="bbs" tabindex="-1" aria-labelledby="bbs" aria-hidden="true" >
-			  <div class="modal-dialog modal-lg">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">피드</h5>
-			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      </div>
-			      <div class="modal-body" >
-			          <div class="mb-3">
-					
-			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-			            <label id="comments-author" for="recipient-name"  class="col-form-label"> 글쓴이 </label>
-			            <label id="comments-date" for="recipient-name"  class="col-form-label">  날짜</label>
-
-			          </div>
-			          <div class="mb-3">
-			         <div id="modal-contents">
-			         	
-      				 </div>
-      				 <div id="modal-hash">
-			         	
-      				 </div>
-      				 
-      				 </div>
-      				 <div class="mb-3">
-      				 <div id="rep-like" style="display:flex;align-items: center; ">
-      				 	<div id="likebtns"></div>
-			             <label id="like" class="col-form-label"> </label>
-			             <label  class="col-form-label">댓글 </label>
-			             <label id="com" class="col-form.btn-label"> </label>
-			          </div>  
-			          </div> 
-					<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->		
-			        <form action="/community/commentsWrite" method="post" >
-			          <div class="mb-3">
-			            <label for="recipient-name" class="col-form-label">댓글 : </label>
-			            <input type="text" class="form-control" id="comment" name="comment" placeholder="${sessionScope.login.id} 님의 생각을 적어보세요" required >
-			          </div>   
-			        <input id="commentsBtn" type="submit" disabled class="btn btn-primary" value="댓글쓰기">
-			
-			        </form>
-			        </c:if>
-			        <div id=commetsList>
-			        <div class="mb-3">
-			            <div class="mb-3">
-			            	<div style="display: flex;">
-				          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-				            <label id="comment-author" for="recipient-name"  class="col-form-label"> '+data[i].USER_ID+' </label>
-				            <label id="comment-date" for="recipient-name"  class="col-form-label">  '+data[i].writedate+'</label>
-				            <c:if test="${sessionScope.login.id == '+data[i].USER_ID+'  }">
-				            <div style="margin : 0 10%; display: flex;">
-				            <button id="comdelete">삭제</button>
-				            <button id="comupdate">수정</button>
-				            
-				            </div>
-				            </c:if>
-				            </div>
-				             <div class="mb-3">
-			         	<div id="modal-comment">
-			         	'+data[i].comments+'
-			       
-			         	
-      				 	</div>
-      				 	</div>
-			        
-			            
-			        	</div>
-			        </div>   
-			        
-			        </div>
-			      </div>
-			    </div>
-			  </div>
-			</div> --%>
 
 
 </body>
