@@ -1,7 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $("#message").slideUp();
-    $("#loginBtn").click(function() {
-        var action = $("#loginForm").attr('action');
+    $("#loginBtn").off().click(function () {
+
+        var action = "/user/login";
         var form_data = {
             id: $("#ID").val(),
             password: $("#PASSWORD").val(),
@@ -10,8 +11,7 @@ $(document).ready(function() {
             type: "POST",
             url: action,
             data: form_data,
-
-            success: function(Integer) {
+            success: function (Integer) {
                 if (Integer == 1) {
                     location.href = "/community/community"
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
                     $("#message").slideDown('slow');
                 }
             },
-            error: function(request, error) {
+            error: function (request, error) {
                 alert("fail");
                 alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
             }

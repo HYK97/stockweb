@@ -4,6 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
+
+
 <head>
     <script type="text/javascript">
         var sessionData = '<c:out value="${sessionScope.login.id}"/>';
@@ -16,19 +18,15 @@
     <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../resources/js/userinfo.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap"
-          rel="stylesheet">
-    <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+
+
     <title>Community</title>
     <script src="../../../resources/js/header.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
+    <!--    <script src="../../../resources/js/content.js"></script> -->
+
+
     <style>
         .text-center {
             text-align: center;
@@ -86,7 +84,6 @@
             }
         }
     </style>
-    </style>
 
 
 </head>
@@ -102,12 +99,12 @@
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="../../../resources/img/logo.png">
             </a>
-            <div style="width: 60%;display: block;margin-left: auto;margin-right: auto; height: 140px;">
+            <div style="width: 60%;display: block;margin-left: auto;margin-right: auto;height: 140px;">
                 <div style="margin-bottom: 1.5%;">
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0"
                         style="display: flex; justify-content: space-around;">
                         <li>
-                            <a href="/user/userinfo" class="nav-link px-2 link-secondary">회원정보변경</a>
+                            <a href="/user/userinfo" class="nav-link px-2 link-dark">회원정보변경</a>
                         </li>
                         <li>
                             <a href="/user/myWrite" class="nav-link px-2 link-dark">내가쓴 글</a>
@@ -116,7 +113,7 @@
                             <a href="/user/likeContent" class="nav-link px-2 link-dark">좋아요 글</a>
                         </li>
                         <li>
-                            <a href="/user/loginHistory" class="nav-link px-2 link-dark">접속내역</a>
+                            <a href="/user/loginHistroy" class="nav-link px-2 link-secondary">접속내역</a>
                         </li>
                     </ul>
                 </div>
@@ -172,72 +169,32 @@
     </div>
 </header>
 <!-- -----------------------body---------------------------------- -->
-
-<div style="margin-top:100px; width: 800px;  text-align: left; margin: 5% auto; overflow: auto;"
-     class="col p-0  d-flex justify-content-center align-items-center flex-column ">
-    <form class="w-75" action="/user/userEdit" method="post" id="loginForm">
-        <label for="id" class="form-label">아이디</label>
+<div style="width: 100%; height: 100%; min-height: 650px">
 
 
-        <div class="mb-3">
-            <input
-                    disabled="disabled"
-                    type="text"
-                    class="form-control"
-                    id="id"
-                    check_result="fail"
-                    name="id"
-                    placeholder="ID"
-                    required>
-        </div>
+    <table style="margin: 0 auto;
+    width: 60vw;" class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <td>아이디</td>
+            <td>ip</td>
+            <td>로그인시간</td>
+        </tr>
+        </thead>
+        <c:forEach items="${user}" var="user">
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.ip}</td>
+            <td>${user.date}</td>
+
+        </tr>
+        <tr>
+            </c:forEach>
+
+    </table>
 
 
-        <div class="mb-3">
-            <label for="password" class="form-label">비밀번호</label>
-            <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    placeholder="PASSWORD"
-                    required>
-        </div>
-        <div class="mb-3">
-            <label for="check" class="form-label">비밀번호확인</label>
-            <input
-                    type="password"
-                    class="form-control"
-                    id="check"
-                    placeholder="PASSWORD"
-                    required>
-        </div>
-        <div class="mb-3">
-            <label for="name" class="form-label">이름</label>
-            <input
-                    disabled="disabled"
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="name"
-                    required>
-        </div>
-        <div class="mb-3">
-            <label for="birthday" class="form-label">생일</label>
-            <input
-                    disabled="disabled"
-                    type="date"
-                    class="form-control"
-                    id="birthday"
-                    name="birthday"
-                    placeholder="birthday"
-                    required>
-        </div>
-
-        <input type="submit" class="btn btn-custom btn-lg btn-block mt-3" value="변경" name="" id="updateBtn">
-    </form>
 </div>
-
 
 </body>
 </html>

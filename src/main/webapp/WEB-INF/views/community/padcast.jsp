@@ -1,301 +1,207 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../../../resources/img/logo.png"> 
-        <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
-      	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  		<script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
-        <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
-        <title>Community</title>
-        <link rel="stylesheet" type="text/css" href="../../../resources/css/default.css">
-        <link rel="stylesheet" type="text/css" href="../../../resources/css/component.css">
-        <!-- 네모틀 -->
-        <script src="../../../resources/js/modernizr.custom.js"></script>
-        <script src="../../../resources/js/main.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-        <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
-        
-      
-        <link rel="stylesheet" id="theme-options-css" href="https://about.stocktwits.com/wp-content/uploads/mk_assets/theme-options-production-1612242140.css?ver=1612242135" type="text/css" media="all">
-        <link
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../resources/img/logo.png">
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../../../resources/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;family=Nanum+Pen+Script&amp;display=swap"
+          rel="stylesheet">
+    <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+    <title>Community</title>
+    <script src="../../../resources/js/header.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="../../../resources/js/main.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../../resources/css/index.css">
+    <link
             href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&display=swap"
             rel="stylesheet">
-        <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
-        <title>Podcast</title>
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-            .mySlides {
-                display: none;
-            }
-            img {
-                vertical-align: middle;
-            }
+    <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
+    <title>Podcast</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-            /* Slideshow container */
-            .slideshow-container {
-                max-width: 1000px;
-                position: relative;
-                margin: auto;
-            }
+        .mySlides {
+            display: none;
+        }
 
-            /* Caption text */
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
             .text {
-                color: #f2f2f2;
-                font-size: 15px;
-                padding: 8px 12px;
-                position: absolute;
-                bottom: 8px;
-                width: 100%;
-                text-align: center;
+                font-size: 11px;
             }
+        }
 
-            /* Number text (1/3 etc) */
-            .numbertext {
-                color: #f2f2f2;
-                font-size: 12px;
-                padding: 8px 12px;
-                position: absolute;
-                top: 0;
-            }
+        .box {
+            -ms-overflow-style: none;
+        }
 
-            /* The dots/bullets/indicators */
-            .dot {
-                height: 15px;
-                width: 15px;
-                margin: 0 2px;
-                background-color: #bbb;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
-
-            .active {
-                background-color: #717171;
-            }
-
-           
-
-            @-webkit-keyframes fade {
-                from {
-                    opacity: 0.4;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-
-            @keyframes fade {
-                from {
-                    opacity: 0.4;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-
-            /* On smaller screens, decrease text size */
-            @media only screen and (max-width: 300px) {
-                .text {
-                    font-size: 11px;
-                }
-            }
-            
-            .box{ -ms-overflow-style: none; } .box::-webkit-scrollbar{ display:none; }
+        .box::-webkit-scrollbar {
+            display: none;
+        }
 
 
-        </style>
-    </head>
-    <body>
-    <div>
-        <!------------------header---------------------------->
-          <header class="p-3 mb-3 border-bottom" style="z-index: 1;position: sticky;top: 0px;background-color: white;margin: 0;padding-top: 5px!important;padding-bottom: 9px!important;">
-        <div class="container" style=" margin-right: auto; margin-left: auto;">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                    <img src="../../../resources/img/logo.png">
-                </a>
-                <div style="width: 60%;display: block;margin-left: auto;margin-right: auto;height: 140p;">
-                    <div style="margin-bottom: 1.5%;">
-                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0" style="display: flex; justify-content: space-around;">
-                            <li>
-                                <a href="/stockinfo/main" class="nav-link px-2 link-dark">주요시세정보</a>
-                            </li>
-                            <li>
-                                <a href="/community/padcast" class="nav-link px-2 link-secondary">팟캐스트</a>
-                            </li>
-                            <li>
-                                <a href="/stockinfo/guide" class="nav-link px-2 link-dark">주식가이드</a>
-                            </li>
-                            <li>
-                                <a href="/community/community" class="nav-link px-2 link-dark">커뮤니티</a>
-                            </li>
-                            <li>
-                                <a href="/community/chart" class="nav-link px-2 link-dark">차트</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="justify-content: space-around;display: flex;border-top: 1px solid #dee2e6; height: 60px">
-                        <div style="display: flex; justify-content: center; align-items: center;  border-radius: 1.5em;  ">                   
-                            <button id="sliderBtn" style="background :transparent; border-color: transparent;" check_result="stop">
-                                <img style="width: 20px;" src="../../../resources/img/stop.png" alt="">
-                            </button>
-                        </div>
-                        <div id="headDiv" style="width: 700px; overflow: hidden;">
-                            <ul id="stockheader" class="nav col-12 col-lg-auto me-lg-auto mb-2  mb-md-0 text-center" style="position: relative;   height: 50px;  vertical-align: middle;">
-							</ul>                        
-                        </div>
-                    </div>
-                </div>
-				 <div style="margin-right: 1%">
-                <!--  <form action="/community/search" method="get" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"> -->
-                        	<input type="text" name="search" id="search" class="form-control" placeholder="@종목명/종목코드 or #해시태그로 검색">
-                    	<!--</form>-->
-				</div>
+    </style>
+</head>
+<body>
+<div>
+    <!------------------header---------------------------->
+    <jsp:include page="../include/header.jsp"></jsp:include>
+    <!--body-->
+    <div class="container">
 
-			<c:if test="${not empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
-                <div class="dropdown text-end">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        <div class="row">
+            <div class="col-lg-3">
+
+                <h1 class="my-4">팟캐스트</h1>
+                <div class="list-group">
+                    <a id="list1" class="list-group-item">
+                        국내 주식
                     </a>
-                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                        <li>
-                            <a id="headerWrite" class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기 </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">알람</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="/user/userinfo">${sessionScope.login.id} 님 계정정보</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="/user/logout">로그아웃</a>
-                        </li>
-                    </ul>
+                    <a id="list2" class="list-group-item">
+                        해외 주식
+                    </a>
+                    <a id="list3" class="list-group-item">
+                        인터넷방송
+                    </a>
                 </div>
-               </c:if> 
-               <c:if test="${empty sessionScope.login }"> <!-- sessionScopre.id가 있으면 -->
-                <div style="margin: 0 10px; ">
-						
-						<div style="margin: 0 3%">
-						<a href="/user/login"><button style="width: 110%; padding: 7px"  class=" lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd  lib_3-XmGDP lib_12C0HKX lib_3wnZQA7">로그인</button></a>
-						</div>
-					</div>
-			</c:if>
-                
+
             </div>
-        </div>
-    </header>
-        <!--body-->
-        <div class="container">
 
-            <div  class="row">
-                <div class="col-lg-3">
+            <div id="one" class="col-lg-9">
 
-                    <h1 class="my-4">팟캐스트</h1>
-                    <div class="list-group">
-                        <a id="list1" class="list-group-item">
-                            국내 주식
-                        </a>
-                        <a id="list2" class="list-group-item">
-                            해외 주식
-                        </a>
-                        <a id="list3" class="list-group-item">
-                            인터넷방송
-                        </a>
+                <div class="slideshow-container">
+
+                    <div class="mySlides ">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="../../../resources/img/caption1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides ">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="../../../resources/img/caption2_1.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides ">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="../../../resources/img/caption3.jpg" style="width:100%">
                     </div>
 
                 </div>
+                <br>
 
-                <div id="one" class="col-lg-9">
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
 
-                    <div class="slideshow-container">
-
-                        <div class="mySlides ">
-                            <div class="numbertext">1 / 3</div>
-                            <img src="../../../resources/img/caption1.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">2 / 3</div>
-                            <img src="../../../resources/img/caption2_1.png" style="width:100%">
-                        </div>
-
-                        <div class="mySlides ">
-                            <div class="numbertext">3 / 3</div>
-                            <img src="../../../resources/img/caption3.jpg" style="width:100%">
-                        </div>
-
-                    </div>
-                    <br>
-
-                    <div style="text-align:center">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcats1.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">시황맨</a>
-                                    </h4>
-                                    <h5>#경제</h5>
-                                    <p class="card-text">국내 증시, 해외 증시 시황을 이해하기 쉽게 전달해 드립니다.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts2.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">블록킹</a>
-                                    </h4>
-                                    <h5>#가상화폐 #블록체인</h5>
-                                    <p class="card-text">블록체인과 관련된 여러가지 주제들을 알기 쉽게 설명드리고 해당 주제들을 가지고 이야기를 나눕니다.</p>
-                                    비트코인, 이더리움, ICO 과 같은 주제들을 다룹니다. 한 주의 핫 이슈들을 소개합니다.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row">
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts3.png" alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">미국주식에 미치다</a>
+                                    <a href="#">시황맨</a>
                                 </h4>
-                                <h5>#해외주식 #미국주식</h5>
-                                <p class="card-text">국내유일의 미국주식전문팟캐스트.</p>
+                                <h5>#경제</h5>
+                                <p class="card-text">국내 증시, 해외 증시 시황을 이해하기 쉽게 전달해 드립니다.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">블록킹</a>
+                                </h4>
+                                <h5>#가상화폐 #블록체인</h5>
+                                <p class="card-text">블록체인과 관련된 여러가지 주제들을 알기 쉽게 설명드리고 해당 주제들을 가지고 이야기를 나눕니다.</p>
+                                비트코인, 이더리움, ICO 과 같은 주제들을 다룹니다. 한 주의 핫 이슈들을 소개합니다.</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
@@ -305,7 +211,23 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts4.png" alt=""></a>
+                            <a href="#"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">코스닥에서 성공을 외치다</a>
+                                </h4>
+                                <h5>#코스닥 150 #코스닥</h5>
+                                <p class="card-text">잘나가는 코스닥, 진짜 보석 찾는 법 - 조선비즈</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">절제주식투자연구소</a>
@@ -321,7 +243,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts5.png" alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
@@ -337,7 +259,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="C:\VSCODEWORKS\html\img\podcasts6.png" alt=""></a>
+                            <a href="#"></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#">비트코인 시황 분석 및 블록체인 정보 - 불롱체인</a>
@@ -347,385 +269,193 @@
                                     풀이하여 전달하고자 '불롱체인'이란 방송을 기획하였습니다.</p>
                                 방송명에서 '불'은 상승장의 의미인 영어 'bull'을 의미하며 '롱'은 bull 장에서 매수하여 상승을 기대하는것이 'long'이란 의미이기에
                                 블록체인의 상승을 기대하는 의미를 담고 있습니다.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.row -->
-
-        </div>
-        
-		<div hidden id="two" class="col-lg-9">
-			<div>sssssssssssss이거</div>
-		</div>
-    </div>
-</div>
-<!-- -----------------------------visual--------------------------------->
-<div id="visual" style=" height: 270px;">
-    <div class="st_1ao2W9y st_Qu5atwI">
-        <a href="#" rel="noopener" target="_blank">
-            <div
-                class="st_36gDNqv st_25_T2PJ st_1MDe3Mh st_GnnuqFp st_2-AYUR9 st_jGV698i st_1GuPg4J st_2HqScKh st_2lU9lq1">
-                <div class="st_14mG6N- st_2k2hsCY">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="525"
-                        height="272"
-                        viewbox="0 0 525 272">
-                        <defs>
-                            <lineargradient id="a" x1="13.856%" x2="85.871%" y1="86.39%" y2="15.477%">
-                                <stop offset="0%" stop-color="#24FFA8" stop-opacity="0"></stop>
-                                <stop offset="100%" stop-color="#24FFA8"></stop>
-                            </lineargradient>
-                            <filter
-                                id="b"
-                                width="119.1%"
-                                height="119.1%"
-                                x="-9.6%"
-                                y="-9.6%"
-                                filterunits="objectBoundingBox">
-                                <fegaussianblur in="SourceGraphic" stddeviation="15"></fegaussianblur>
-                            </filter>
-                        </defs>
-                        <circle
-                            cx="259"
-                            cy="244"
-                            r="235"
-                            fill="url(#a)"
-                            fill-opacity=".5"
-                            fill-rule="nonzero"
-                            filter="url(#b)"
-                            transform="rotate(190 259 244)"></circle>
-                    </svg>
-                </div>
-                <div class="st_1kvx1wU"></div>
-                <div class="st_tmDqi7Z st_2k2hsCY st_v2SiH_J st_3AYudBJ"></div>
-                <div
-                    class="st_3zqxjta st_jGV698i st_1GuPg4J st_1Z-amNw st_2HqScKh st_cUBEAH8 st_2uhTU4W">
-                    <div class="st_2sNYbeJ st_jGV698i st_1GuPg4J st_1jlXvfv st_Qu5atwI">
-                        <div class="st_2uHqcfm st_3QTv-Ni">
-                            <svg width="500px" height="50px" viewbox="0 0 600 140">
-                                <text
-                                    x="-400"
-                                    y="90"
-                                    fill="#fff"
-                                    font-size="110px"
-                                    font-family="'Nanum Pen Script', cursive"
-                                    textlength="1200px"
-                                    lengthadjust="spacingAndGlyphs">
-                                    수수료없이 거래하고 정보를 공유하세요!
-                                </text>
-                            </svg>
-                        </svg>
-                        <div class="st_1W8EzVj">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 229 22" width="100%">
-                                <defs>
-                                    <filter
-                                        id="a"
-                                        width="105.6%"
-                                        height="318%"
-                                        x="-2.8%"
-                                        y="-109.1%"
-                                        filterunits="objectBoundingBox">
-                                        <fegaussianblur in="SourceGraphic" stddeviation="1.6"></fegaussianblur>
-                                    </filter>
-                                    <filter
-                                        id="b"
-                                        width="102%"
-                                        height="178.7%"
-                                        x="-1%"
-                                        y="-39.5%"
-                                        filterunits="objectBoundingBox">
-                                        <fegaussianblur in="SourceGraphic" stddeviation=".3"></fegaussianblur>
-                                    </filter>
-                                    <filter
-                                        id="c"
-                                        width="118.4%"
-                                        height="971.6%"
-                                        x="-9.2%"
-                                        y="-435.9%"
-                                        filterunits="objectBoundingBox">
-                                        <fegaussianblur in="SourceGraphic" stddeviation="1.6"></fegaussianblur>
-                                    </filter>
-                                    <filter
-                                        id="d"
-                                        width="106.6%"
-                                        height="414.5%"
-                                        x="-3.3%"
-                                        y="-157.3%"
-                                        filterunits="objectBoundingBox">
-                                        <fegaussianblur in="SourceGraphic" stddeviation=".3"></fegaussianblur>
-                                    </filter>
-                                </defs>
-                                <g
-                                    fill="none"
-                                    fill-rule="evenodd"
-                                    stroke="#24FFA8"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2.6">
-                                    <path
-                                        d="M0 5.6c56.593-9.383 79.49-4.391 144.144-3.278 24.216.417 48.437-.198 72.656-.296"
-                                        filter="url(#c)"
-                                        transform="translate(5 5)"></path>
-                                    <path
-                                        d="M0 5.6c56.593-9.383 79.49-4.391 144.144-3.278 24.216.417 48.437-.198 72.656-.296"
-                                        filter="url(#d)"
-                                        transform="translate(5 5)"></path>
-                                    <g>
-                                        <path
-                                            d="M0 1.4C17.333-.946 24.345.302 44.148.58 51.564.686 58.983.532 66.4.507"
-                                            filter="url(#c)"
-                                            transform="translate(158.2 15.4)"></path>
-                                        <path
-                                            d="M0 1.4C17.333-.946 24.345.302 44.148.58 51.564.686 58.983.532 66.4.507"
-                                            filter="url(#d)"
-                                            transform="translate(158.2 15.4)"></path>
-                                    </g>
-                                </g>
-                            </svg>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="st_3fpWRs8 st_3QTv-Ni">
-                        <svg width="600" height="50" viewbox="0 0 600 140">
-                            <text
-                                x="-500"
-                                y="90"
-                                fill="#fff"
-                                font-size="40px"
-                                font-family="'Do Hyeon', sans-serif "
-                                textlength="1300"
-                                lengthadjust="spacingAndGlyphs">
-                                수수료 없이 전체 또는 일부 주식으로 투자하고 원하는 사람과 거래를 공유하세요!
-                            </text>
-                        </svg>
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+
+            <div hidden id="two" class="col-lg-9">
+                <div>
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">레져프로뱅브로</a>
+                                    </h4>
+                                    <h5>#미국주식</h5>
+                                    <p class="card-text">구독자 : 18.3명, 미국 주식 상반기 대응전략.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ☆</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">박곰희TV</a>
+                                    </h4>
+                                    <h5>#초보자 #금융유튜버</h5>
+                                    <p class="card-text">"내 돈은 내손으로" 박곰희TV는 많은 사람들이 스스로 자산 관리 하는 방법을 익히는 것을 목표로 하고
+                                        있습니다.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ★</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">미국주식에 미치다</a>
+                                    </h4>
+                                    <h5>#해외주식 #미국주식</h5>
+                                    <p class="card-text">국내유일의 미국주식전문팟캐스트.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ★</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">STOCK USA</a>
+                                    </h4>
+                                    <h5>#미국주식</h5>
+                                    <p class="card-text">미국 주식투자 전문 방송 채널.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ☆</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">키움증권 주식, 글로벌 시황 투자전략</a>
+                                    </h4>
+                                    <h5>#경제</h5>
+                                    <p class="card-text">국내외 경제이슈 및 투자전략, 종목분석까지~ 주식투자의 모든 것!!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ☆</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">뱅골호랑이, 강남 왕서방의 해외 주식 토크</a>
+                                    </h4>
+                                    <h5>#해외주식</h5>
+                                    <p class="card-text">올바른 경제 및 자본시장과 함께 하는 글로벌 자산 금융 투자의 모든 것!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">★ ★ ★ ★ ☆</small>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="st_1UKVGiZ st_2-AYUR9 st_jGV698i st_2HqScKh st_3tuT9Yf"><img
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODgiIGhlaWdodD0iODQiIHZpZXdCb3g9IjAgMCAxODggODQiPgogICAgPGRlZnM+CiAgICAgICAgPGZpbHRlciBpZD0iYSIgd2lkdGg9IjEwMy4zJSIgaGVpZ2h0PSIxMDcuNSUiIHg9Ii0xLjYlIiB5PSItMy44JSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICAgICAgICAgICAgPGZlR2F1c3NpYW5CbHVyIGluPSJTb3VyY2VHcmFwaGljIiBzdGREZXZpYXRpb249Ii41Ii8+CiAgICAgICAgPC9maWx0ZXI+CiAgICA8L2RlZnM+CiAgICA8cGF0aCBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iI0ZGMDBFNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjMiIGQ9Ik0xMTYwIDg5OS43MzdjLS44MTctMTEuNjk4LTIuOTU4LTIzLjk5LTI3LjMzMy0zNC4zODYtMzcuMzItMTUuOTE3LTEzOC41MzEtMzMuMTI4LTE1NC45NDIgMTYuMzM2LTEwLjE2IDMwLjYyNSAyNi4zOSA0NC45OTkgNjEuNDMyIDQ1Ljg1NSAzNS4wNDIuODU2IDgxLjIzNSA3LjQ2MSAxMDQuMjQ1LTE2Ljc5NCAxMi41OC0xMy4yNjEgMTYuNTk4LTIxLjU3OCAxMi43MTgtMzYuMDg1IiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05NzQgLTg0NykiLz4KPC9zdmc+Cg=="
-                    class="st_2GdkxIs st_2k2hsCY">
-                    <svg width="500px" height="60px" viewbox="0 0 600 140">
-                        <text
-                            x="150"
-                            y="110"
-                            fill="#24FFA8"
-                            font-size="90px"
-                            font-family="'Do Hyeon', sans-serif "
-                            textlength="300px"
-                            lengthadjust="spacingAndGlyphs">
-                            시작하기
-                        </text>
-                    </svg>
-                </div>
             </div>
-        </div>
-    </a>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ">
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">피드쓰기</h5>
-			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      </div>
-			      <div class="modal-body" >
-			        <form id="writeForm" action="/community/write" method="post" >
-			          <div class="mb-3">
-			          	<img src="../../../resources/img/velog.png" alt="mdo" width="32" height="32" class="rounded-circle">
-			            <label for="recipient-name" class="col-form-label"> ${sessionScope.login.id} 님의 생각을 적어보세요</label>
 
-			          </div>
-			          <div class="mb-3">
-			            <label for="message-text" class="col-form-label">내용:</label>
-			            <textarea class="form-control" id="content" style="min-height: calc(1.5em + 22.75rem + 2px);" name="content" placeholder="내용" required></textarea>
-			          </div>
-			          <div class="mb-3">
-			            <label for="recipient-name" class="col-form-label">해시태그 : </label>
-			            <input type="text" class="form-control" id="hashTag" name="hashTag" placeholder="해시태그 ,로 구분 최대 5개까지" required >
-			          </div>
-			    
-			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-			        <input  type="submit" class="btn btn-primary" value="글쓰기">
-			
-			        </form>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+            <script type="text/JavaScript">
 
-</div>
-<!--------------------------------footer--------------------------------->
-<footer id="footer" style=" height: 300px; border-top: 1px solid #dee2e6; ">
-<div
-    class="contents"
-    style="width: 800px; height: inherit;  text-align: center; margin: 0 auto;">
-    <div class="lib_3WlkSok lib_pmnolf8" style="padding : 5% 3%;">
-        <div class="lib_tuAbocL lib_3UzYkI9 lib_iAc2fkL lib_24UXSFj lib_285rttb">
-            <div class="lib_1Hrnkmu">
-                <div class="lib_1gWiiBf lib_2S7tmc- lib_65XwjLA lib_1XCy-SC">
-                    <ul
-                        class="lib_3U9ewX1 lib_pmnolf8 lib_3UzYkI9 lib_24UXSFj lib_2p_jTmF lib_23WxpCB lib_2gU77Qd"
-                        style="text-align: left">
-                        <li>
-                            <a href="#" rel="noopener" target="_blank">회사소개</a>
-                        </li>
-                        <li>
-                            <a href="#">개인정보처리방침</a>
-                        </li>
-                        <li>
-                            <a href="#" rel="noopener" target="_blank">1대1 문의하기</a>
-                        </li>
-                        <li>
-                            <a href="#">모범사례</a>
-                        </li>
-                        <li>
-                            <a href="#" rel="noopener" target="_blank">블로그</a>
-                        </li>
-                        <li>
-                            <a href="#" rel="noopener" target="_blank">개발자</a>
-                        </li>
-                        <li>
-                            <a href="#">공지사항</a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank">자주하는질문</a>
-                        </li>
-                        <li>
-                            <a href="#">이용약관</a>
-                        </li>
-                        <li>
-                            <a href="#">조건</a>
-                        </li>
-                        <li>
-                            <a class="lib_1Nq1Qic lib_3RwLEdi" href="#">광고문의</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="lib_143roFp" style="width: 100px;">
-                <img src="../../../resources/img/logo.png" style="height: 88px;" alt="logo">
-            </div>
-            <div
-                class="lib_143roFp"
-                style="width: 240px;>
-                        <h4 class="
-                lib_wykgpqa="lib_WYkgPQa"
-                lib_rljvxxj="lib_rljvxxj"
-                lib_2tuiksz="lib_2TuIKSz"
-                lib_65xwjla="lib_65XwjLA"
-                lib_1xcy-sc"="lib_1XCy-SC"">알람 받기
-            </h4>
-            <form
-                autocomplete="off"
-                class="lib_2mT6iG2 lib_3UzYkI9 lib_iAc2fkL lib_3PxyMmd lib_19qAsOz">
-                <div class="lib_2mT6iG2 lib_3UzYkI9 lib_iAc2fkL lib_3PxyMmd lib_19qAsOz">
-                    <div
-                        class="lib_3X4eZ-6 lib_2TuIKSz lib_65XwjLA lib_1XCy-SC lib_1p6SlnP lib_9ZK2ODV">
-                        <label class="lib_34gpIKJ lib_17kCokv lib_lPsmyQd lib_AWe8PWK lib_3PxyMmd"><input
-                            type="text"
-                            class="lib_1wfqR1p lib_3QqxY_W lib_2p_jTmF lib_1wUkfaO lib_3Y_hr05 lib_3PxyMmd js-bound"
-                            name="email"
-                            value=""
-                            placeholder="이메일 입력"></label>
-                    </div>
-                    <div class="lib_1w2ANFn lib_2S7tmc- lib_65XwjLA lib_1XCy-SC">
-                        <button
-                            class="lib_2cF8aMP lib_c4bD4Or lib_2ybS2EZ lib_3NGW_J6 lib_2q7AR4x lib_3kUdsG1 lib_3Z398za lib_2WawZPB lib_2bmVxh4 lib_3PxyMmd lib_q275ObV lib_JZxvQws lib_3RwLEdi lib_yW5-oZX lib_c4bD4Or"
-                            type="submit"
-                            title="Subscribe"
-                            alt="Subscribe">구독</button>
+                $(document).ready(function () {
+
+
+                });
+            </script>
+
+            <div id="three" hidden="true" class="col-lg-9">
+                <div style="overflow: hidden;position: relative;">
+                    <div id="wrap" style="position: relative;left: 16px;top:-267px;">
+                        <iframe
+                                id="ifrm"
+                                src="https://www.afreecatv.com/total_search.html?szSearchType=broad&szStype=di&szKeyword=%EC%A3%BC%EC%8B%9D&rs=1"
+                                style="width:750px;height: 591vh" scrolling="no" frameborder="0"></iframe>
                     </div>
                 </div>
-            </form>
-            <div class="lib_3Kvwi5g lib_3UzYkI9 lib_iAc2fkL lib_24UXSFj lib_lPsmyQd">
-                <ul
-                    class="lib_VbRVgfB lib_3UzYkI9 lib_iAc2fkL lib_2p_jTmF lib_23WxpCB lib_2gU77Qd lib_2S7tmc- lib_65XwjLA lib_1XCy-SC">
 
-                    <li>
-                        <a href="#" rel="noopener" target="_blank">
-                            <svg
-                                class="lib_1e7YeD3 lib_3NGW_J6 lib_2jbIWTp lib_2bmVxh4 lib_1LUBAjF"
-                                height="100%"
-                                viewbox="0 0 512 512"
-                                width="100%">
-                                <path
-                                    d="M463.7450866699219,0.000020274907981408406 h-416.2419128417969 q-20.198352813720703,0 -33.841270446777344,14.790528711004299 t-13.66191577911377,34.33447827361488 v414.85442975873957 q0,20.13102589680966 13.66191577911377,33.72846710481417 t33.841270446777344,13.616376042606134 h207.2279052734375 v-223.7138508632961 h-64.71833801269531 v-63.915535695623475 h64.71833801269531 v-32.55431443641601 q0,-39.656040624818615 28.19788932800293,-67.17286062272524 t66.80847930908203,-27.516822835011 h64.71833801269531 v64.50261202982256 h-64.71833801269531 q-13.072876930236816,0 -22.858531951904297,9.771974781305289 t-9.804656982421875,22.195263320911636 v32.55431443641601 h95.0063705444336 l-13.072876930236816,62.135371858424605 h-79.57733917236328 v223.7138508632961 h144.29566955566406 q19.590314865112305,0 33.556251525878906,-13.616376042606134 t13.946935653686523,-33.72846710481417 v-414.85442975873957 q0,-19.525013309456767 -13.946935653686523,-34.33447827361488 t-33.556251525878906,-14.790528711004299 z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" rel="noopener" target="_blank"><img
-                            class="lib_2oZJc-h lib_2CZJ9Xf"
-                            src="https://s3.amazonaws.com/st-assets/production/new-web/badge-apple.png"></a>
-                    </li>
-                    <li>
-                        <a href="#" rel="noopener" target="_blank"><img
-                            class="lib_2oZJc-h lib_2CZJ9Xf"
-                            src="https://s3.amazonaws.com/st-assets/production/new-web/badge-android.png"></a>
-                    </li>
-                </ul>
+
             </div>
         </div>
     </div>
-    <div class="lib_149scZE lib_2S7tmc- lib_65XwjLA lib_1XCy-SC lib_1LUBAjF">
-        <div>©2021 Jutopia, Inc. 모든 권리 보유.</div>
-        <div class="lib_2neEUmq">
-            <p>증권 상품 및 서비스는 Jutopia, ST를 통해 전문 투자자에게 제공됩니다. ST 투자(신탁)회사는 Jutopia 주식회사의 소유입니다.
-                <br>증권 상품에 대한 투자는 원금 손실 가능성을 포함한 위험을 수반합니다.<br>
-                <a href="#" rel="noopener noreferrer" target="_blank">중요한 법률 공시를 읽어 주십시오.</a>
-            </p>
-        </div>
-    </div>
-</div>
-</div>
-</footer>
+    <jsp:include page="../include/visual.jsp"></jsp:include>
+    <jsp:include page="../include/footer.jsp"></jsp:include>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i]
+                    .className
+                    .replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        $('#list1').click(function () {
+            $('#one').removeAttr('hidden');
+            $('#two').attr('hidden', 'true');
+            $('#three').attr('hidden', 'true');
+        });
+        $('#list2').click(function () {
+            $('#one').attr('hidden', 'true');
+            $('#two').removeAttr('hidden');
+            $('#three').attr('hidden', 'true');
+        });
+        $('#list3').click(function () {
+            $('#one').attr('hidden', 'true');
+            $('#two').attr('hidden', 'true');
+            $('#three').removeAttr('hidden');
+
+            var hei = $('#ifr').contents().height();
+            $('#ifr').css('height', hei);
 
 
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-}
-slideIndex++;
-if (slideIndex > slides.length) {
-    slideIndex = 1
-}
-for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i]
-        .className
-        .replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-dots[slideIndex - 1].className += " active";
-setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-
-$('#list1').click( function() {
-	$('#one').removeAttr('hidden');
-	$('#two').attr('hidden','true');
-	$('#three').attr('hidden','true');
-} );
-$('#list2').click( function() {
-	$('#one').attr('hidden','true');
-	$('#two').removeAttr('hidden');
-	$('#three').attr('hidden','true');
-} );
-$('#list3').click( function() {
-	$('#one').attr('hidden','true');
-	$('#two').attr('hidden','true');
-	$('#three').removeAttr('hidden');
-} );
-</script>
+        });
+    </script>
 </div>
 </body>
 </html>
