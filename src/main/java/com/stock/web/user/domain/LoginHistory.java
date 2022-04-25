@@ -11,9 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class LoginHistory {
-    private String id;
-    private String ip;
-    private String date;
 
+    private String id;
+
+    private String ip;
+
+    private String date;
 
 }
