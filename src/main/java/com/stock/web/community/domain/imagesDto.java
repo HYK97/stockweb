@@ -10,8 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class imagesDto {
-	private String fileName;
-	private String fileId;
-	private Long bbs_id;
+
+    private String fileName;
+
+    private String fileId;
+
+    private Long bbs_id;
 
 }
