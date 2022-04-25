@@ -19,6 +19,7 @@
     <link data-chunk="app" rel="stylesheet" href="../../../resources/css/style.css">
     <title>Community</title>
     <script src="../../../resources/js/main.js"></script>
+    <script src="../../../resources/js/header.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

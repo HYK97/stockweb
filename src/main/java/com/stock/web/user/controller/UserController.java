@@ -101,8 +101,6 @@ public class UserController {
 
         JSONArray jsonArray = JSONArray.fromObject(list);
 
-
-        log.info(jsonArray);
         session.setAttribute("login", session.getAttribute("login"));
         return jsonArray.toString();
     }
@@ -122,8 +120,6 @@ public class UserController {
 
         JSONArray jsonArray = JSONArray.fromObject(list);
 
-
-        log.info(jsonArray);
         session.setAttribute("login", session.getAttribute("login"));
         return jsonArray.toString();
     }
@@ -142,9 +138,6 @@ public class UserController {
 
         UserDto search = service.userInfo(user);
         JSONArray jsonArray = JSONArray.fromObject(search);
-
-
-        log.info(jsonArray);
 
         return jsonArray.toString();
     }
@@ -180,7 +173,6 @@ public class UserController {
     public String login(HttpSession session) {
         if (session.getAttribute("login") != null) {
 
-            log.info("���缼��=======" + session.getAttribute("login").toString());
             session.setAttribute("login", session.getAttribute("login"));
             return "redirect:/community/community";
 
@@ -199,15 +191,15 @@ public class UserController {
 
             session.setAttribute("login", user);
             String ip = request.getRemoteAddr();
-            log.info("ipȮ�� : " + ip);
+
             LoginHistory log = new LoginHistory();
             log.setId(user.getId());
             log.setIp(ip);
             service.loginHistroy(log);
-            return "1"; //����
+            return "1";
         } else {
 
-            return "0"; //����
+            return "0";
         }
     }
 

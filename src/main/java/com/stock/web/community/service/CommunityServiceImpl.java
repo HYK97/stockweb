@@ -71,20 +71,16 @@ public class CommunityServiceImpl implements CommunityService {
         map.put("v_result", "");
 
         mapper.likePush(map);
-        log.info("�°� ------" + map.get("v_result2"));
         return (String) map.get("v_result2");
     }
 
     @Override
     public CommunityDto selectContent(Long bid, String user) {
-        log.info("�Խ���" + bid + "������" + user);
-        // TODO Auto-generated method stub
         return mapper.selectContent(bid, user);
     }
 
     @Override
     public List<Comments> commentsList(int fpage, int epage, Long bid) {
-        // TODO Auto-generated method stub
         return mapper.commentsList(fpage, epage, bid);
     }
 
@@ -96,14 +92,11 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityDto> searchList(int fpage, int epage, String user, String search) {
-        // TODO Auto-generated method stub
         List<CommunityDto> list = mapper.searchList(fpage, epage, user, search);
-
         for (CommunityDto communityDto : list) {
             if (!communityDto.getImg().equals("0")) {
                 List<String> a = Arrays.asList(communityDto.getImg().split("\\|"));
                 communityDto.setImglist(a);
-
             }
         }
 
@@ -112,9 +105,7 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityDto> myContentList(int fpage, int epage, String user) {
-        // TODO Auto-generated method stub
         List<CommunityDto> list = mapper.myContentList(fpage, epage, user);
-
         for (CommunityDto communityDto : list) {
             if (!communityDto.getImg().equals("0")) {
                 List<String> a = Arrays.asList(communityDto.getImg().split("\\|"));
@@ -129,9 +120,7 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityDto> likeContent(int fpage, int epage, String user) {
-        // TODO Auto-generated method stub
         List<CommunityDto> list = mapper.likeContent(fpage, epage, user);
-
         for (CommunityDto communityDto : list) {
             if (!communityDto.getImg().equals("0")) {
                 List<String> a = Arrays.asList(communityDto.getImg().split("\\|"));
@@ -144,27 +133,22 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public int deleteContent(Long ID) {
-        // TODO Auto-generated method stub
         return mapper.deleteContent(ID);
     }
 
     @Override
     public int deleteComment(Comments com) {
-        // TODO Auto-generated method stub
         return mapper.deleteComment(com);
     }
 
     @Override
     public int modifyComment(Comments com) {
-        // TODO Auto-generated method stub
         return mapper.updateComment(com);
 
     }
 
     @Override
     public void updateContent(CommunityDto com) {
-        log.info("������ Ȯ�� ---------------------" + com.toString());
-        // TODO Auto-generated method stub
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("v_user_id", com.getUSER_ID());
         map.put("v_content", com.getCONTENT());
