@@ -116,7 +116,7 @@ $(document).ready(function () {
                         if (data[i].img != 0) {
                             var len = data[i].imglist.length;
                             for (var j = 0; j < data[i].imglist.length; j++) {
-                                var dyroll = '<li><div style="width:707px"> <img class="im" src="' + data[i].imglist[j] + '"></div></li>'
+                                var dyroll = '<li><div style="width:707px"> <img class="im" src="/' + data[i].imglist[j] + '"></div></li>'
                                 var s = "#r" + data[i].ID + " ul"
                                 $(s).append(dyroll);
                                 var wi = parseInt(len) * 707;
