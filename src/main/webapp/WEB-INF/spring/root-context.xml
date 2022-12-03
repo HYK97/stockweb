@@ -23,6 +23,7 @@
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:khy"></property>
 		<property name="username" value="khy"></property>
 		<property name="password" value="***REMOVED***"></property>
+
 	</bean>
 	
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
