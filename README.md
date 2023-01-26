@@ -38,8 +38,6 @@
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/Mybatis-4479A1?style=flat-square&logo=Mybatis&logoColor=white"/></a>
 
-### 기타 
-- Oracle procedure, Trigger를 Mapper를 이용해서 사용하는 방법을 이용해보았음
 
 
 ## 데모
